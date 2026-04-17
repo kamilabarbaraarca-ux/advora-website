@@ -1,0 +1,16 @@
+/* TEAM */
+Agency: Advora
+Website: https://advoralabs.com
+Location: Sitges, Spain
+
+/* SITE */
+Standards: HTML5, CSS3
+Components: Google Analytics, Calendly
+Software: Claude (Anthropic), VS Code
+
+/* BUILD */
+Built: April 2026
+Framework: Static HTML/CSS/JS
+Hosting: Netlify
+Domain: advoralabs.com
+Performance: 90+ PageSpeed Score

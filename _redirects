@@ -1,0 +1,17 @@
+# Redirects for Advora website
+
+# Force HTTPS
+http://advoralabs.com/* https://advoralabs.com/:splat 301!
+http://www.advoralabs.com/* https://advoralabs.com/:splat 301!
+
+# Redirect www to non-www
+https://www.advoralabs.com/* https://advoralabs.com/:splat 301!
+
+# Spanish homepage redirect
+/es /es/ 301
+
+# Privacy policy
+/privacy /privacy.html 200
+
+# Custom 404
+/* /404.html 404

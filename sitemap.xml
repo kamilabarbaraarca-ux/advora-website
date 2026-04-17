@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- English Homepage -->
+  <url>
+    <loc>https://advoralabs.com/</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advoralabs.com/es/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://advoralabs.com/" />
+  </url>
+  
+  <!-- Spanish Homepage -->
+  <url>
+    <loc>https://advoralabs.com/es/</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advoralabs.com/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://advoralabs.com/es/" />
+  </url>
+  
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://advoralabs.com/privacy</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+</urlset>

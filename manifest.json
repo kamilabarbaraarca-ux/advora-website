@@ -1,0 +1,17 @@
+{
+  "name": "Advora",
+  "short_name": "Advora",
+  "description": "Performance marketing for service businesses",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#2563EB",
+  "icons": [
+    {
+      "src": "/images/advora-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

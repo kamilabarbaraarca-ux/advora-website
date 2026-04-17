@@ -1,0 +1,32 @@
+=== COPY LOG (forensic recovery) - Fri Apr 17 12:26:20 UTC 2026
+All operations are COPY with -p (preserve attributes). Nothing is moved or deleted.
+
+[PRIMARY]  /sessions/dreamy-brave-dirac/mnt/juangabrielarca/07_Inbox/to_file/advora-assets/advora-v15.html  =>  /sessions/dreamy-brave-dirac/mnt/juangabrielarca/02_Advora/website_recovered_master/index.html
+[CONFIG]   /sessions/dreamy-brave-dirac/mnt/juangabrielarca/07_Inbox/to_file/advora-assets/advora-website/netlify.toml  =>  /sessions/dreamy-brave-dirac/mnt/juangabrielarca/02_Advora/website_recovered_master/netlify.toml
+[CONFIG]   /sessions/dreamy-brave-dirac/mnt/juangabrielarca/07_Inbox/to_file/advora-assets/advora-website/_headers  =>  /sessions/dreamy-brave-dirac/mnt/juangabrielarca/02_Advora/website_recovered_master/_headers
+[CONFIG]   /sessions/dreamy-brave-dirac/mnt/juangabrielarca/07_Inbox/to_file/advora-assets/advora-website/_redirects  =>  /sessions/dreamy-brave-dirac/mnt/juangabrielarca/02_Advora/website_recovered_master/_redirects
+[CONFIG]   /sessions/dreamy-brave-dirac/mnt/juangabrielarca/07_Inbox/to_file/advora-assets/advora-website/robots.txt  =>  /sessions/dreamy-brave-dirac/mnt/juangabrielarca/02_Advora/website_recovered_master/robots.txt
+[CONFIG]   /sessions/dreamy-brave-dirac/mnt/juangabrielarca/07_Inbox/to_file/advora-assets/advora-website/sitemap.xml  =>  /sessions/dreamy-brave-dirac/mnt/juangabrielarca/02_Advora/website_recovered_master/sitemap.xml
+[CONFIG]   /sessions/dreamy-brave-dirac/mnt/juangabrielarca/07_Inbox/to_file/advora-assets/advora-website/humans.txt  =>  /sessions/dreamy-brave-dirac/mnt/juangabrielarca/02_Advora/website_recovered_master/humans.txt
+[CONFIG]   /sessions/dreamy-brave-dirac/mnt/juangabrielarca/07_Inbox/to_file/advora-assets/advora-website/security.txt  =>  /sessions/dreamy-brave-dirac/mnt/juangabrielarca/02_Advora/website_recovered_master/security.txt
+[CONFIG]   /sessions/dreamy-brave-dirac/mnt/juangabrielarca/07_Inbox/to_file/advora-assets/advora-website/manifest.json  =>  /sessions/dreamy-brave-dirac/mnt/juangabrielarca/02_Advora/website_recovered_master/manifest.json
+[CONFIG]   /sessions/dreamy-brave-dirac/mnt/juangabrielarca/07_Inbox/to_file/advora-assets/advora-website/404.html  =>  /sessions/dreamy-brave-dirac/mnt/juangabrielarca/02_Advora/website_recovered_master/404.html
+[CONFIG]   /sessions/dreamy-brave-dirac/mnt/juangabrielarca/07_Inbox/to_file/advora-assets/advora-website/privacy.html  =>  /sessions/dreamy-brave-dirac/mnt/juangabrielarca/02_Advora/website_recovered_master/privacy.html
+[CONFIG]   /sessions/dreamy-brave-dirac/mnt/juangabrielarca/07_Inbox/to_file/advora-assets/advora-website/.well-known/security.txt  =>  /sessions/dreamy-brave-dirac/mnt/juangabrielarca/02_Advora/website_recovered_master/.well-known/security.txt
+[LEGACY-SUPPORT] /sessions/dreamy-brave-dirac/mnt/juangabrielarca/07_Inbox/to_file/advora-assets/advora-website/css/main.css  =>  /sessions/dreamy-brave-dirac/mnt/juangabrielarca/02_Advora/website_recovered_master/css/main.css
+[LEGACY-SUPPORT] /sessions/dreamy-brave-dirac/mnt/juangabrielarca/07_Inbox/to_file/advora-assets/advora-website/js/main.js  =>  /sessions/dreamy-brave-dirac/mnt/juangabrielarca/02_Advora/website_recovered_master/js/main.js
+[IMAGE]    /sessions/dreamy-brave-dirac/mnt/juangabrielarca/07_Inbox/to_file/advora-assets/advora-website/images/advora-blue.svg  =>  /sessions/dreamy-brave-dirac/mnt/juangabrielarca/02_Advora/website_recovered_master/images/advora-blue.svg
+[IMAGE]    /sessions/dreamy-brave-dirac/mnt/juangabrielarca/07_Inbox/to_file/advora-assets/advora-website/images/advora-header.svg  =>  /sessions/dreamy-brave-dirac/mnt/juangabrielarca/02_Advora/website_recovered_master/images/advora-header.svg
+[IMAGE]    /sessions/dreamy-brave-dirac/mnt/juangabrielarca/07_Inbox/to_file/advora-assets/advora-website/images/advora-icon.svg  =>  /sessions/dreamy-brave-dirac/mnt/juangabrielarca/02_Advora/website_recovered_master/images/advora-icon.svg
+[IMAGE]    /sessions/dreamy-brave-dirac/mnt/juangabrielarca/07_Inbox/to_file/advora-assets/advora-website/images/advora-white.svg  =>  /sessions/dreamy-brave-dirac/mnt/juangabrielarca/02_Advora/website_recovered_master/images/advora-white.svg
+[LEGACY-ES] /sessions/dreamy-brave-dirac/mnt/juangabrielarca/07_Inbox/to_file/advora-assets/advora-website/es/index.html  =>  /sessions/dreamy-brave-dirac/mnt/juangabrielarca/02_Advora/website_recovered_master/es/index.html
+[FAVICON]  /sessions/dreamy-brave-dirac/mnt/juangabrielarca/02_Advora/deploy/favicon.ico  =>  /sessions/dreamy-brave-dirac/mnt/juangabrielarca/02_Advora/website_recovered_master/favicon.ico
+[FAVICON]  /sessions/dreamy-brave-dirac/mnt/juangabrielarca/02_Advora/deploy/favicon-16x16.png  =>  /sessions/dreamy-brave-dirac/mnt/juangabrielarca/02_Advora/website_recovered_master/favicon-16x16.png
+[FAVICON]  /sessions/dreamy-brave-dirac/mnt/juangabrielarca/02_Advora/deploy/favicon-32x32.png  =>  /sessions/dreamy-brave-dirac/mnt/juangabrielarca/02_Advora/website_recovered_master/favicon-32x32.png
+[FAVICON]  /sessions/dreamy-brave-dirac/mnt/juangabrielarca/02_Advora/deploy/apple-touch-icon.png  =>  /sessions/dreamy-brave-dirac/mnt/juangabrielarca/02_Advora/website_recovered_master/apple-touch-icon.png
+[FAVICON]  /sessions/dreamy-brave-dirac/mnt/juangabrielarca/02_Advora/deploy/android-chrome-192x192.png  =>  /sessions/dreamy-brave-dirac/mnt/juangabrielarca/02_Advora/website_recovered_master/android-chrome-192x192.png
+[FAVICON]  /sessions/dreamy-brave-dirac/mnt/juangabrielarca/02_Advora/deploy/android-chrome-512x512.png  =>  /sessions/dreamy-brave-dirac/mnt/juangabrielarca/02_Advora/website_recovered_master/android-chrome-512x512.png
+[FAVICON]  /sessions/dreamy-brave-dirac/mnt/juangabrielarca/02_Advora/deploy/site.webmanifest  =>  /sessions/dreamy-brave-dirac/mnt/juangabrielarca/02_Advora/website_recovered_master/site.webmanifest
+[MISC]     /sessions/dreamy-brave-dirac/mnt/juangabrielarca/07_Inbox/to_file/advora-assets/advora-website/.nojekyll  =>  /sessions/dreamy-brave-dirac/mnt/juangabrielarca/02_Advora/website_recovered_master/.nojekyll
+
+=== COPY COMPLETE ===

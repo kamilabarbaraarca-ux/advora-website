@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advora — Patient Acquisition for Specialist Medical Clinics</title>
+<meta name="description" content="Advora helps specialist medical clinics get more patients through Meta, Google, and SEO. IVF, hair transplant, and cosmetic clinics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<style>
+
+/* ═══════════════════════════════════════════════════
+   TOKENS
+═══════════════════════════════════════════════════ */
+:root {
+  --blue:     #1B5CE6;
+  --blue-d:   #1247C0;
+  --blue-lt:  #4A7FF5;
+  --blue-bg:  #0F2563;
+  --hero-1:   #0B1D52;
+  --hero-2:   #132B7A;
+  --white:    #FFFFFF;
+  --warm:     #F8F7F4;
+  --cream:    #F2F0EB;
+  --ink:      #0C0C0F;
+  --ink-2:    #374151;
+  --ink-3:    #6B7280;
+  --ink-4:    #9CA3AF;
+  --rule:     rgba(0,0,0,0.08);
+  --f-h:      'Fraunces', Georgia, serif;
+  --f-b:      'Plus Jakarta Sans', sans-serif;
+  --ease:     cubic-bezier(0.22,1,0.36,1);
+  --r:        16px;
+}
+
+/* ═══ RESET ═════════════════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--f-b);background:var(--white);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.6;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;}
+::selection{background:var(--blue);color:#fff;}
+
+/* ═══ LAYOUT ═════════════════════════════════════════ */
+.w{max-width:1100px;margin:0 auto;padding:0 44px;}
+@media(max-width:640px){.w{padding:0 22px;}}
+
+/* ═══════════════════════════════════════════════════
+   HEADER
+═══════════════════════════════════════════════════ */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:200;padding:0;transition:all 0.28s;}
+.hdr.scrolled{background:rgba(11,29,82,0.96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.07);}
+.hdr-i{display:flex;align-items:center;justify-content:space-between;height:68px;}
+
+.logo{font-family:var(--f-h);font-size:22px;font-weight:900;color:#fff;letter-spacing:-0.02em;}
+.logo em{color:var(--blue-lt);font-style:normal;}
+
+.hdr-nav{display:flex;align-items:center;gap:32px;}
+.hdr-nav a{font-size:14px;font-weight:500;color:rgba(255,255,255,0.65);transition:color 0.15s;}
+.hdr-nav a:hover{color:#fff;}
+@media(max-width:720px){.hdr-nav{display:none;}}
+
+.hdr-cta{display:inline-flex;align-items:center;gap:7px;background:#fff;color:var(--blue-d);font-size:13.5px;font-weight:700;padding:10px 22px;border-radius:100px;transition:all 0.18s;white-space:nowrap;box-shadow:0 2px 12px rgba(0,0,0,0.14);}
+.hdr-cta:hover{background:var(--blue-lt);color:#fff;box-shadow:0 4px 20px rgba(27,92,230,0.38);}
+.hdr-cta svg{flex-shrink:0;}
+
+/* ═══════════════════════════════════════════════════
+   HERO — DARK BLUE BACKGROUND
+═══════════════════════════════════════════════════ */
+.hero{background:linear-gradient(145deg, var(--hero-1) 0%, var(--hero-2) 55%, #0F2E8C 100%);position:relative;overflow:hidden;padding-top:68px;}
+
+/* Mesh grain overlay */
+.hero::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");opacity:0.4;pointer-events:none;}
+
+/* Radial light blob */
+.hero::after{content:'';position:absolute;top:-10%;right:-5%;width:600px;height:600px;background:radial-gradient(circle, rgba(74,127,245,0.18) 0%, transparent 70%);pointer-events:none;}
+
+.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:80px 0 0;}
+@media(max-width:880px){.hero-inner{grid-template-columns:1fr;gap:52px;padding:60px 0 0;}}
+
+/* ─── LEFT COPY ─── */
+.hero-label{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:100px;padding:5px 14px;margin-bottom:26px;}
+.hero-label-dot{width:7px;height:7px;border-radius:50%;background:#22C55E;animation:pulse-dot 2s infinite;}
+@keyframes pulse-dot{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(34,197,94,0.4);}50%{opacity:0.8;box-shadow:0 0 0 5px rgba(34,197,94,0);}}
+.hero-label span{font-size:12px;font-weight:600;color:rgba(255,255,255,0.75);letter-spacing:0.04em;}
+
+.hero-h{font-family:var(--f-h);font-size:clamp(38px,4.8vw,62px);font-weight:900;line-height:1.04;letter-spacing:-0.025em;color:#fff;margin-bottom:20px;max-width:540px;}
+.hero-h em{font-style:italic;color:var(--blue-lt);white-space:nowrap;}
+
+.hero-sub{font-size:clamp(15px,1.5vw,18px);color:rgba(255,255,255,0.58);line-height:1.65;max-width:420px;margin-bottom:36px;}
+
+.hero-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:48px;}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--blue-lt);color:#fff;font-size:15px;font-weight:700;padding:15px 30px;border-radius:100px;border:none;transition:all 0.2s;box-shadow:0 4px 24px rgba(74,127,245,0.4);}
+.btn-primary:hover{background:#fff;color:var(--blue-d);transform:translateY(-1px);box-shadow:0 8px 32px rgba(74,127,245,0.3);}
+.btn-primary svg{flex-shrink:0;}
+.hero-note{font-size:12.5px;color:rgba(255,255,255,0.35);}
+
+/* Trust strip */
+.hero-trust{display:flex;align-items:center;gap:28px;flex-wrap:wrap;padding-bottom:0;}
+.trust-item{display:flex;align-items:center;gap:7px;font-size:12.5px;color:rgba(255,255,255,0.44);}
+.trust-check{width:18px;height:18px;border-radius:50%;background:rgba(34,197,94,0.15);border:1px solid rgba(34,197,94,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.trust-check svg{width:9px;height:9px;stroke:#22C55E;fill:none;stroke-width:2.5;}
+
+/* ─── RIGHT: PLATFORM BOARD ─── */
+.hero-board{display:flex;flex-direction:column;align-items:flex-end;justify-content:center;position:relative;padding:0 4px 0 0;min-height:460px;}
+
+/* Cube accent — anchored to top-right corner of Google tile, slight overlap */
+.plat-tile.tile-goog{overflow:visible;}
+.plat-tile.tile-goog::before{border-radius:24px;}
+.cube-wrap{position:absolute;top:-14px;right:-12px;z-index:4;animation:cube-float 7s ease-in-out infinite;}
+@keyframes cube-float{0%,100%{transform:translateY(0);}50%{transform:translateY(-2px);}}
+.cube{width:42px;height:42px;position:relative;transform-style:preserve-3d;transform:rotateX(20deg) rotateY(-30deg);}
+.cube-face{position:absolute;width:42px;height:42px;border-radius:7px;opacity:0.92;}
+.cube-front{background:linear-gradient(135deg,#4A7FF5,#1B5CE6);transform:translateZ(21px);}
+.cube-right{background:linear-gradient(135deg,#1247C0,#0B2E8C);transform:rotateY(90deg) translateZ(21px);}
+.cube-top{background:linear-gradient(135deg,#6B9DFF,#4A7FF5);transform:rotateX(90deg) translateZ(21px);}
+
+/* 2×2 grid of platform tiles — equal horizontal & vertical gap */
+.platform-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;width:100%;max-width:400px;position:relative;z-index:3;}
+
+.plat-tile{border-radius:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:32px 20px;position:relative;overflow:hidden;transition:transform 0.4s ease-out;}
+.plat-tile:hover{transform:translateY(-4px);}
+
+/* Individual tile backgrounds */
+.tile-ig{background:linear-gradient(135deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);animation:tileFloat1 10.4s ease-out infinite;}
+.tile-fb{background:linear-gradient(145deg,#1877F2,#0D5FCC);animation:tileFloat2 11.7s ease-out infinite 1s;}
+.tile-yt{background:linear-gradient(145deg,#FF0000,#CC0000);animation:tileFloat3 9.1s ease-out infinite 0.5s;}
+.tile-goog{background:#fff;border:1px solid rgba(0,0,0,0.08);box-shadow:0 10px 30px rgba(0,0,0,0.15);animation:tileFloat4 13s ease-out infinite 1.5s;}
+
+@keyframes tileFloat1{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+@keyframes tileFloat2{0%,100%{transform:translateY(0);}50%{transform:translateY(-13px);}}
+@keyframes tileFloat3{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+@keyframes tileFloat4{0%,100%{transform:translateY(0);}50%{transform:translateY(-11px);}}
+
+/* Tile inner glow */
+.plat-tile::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 30%, rgba(255,255,255,0.22) 0%, transparent 60%);pointer-events:none;border-radius:24px;}
+
+.tile-logo{width:56px;height:56px;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 2px 8px rgba(0,0,0,0.18));}
+.tile-logo svg{width:56px;height:56px;}
+.tile-name{font-size:13px;font-weight:700;color:#fff;letter-spacing:0.02em;}
+.tile-goog .tile-name{color:var(--ink-2);}
+
+/* Shadow beneath tiles */
+.plat-tile::after{content:'';position:absolute;bottom:-14px;left:50%;transform:translateX(-50%);width:70%;height:18px;background:radial-gradient(ellipse, rgba(0,0,0,0.22) 0%, transparent 70%);border-radius:50%;pointer-events:none;}
+
+/* Wave bottom */
+.hero-wave{position:relative;z-index:2;margin-top:60px;line-height:0;}
+.hero-wave svg{display:block;width:100%;}
+
+/* ═══════════════════════════════════════════════════
+   TICKER
+═══════════════════════════════════════════════════ */
+.ticker{background:var(--warm);border-bottom:1px solid var(--rule);padding:10px 0;overflow:hidden;}
+.ticker-track{display:flex;white-space:nowrap;animation:tickroll 28s linear infinite;width:max-content;}
+.ticker-item{display:inline-flex;align-items:center;gap:9px;padding:0 48px;font-size:13px;color:var(--ink-3);}
+.ticker-item strong{color:var(--ink);font-weight:600;}
+.t-dot{width:5px;height:5px;border-radius:50%;background:#22C55E;flex-shrink:0;}
+@keyframes tickroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+/* ═══════════════════════════════════════════════════
+   RESULTS STRIP
+═══════════════════════════════════════════════════ */
+.results{background:var(--white);padding:28px 0;border-bottom:1px solid var(--rule);}
+.results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+@media(max-width:640px){.results-grid{grid-template-columns:1fr 1fr;}}
+.res-item{padding:14px 24px;border-right:1px solid var(--rule);display:flex;align-items:center;gap:10px;}
+.res-item:last-child{border-right:none;}
+@media(max-width:640px){.res-item:nth-child(2){border-right:none;}.res-item:nth-child(3){border-right:none;border-top:1px solid var(--rule);}.res-item:nth-child(4){border-top:1px solid var(--rule);}}
+.res-dot{width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0;}
+.res-lbl{font-size:12.5px;color:var(--ink-2);line-height:1.4;font-weight:500;}
+
+/* ═══════════════════════════════════════════════════
+   SERVICES
+═══════════════════════════════════════════════════ */
+.services{background:var(--warm);padding:120px 0;}
+.section-eyebrow{font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);display:block;margin-bottom:12px;}
+.section-h{font-family:var(--f-h);font-size:clamp(28px,3.2vw,44px);font-weight:900;line-height:1.1;letter-spacing:-0.02em;color:var(--ink);margin-bottom:14px;}
+.section-sub{font-size:16px;color:var(--ink-3);margin-bottom:56px;max-width:480px;line-height:1.6;}
+
+.services{position:relative;overflow:hidden;}
+.services::before{content:'';position:absolute;top:40%;left:-120px;right:-120px;height:1px;background:linear-gradient(to right,transparent 0%,rgba(27,92,230,0.12) 50%,transparent 100%);pointer-events:none;z-index:0;}
+.services > .w{position:relative;z-index:1;}
+
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+@media(max-width:960px){.svc-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.svc-grid{grid-template-columns:1fr;}}
+
+.svc-card{background:#fff;border-radius:16px;overflow:hidden;border:1px solid var(--rule);transition:transform 0.4s var(--ease),box-shadow 0.4s var(--ease),border-color 0.4s var(--ease);cursor:default;display:flex;flex-direction:column;position:relative;}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent 0%,var(--blue-lt) 50%,transparent 100%);opacity:0;transition:opacity 0.45s var(--ease);z-index:5;}
+.svc-card:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(11,29,82,0.12);border-color:rgba(27,92,230,0.22);}
+.svc-card:hover::before{opacity:1;}
+.svc-visual{height:220px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.svc-body{padding:20px 22px 24px;}
+.svc-role{display:block;font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue);margin-bottom:8px;opacity:0.8;}
+.svc-name{font-family:var(--f-h);font-size:18px;font-weight:900;color:var(--ink);margin-bottom:6px;letter-spacing:-0.015em;line-height:1.2;}
+.svc-desc{font-size:13px;color:var(--ink-3);line-height:1.55;opacity:0.85;}
+
+/* Stage marker — 01 / 02 / 03 / 04 pill */
+.svc-stage{position:absolute;top:10px;left:10px;z-index:6;font-family:var(--f-h);font-size:9.5px;font-weight:800;color:var(--blue);background:rgba(255,255,255,0.82);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(27,92,230,0.14);border-radius:100px;padding:2.5px 8px;letter-spacing:0.05em;box-shadow:0 1px 6px rgba(11,29,82,0.05);}
+
+/* SVC VISUALS */
+/* 1. Search Ads */
+.svc-v-search{background:#F8FAFF;}
+.serp-mini{background:#fff;border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,0.08);padding:12px 13px;width:86%;max-width:240px;}
+.serp-mini-chrome{background:#F1F3F4;border-radius:8px;padding:6px 10px;font-size:10px;color:#555;font-family:var(--f-b);display:flex;align-items:center;gap:6px;margin-bottom:10px;}
+.serp-mini-lock{opacity:0.5;}
+.serp-ad-row{padding:2px 0;}
+.serp-ad-fav{display:flex;align-items:center;gap:5px;margin-bottom:2px;}
+.serp-ad-circle{width:14px;height:14px;border-radius:50%;background:linear-gradient(135deg,#4285F4,#34A853);display:flex;align-items:center;justify-content:center;font-size:6px;color:#fff;font-weight:800;}
+.serp-ad-domain{font-size:9.5px;color:#1F1F1F;font-family:var(--f-b);}
+.serp-ad-spons{font-size:8px;color:#70757A;font-family:var(--f-b);margin-left:auto;}
+.serp-ad-title{font-size:14px;color:#1A0DAB;font-weight:700;font-family:var(--f-b);line-height:1.3;margin:2px 0;}
+.serp-ad-desc{font-size:9px;color:#4D5156;font-family:var(--f-b);line-height:1.4;margin-bottom:5px;}
+.serp-ad-ext{display:flex;align-items:center;gap:4px;font-size:8.5px;color:#F4B400;font-family:var(--f-b);}
+.serp-ad-rv{color:#333;font-weight:700;font-size:8.5px;}
+.serp-ad-rc{color:#70757A;font-size:8.5px;}
+.serp-pos-badge{position:absolute;top:14px;right:14px;background:var(--blue);color:#fff;font-size:9px;font-weight:800;border-radius:6px;padding:3px 9px;font-family:var(--f-b);letter-spacing:0.04em;box-shadow:0 4px 14px rgba(27,92,230,0.28);}
+.serp-cursor{position:absolute;left:58%;top:62%;width:14px;height:14px;color:var(--ink);opacity:0.75;animation:cursor-tap 3.4s ease-in-out infinite;pointer-events:none;}
+@keyframes cursor-tap{0%,100%{transform:translate(0,0) scale(1);opacity:0.7;}45%{transform:translate(-6px,-6px) scale(0.92);opacity:1;}55%{transform:translate(-6px,-6px) scale(0.92);opacity:1;}}
+
+/* SEO top-row highlight */
+.kw-row.kw-row-top{background:linear-gradient(90deg,rgba(27,92,230,0.08) 0%,rgba(27,92,230,0) 100%);border-radius:4px;margin:2px -4px;padding:6px 4px;}
+.kw-row.kw-row-top .kw-pos{color:var(--blue);}
+
+/* Landing page — booking confirmation pill */
+.lp-booked{display:inline-flex;align-items:center;gap:5px;background:rgba(22,163,74,0.1);color:#16A34A;font-size:8px;font-weight:700;font-family:var(--f-b);padding:3px 7px;border-radius:100px;margin-bottom:6px;border:1px solid rgba(22,163,74,0.2);}
+.lp-booked-dot{width:5px;height:5px;border-radius:50%;background:#22C55E;animation:pulse-dot 2s infinite;}
+
+/* Social CTA subtle glow */
+.pig-cta{box-shadow:0 4px 12px rgba(0,149,246,0.25);}
+
+/* 2. Social Ads — iPhone mockup card */
+.svc-v-social{background:linear-gradient(160deg,#F3EEE6 0%,#E7DFD2 100%);padding:14px 0 0;}
+.phone-ig{width:128px;margin:0 auto;filter:drop-shadow(0 18px 36px rgba(15,23,42,0.15)) drop-shadow(0 4px 12px rgba(15,23,42,0.08));}
+.phone-frame{background:#1a1a1c;border-radius:24px;padding:4px;width:100%;aspect-ratio:9/19.5;}
+.phone-screen{background:#fff;border-radius:21px;overflow:hidden;width:100%;height:100%;position:relative;display:flex;flex-direction:column;}
+.phone-notch{position:absolute;top:4px;left:50%;transform:translateX(-50%);width:38px;height:10px;background:#0a0a0a;border-radius:100px;z-index:3;}
+.pig-top{display:flex;align-items:center;gap:5px;padding:18px 8px 4px;}
+.pig-av{width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,#E8D9C3 0%,#C9A87E 100%);flex-shrink:0;border:1.2px solid #fff;box-shadow:0 0 0 1px #E4B878;}
+.pig-who{flex:1;min-width:0;line-height:1.15;}
+.pig-name{display:block;font-size:6.8px;font-weight:700;color:#0a0a0a;font-family:var(--f-b);letter-spacing:0.01em;}
+.pig-spon{display:block;font-size:5.6px;color:#737373;font-family:var(--f-b);}
+.pig-dots{font-size:9px;color:#0a0a0a;line-height:1;}
+.pig-img{height:94px;background:linear-gradient(145deg,#F8F7F5 0%,#EAE7E2 55%,#D9CFC0 100%);position:relative;overflow:hidden;}
+.pig-img svg{position:absolute;inset:0;width:100%;height:100%;}
+.pig-actions{display:flex;align-items:center;gap:6px;padding:5px 8px 2px;}
+.pig-actions svg{width:10px;height:10px;stroke:#0a0a0a;fill:none;stroke-width:1.8;}
+.pig-actions .pig-save{margin-left:auto;}
+.pig-likes{padding:1px 8px;font-size:6.2px;font-weight:700;color:#0a0a0a;font-family:var(--f-b);}
+.pig-copy{padding:1px 8px;font-size:6.4px;color:#0a0a0a;font-family:var(--f-b);line-height:1.3;}
+.pig-copy strong{font-weight:700;}
+.pig-sub{padding:0 8px;font-size:5.4px;color:#555;font-family:var(--f-b);line-height:1.38;}
+.pig-cta{margin:4px 8px 3px;background:#0095F6;color:#fff;text-align:center;font-size:6.4px;font-weight:600;padding:4px 0;border-radius:4px;font-family:var(--f-b);}
+.pig-foot{padding:2px 8px 6px;font-size:4.8px;color:#8e8e8e;font-family:var(--f-b);text-align:center;}
+.social-mini{width:180px;background:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.1);overflow:hidden;}
+.soc-hdr{display:flex;align-items:center;gap:7px;padding:8px 10px 5px;}
+.soc-av{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#C8B8F0,#8B72E0);display:flex;align-items:center;justify-content:center;font-size:9px;color:#fff;font-weight:700;flex-shrink:0;}
+.soc-info{flex:1;}
+.soc-name{font-size:10px;font-weight:700;color:#000;font-family:var(--f-b);display:block;line-height:1.2;}
+.soc-spons{font-size:8.5px;color:#8A8D91;font-family:var(--f-b);}
+.soc-img{height:100px;background:linear-gradient(145deg,#F7F2E8,#E8DFC8);position:relative;overflow:hidden;}
+.soc-img-overlay{position:absolute;bottom:0;left:0;right:0;padding:7px 10px;background:linear-gradient(transparent,rgba(0,0,0,0.55));}
+.soc-img-hl{font-size:10px;font-weight:700;color:#fff;font-family:var(--f-b);font-style:italic;}
+.soc-cta-bar{background:#F0F2F5;padding:6px 10px;display:flex;align-items:center;justify-content:space-between;}
+.soc-cta-d{font-size:8px;color:#8A8D91;font-family:var(--f-b);}
+.soc-cta-btn{background:#1877F2;color:#fff;font-size:8.5px;font-weight:700;border-radius:5px;padding:4px 10px;font-family:var(--f-b);}
+
+/* 3. SEO */
+.svc-v-seo{background:#F3F9F3;}
+.kw-tracker{background:#fff;border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,0.07);padding:12px 13px;width:86%;max-width:220px;}
+.kw-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;}
+.kw-hdr-t{font-size:10px;font-weight:700;color:var(--ink);font-family:var(--f-b);}
+.kw-hdr-s{font-size:8.5px;color:var(--ink-4);font-family:var(--f-b);}
+.kw-row{display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid #F3F4F6;}
+.kw-row:last-child{border-bottom:none;}
+.kw-word{font-size:9.5px;color:#374151;flex:1;font-family:var(--f-b);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.kw-pos{font-size:13px;font-weight:800;color:var(--blue);font-family:var(--f-b);min-width:22px;text-align:right;}
+.kw-delta{font-size:9px;color:#16A34A;font-weight:700;font-family:var(--f-b);}
+.kw-spark{width:28px;}
+
+/* 4. Landing Pages */
+.svc-v-lp{background:linear-gradient(135deg,#EEF4FF,#E8F0FF);}
+.lp-mini{width:86%;max-width:210px;background:#fff;border-radius:10px;box-shadow:0 6px 24px rgba(0,0,0,0.10);overflow:hidden;}
+.lp-header-bar{background:linear-gradient(135deg,var(--blue),var(--blue-lt));padding:10px 12px;}
+.lp-h-logo{font-size:11px;font-weight:800;color:#fff;font-family:var(--f-b);opacity:0.9;}
+.lp-body{padding:10px 12px 12px;}
+.lp-headline{font-size:11.5px;font-weight:800;color:var(--ink);line-height:1.28;margin-bottom:6px;font-family:var(--f-b);}
+.lp-sub{font-size:8.5px;color:var(--ink-3);line-height:1.4;margin-bottom:8px;font-family:var(--f-b);}
+.lp-trust{display:flex;align-items:center;gap:5px;margin-bottom:8px;}
+.lp-stars{font-size:9px;color:#F4B400;}
+.lp-tv{font-size:8.5px;color:var(--ink);font-weight:700;font-family:var(--f-b);}
+.lp-tc{font-size:8.5px;color:var(--ink-4);font-family:var(--f-b);}
+.lp-cta{background:var(--blue);color:#fff;text-align:center;border-radius:6px;padding:7px 0;font-size:10px;font-weight:700;font-family:var(--f-b);display:block;margin-bottom:5px;}
+.lp-micro{font-size:7.5px;text-align:center;color:var(--ink-4);font-family:var(--f-b);}
+
+/* 5. YouTube */
+.svc-v-yt{background:#FFF5F5;}
+.yt-mini{width:220px;background:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.09);overflow:hidden;}
+.yt-thumb{height:110px;background:linear-gradient(145deg,#1a1a2e,#16213e);position:relative;display:flex;align-items:center;justify-content:center;}
+.yt-play{width:40px;height:40px;background:rgba(255,0,0,0.92);border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.yt-play svg{width:14px;height:14px;fill:#fff;margin-left:2px;}
+.yt-duration{position:absolute;bottom:7px;right:9px;background:rgba(0,0,0,0.75);color:#fff;font-size:9px;font-weight:700;border-radius:3px;padding:1px 5px;font-family:var(--f-b);}
+.yt-info{padding:10px 12px 12px;}
+.yt-title{font-size:10.5px;font-weight:700;color:var(--ink);line-height:1.38;font-family:var(--f-b);margin-bottom:5px;}
+.yt-meta{font-size:8.5px;color:var(--ink-3);font-family:var(--f-b);}
+
+/* 6. Reporting */
+.svc-v-rpt{background:linear-gradient(135deg,#F5F3FF,#EDE9FF);}
+.rpt-mini{background:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.08);padding:14px;width:230px;}
+.rpt-mini-hdr{background:linear-gradient(120deg,var(--blue),var(--blue-lt));border-radius:7px;padding:9px 11px;margin-bottom:10px;}
+.rpt-mini-tag{font-size:7.5px;font-weight:700;color:rgba(255,255,255,0.55);text-transform:uppercase;letter-spacing:0.1em;font-family:var(--f-b);}
+.rpt-mini-name{font-size:12px;font-weight:700;color:#fff;font-family:var(--f-b);}
+.rpt-row{display:flex;align-items:center;justify-content:space-between;padding:4px 0;border-bottom:1px solid #F0F0F0;}
+.rpt-row:last-child{border-bottom:none;}
+.rpt-lbl{font-size:9px;color:var(--ink-3);font-family:var(--f-b);}
+.rpt-val{font-size:11px;font-weight:700;color:var(--ink);font-family:var(--f-b);}
+.rpt-d{font-size:8px;font-weight:700;border-radius:3px;padding:1px 5px;font-family:var(--f-b);}
+.d-up{background:#DCFCE7;color:#166534;}
+.d-dn{background:#FEE2E2;color:#991B1B;}
+
+/* ═══════════════════════════════════════════════════
+   PROCESS (HOW IT WORKS)
+═══════════════════════════════════════════════════ */
+.process{background:#fff;padding:120px 0;position:relative;overflow:hidden;}
+.process::after{content:'';position:absolute;bottom:-120px;right:-120px;width:440px;height:440px;background:radial-gradient(circle,rgba(27,92,230,0.045) 0%,transparent 70%);pointer-events:none;z-index:0;}
+.process > .w{position:relative;z-index:1;}
+
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:64px;position:relative;border:1px solid var(--rule);border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 4px 24px rgba(11,29,82,0.04);}
+@media(max-width:720px){.process-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:480px){.process-grid{grid-template-columns:1fr;}}
+
+.proc-item{padding:38px 28px 34px;position:relative;text-align:left;border-right:1px solid var(--rule);transition:background 0.4s var(--ease);}
+.proc-item:last-child{border-right:none;}
+.proc-item:hover{background:rgba(27,92,230,0.025);}
+@media(max-width:720px){
+  .proc-item:nth-child(2){border-right:none;}
+  .proc-item:nth-child(3){border-top:1px solid var(--rule);}
+  .proc-item:nth-child(4){border-top:1px solid var(--rule);border-right:none;}
+}
+
+/* Giant editorial numeral */
+.proc-numeral{font-family:var(--f-h);font-size:78px;font-weight:900;line-height:0.85;color:rgba(27,92,230,0.06);position:absolute;top:20px;right:32px;letter-spacing:-0.05em;pointer-events:none;transition:color 0.4s var(--ease),transform 0.4s var(--ease);z-index:0;}
+.proc-item:hover .proc-numeral{color:rgba(27,92,230,0.16);transform:translateY(-3px);}
+
+/* Icon tile */
+.proc-icon{width:44px;height:44px;border-radius:12px;background:rgba(27,92,230,0.08);display:flex;align-items:center;justify-content:center;margin-bottom:24px;position:relative;z-index:2;transition:background 0.4s var(--ease),transform 0.4s var(--ease),box-shadow 0.4s var(--ease);}
+.proc-icon svg{width:20px;height:20px;stroke:var(--blue);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.proc-item:hover .proc-icon{background:rgba(27,92,230,0.16);transform:scale(1.06);box-shadow:0 6px 18px rgba(27,92,230,0.14);}
+
+.proc-title{font-family:var(--f-h);font-size:19px;font-weight:900;color:var(--ink);line-height:1.18;letter-spacing:-0.015em;margin-bottom:10px;position:relative;z-index:2;}
+.proc-body{font-size:13.5px;color:var(--ink-3);line-height:1.6;position:relative;z-index:2;}
+
+/* Chevron flow between steps — sequential pulse for momentum */
+.proc-item::after{content:'';position:absolute;top:58px;right:-7px;width:12px;height:12px;border-right:1.5px solid var(--blue);border-top:1.5px solid var(--blue);transform:rotate(45deg);opacity:0.3;z-index:3;animation:chevron-pulse 3.6s ease-in-out infinite;}
+.proc-item:nth-child(1)::after{animation-delay:0s;}
+.proc-item:nth-child(2)::after{animation-delay:0.35s;}
+.proc-item:nth-child(3)::after{animation-delay:0.7s;}
+.proc-item:last-child::after{display:none;}
+@media(max-width:720px){.proc-item::after{display:none;}}
+@keyframes chevron-pulse{0%,100%{opacity:0.22;}50%{opacity:0.72;}}
+
+/* ═══════════════════════════════════════════════════
+   PROOF BAND
+═══════════════════════════════════════════════════ */
+.proof-band{background:var(--hero-1);padding:72px 0;}
+.proof-band-inner{display:flex;gap:64px;flex-wrap:wrap;align-items:flex-start;}
+.proof-left{flex:1;min-width:240px;}
+.proof-eyebrow{font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:14px;display:block;}
+.proof-hl{font-family:var(--f-h);font-size:clamp(22px,2.4vw,30px);color:#fff;font-weight:900;line-height:1.2;margin-bottom:8px;}
+.proof-clinic{font-size:13px;color:rgba(255,255,255,0.35);font-style:italic;}
+.proof-right{flex:2;min-width:280px;}
+.proof-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:0;}
+.proof-m{padding:20px 28px;border-right:1px solid rgba(255,255,255,0.08);}
+.proof-m:last-child{border-right:none;}
+@media(max-width:760px){.proof-metrics{grid-template-columns:1fr;}.proof-m{border-right:none;border-bottom:1px solid rgba(255,255,255,0.08);padding:16px 0;}.proof-m:last-child{border-bottom:none;}}
+.proof-before{font-size:12px;color:rgba(255,255,255,0.22);text-decoration:line-through;display:block;margin-bottom:4px;}
+.proof-after{font-family:var(--f-h);font-size:clamp(28px,3vw,38px);color:#fff;font-weight:900;display:block;line-height:1.1;margin-bottom:4px;}
+.proof-after-soft{font-family:var(--f-h);font-size:clamp(18px,1.8vw,22px);color:#fff;font-weight:800;display:block;line-height:1.2;margin-bottom:6px;letter-spacing:-0.01em;}
+.proof-metric-lbl{font-size:12.5px;color:rgba(255,255,255,0.42);}
+
+/* ═══════════════════════════════════════════════════
+   WHO
+═══════════════════════════════════════════════════ */
+.who{background:var(--warm);padding:120px 0;}
+.positioning-divider{background:#fff;padding:80px 0;text-align:center;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+.positioning-divider p{max-width:720px;margin:0 auto;padding:0 24px;font-family:var(--f-h);font-size:19px;font-weight:700;line-height:1.4;color:var(--ink);letter-spacing:-0.01em;}
+.positioning-divider em{color:var(--blue);font-style:italic;}
+.who-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center;}
+@media(max-width:760px){.who-grid{grid-template-columns:1fr;}}
+.who-left{}
+.who-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px;}
+.who-chip{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--rule);border-radius:100px;padding:9px 18px;font-size:13.5px;font-weight:600;color:var(--ink);transition:all 0.18s;}
+.who-chip:hover{border-color:rgba(27,92,230,0.3);color:var(--blue);}
+.who-chip-dot{width:8px;height:8px;border-radius:50%;background:var(--blue);flex-shrink:0;animation:chip-dot-glow 3.2s ease-in-out infinite;}
+@keyframes chip-dot-glow{0%,100%{opacity:0.55;box-shadow:0 0 0 0 rgba(27,92,230,0);}50%{opacity:1;box-shadow:0 0 0 3px rgba(27,92,230,0.12);}}
+.who-right{background:#fff;border-radius:20px;padding:32px;border:1px solid var(--rule);}
+.who-quote{font-family:var(--f-h);font-style:italic;font-size:clamp(16px,1.8vw,20px);color:var(--ink);line-height:1.52;margin-bottom:18px;}
+.who-attr{font-size:12.5px;color:var(--ink-4);}
+.who-result{margin-top:22px;padding-top:22px;border-top:1px solid var(--rule);display:flex;gap:24px;}
+.wr-item{}
+.wr-val{font-family:var(--f-h);font-size:26px;font-weight:900;color:var(--blue);display:block;line-height:1;}
+.wr-lbl{font-size:13px;color:var(--ink-2);line-height:1.45;font-weight:500;}
+
+/* ═══════════════════════════════════════════════════
+   CTA SECTION
+═══════════════════════════════════════════════════ */
+.cta-section{background:linear-gradient(145deg,var(--hero-1),var(--hero-2));padding:120px 0;text-align:center;}
+.cta-inner{max-width:600px;margin:0 auto;}
+.cta-h{font-family:var(--f-h);font-size:clamp(32px,4vw,52px);font-weight:900;color:#fff;line-height:1.06;margin-bottom:18px;letter-spacing:-0.02em;}
+.cta-h em{font-style:italic;color:var(--blue-lt);}
+.cta-sub{font-size:17px;color:rgba(255,255,255,0.52);line-height:1.6;margin-bottom:36px;}
+.cta-actions{display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap;}
+.cta-secondary{font-size:14px;color:rgba(255,255,255,0.62);text-decoration:none;border:none;background:none;border-bottom:1px solid rgba(255,255,255,0.25);padding:0 0 2px;font-family:inherit;cursor:pointer;transition:color 0.18s,border-color 0.18s;}
+.cta-secondary:hover{color:#fff;border-color:rgba(255,255,255,0.6);}
+.cta-btn{display:inline-flex;align-items:center;gap:9px;background:#fff;color:var(--blue-d);font-size:16px;font-weight:700;padding:17px 36px;border-radius:100px;transition:all 0.2s;box-shadow:0 4px 24px rgba(0,0,0,0.18);}
+.cta-btn:hover{background:var(--blue-lt);color:#fff;transform:translateY(-2px);}
+.cta-note{font-size:12.5px;color:rgba(255,255,255,0.3);margin-top:14px;}
+.cta-guar{display:inline-flex;align-items:center;gap:7px;margin-top:28px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:8px 18px;font-size:12.5px;color:rgba(255,255,255,0.45);}
+.guar-ic{color:#22C55E;font-size:14px;}
+
+/* ═══════════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════════ */
+.ftr{background:#080E26;padding:48px 0;}
+.ftr-i{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;flex-wrap:wrap;}
+.ftr-logo{font-family:var(--f-h);font-size:20px;font-weight:900;color:#fff;letter-spacing:-0.02em;display:block;margin-bottom:6px;}
+.ftr-logo em{color:var(--blue-lt);font-style:normal;}
+.ftr-email{font-size:13px;color:rgba(255,255,255,0.3);transition:color 0.15s;}
+.ftr-email:hover{color:rgba(255,255,255,0.7);}
+.ftr-r{font-size:12px;color:rgba(255,255,255,0.15);}
+
+/* ═══════════════════════════════════════════════════
+   MODAL
+═══════════════════════════════════════════════════ */
+.modal-overlay{position:fixed;inset:0;background:rgba(8,14,38,0.72);z-index:1000;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity 0.26s;}
+.modal-overlay.open{opacity:1;pointer-events:all;}
+.modal{background:#fff;border-radius:24px;max-width:520px;width:100%;padding:40px 44px;position:relative;transform:translateY(24px) scale(0.97);transition:all 0.28s var(--ease);max-height:90vh;overflow-y:auto;}
+.modal-overlay.open .modal{transform:none;}
+.modal-close{position:absolute;top:18px;right:18px;width:32px;height:32px;border-radius:50%;background:var(--warm);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background 0.15s;border:none;}
+.modal-close:hover{background:var(--cream);}
+.modal-close svg{width:14px;height:14px;stroke:var(--ink-3);fill:none;stroke-width:2;}
+.modal-tag{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);display:block;margin-bottom:10px;}
+.modal-h{font-family:var(--f-h);font-size:clamp(22px,3vw,30px);font-weight:900;color:var(--ink);line-height:1.12;margin-bottom:8px;letter-spacing:-0.018em;}
+.modal-sub{font-size:14px;color:var(--ink-3);margin-bottom:28px;line-height:1.6;}
+.form-group{display:flex;flex-direction:column;gap:11px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:11px;}
+@media(max-width:480px){.form-row{grid-template-columns:1fr;}}
+.f-inp{width:100%;background:var(--warm);border:1.5px solid transparent;border-radius:10px;padding:13px 15px;font-family:var(--f-b);font-size:14px;color:var(--ink);outline:none;transition:border-color 0.16s;}
+.f-inp:focus{border-color:rgba(27,92,230,0.4);background:#fff;}
+.f-inp::placeholder{color:var(--ink-4);}
+.f-sel{-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%239CA3AF' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;cursor:pointer;}
+.f-sel option{background:#fff;color:var(--ink);}
+textarea.f-inp{resize:vertical;min-height:80px;}
+.modal-submit{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;background:var(--blue);color:#fff;font-family:var(--f-b);font-size:15px;font-weight:700;padding:15px 0;border-radius:100px;border:none;cursor:pointer;transition:all 0.18s;margin-top:4px;box-shadow:0 4px 20px rgba(27,92,230,0.28);}
+.modal-submit:hover{background:var(--blue-d);transform:translateY(-1px);}
+.modal-privacy{font-size:11.5px;color:var(--ink-4);text-align:center;margin-top:10px;}
+.modal-error{font-size:12.5px;color:#B91C1C;background:rgba(220,38,38,0.08);border:1px solid rgba(220,38,38,0.18);border-radius:8px;padding:9px 12px;text-align:center;margin-top:4px;}
+
+/* ═══════════════════════════════════════════════════
+   ANIMATIONS
+═══════════════════════════════════════════════════ */
+@keyframes riseIn{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:none;}}
+.hero-label{opacity:0;animation:riseIn 0.6s var(--ease) 0.08s forwards;}
+.hero-h{opacity:0;animation:riseIn 0.7s var(--ease) 0.16s forwards;}
+.hero-sub{opacity:0;animation:riseIn 0.7s var(--ease) 0.24s forwards;}
+.hero-actions{opacity:0;animation:riseIn 0.7s var(--ease) 0.32s forwards;}
+.hero-trust{opacity:0;animation:riseIn 0.7s var(--ease) 0.4s forwards;}
+.hero-board{opacity:0;animation:riseIn 0.9s var(--ease) 0.22s forwards;}
+
+/* Reveal animation */
+.reveal{opacity:0;transform:translateY(10px);transition:opacity 0.4s ease-out,transform 0.4s ease-out;}
+.reveal.in{opacity:1;transform:none;}
+
+/* ═══════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════ */
+@media(max-width:880px){
+  .hero-board{min-height:360px;}
+  .platform-grid{max-width:360px;gap:24px;}
+}
+@media(max-width:640px){
+  .results-grid{grid-template-columns:1fr 1fr;}
+}
+
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════
+     HEADER
+══════════════════════════════════════════════════ -->
+<header class="hdr" id="hdr">
+  <div class="w hdr-i">
+    <a href="/" class="logo">Advora<em>.</em></a>
+    <nav class="hdr-nav">
+      <a href="#services">Services</a>
+      <a href="#how">How it works</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="hdr-cta" onclick="openModal()">
+      Get the proposal
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="w">
+    <div class="hero-inner">
+
+      <!-- LEFT COPY -->
+      <div>
+        <div class="hero-label">
+          <span class="hero-label-dot"></span>
+          <span>Now accepting new clinics — limited spots</span>
+        </div>
+
+        <h1 class="hero-h">
+          Predictable patient acquisition for <em>specialist clinics</em>
+        </h1>
+
+        <p class="hero-sub">We help IVF, hair transplant and aesthetic clinics turn demand into booked consultations.</p>
+
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="openModal()">
+            Get your patient acquisition plan
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7.5 3L12 7l-4.5 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <p class="hero-note">No pitch. Just a clear look at your clinic.</p>
+
+        <div class="hero-trust" style="margin-top:32px;">
+          <div class="trust-item">
+            <div class="trust-check"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,7 9,1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            IVF & fertility clinics
+          </div>
+          <div class="trust-item">
+            <div class="trust-check"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,7 9,1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            Hair transplant practices
+          </div>
+          <div class="trust-item">
+            <div class="trust-check"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,7 9,1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            Europe & Middle East
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: PLATFORM BOARD -->
+      <div class="hero-board">
+        <!-- 2×2 platform grid -->
+        <div class="platform-grid">
+
+          <!-- Instagram -->
+          <div class="plat-tile tile-ig">
+            <div class="tile-logo">
+              <svg viewBox="12 12 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="56" height="56" rx="12" fill="none"/>
+                <path d="M28 14c-3.8 0-4.3.02-5.8.08-1.5.07-2.5.3-3.4.64a6.9 6.9 0 00-2.48 1.62 6.9 6.9 0 00-1.62 2.47c-.35.9-.58 1.9-.64 3.4C14.02 23.7 14 24.2 14 28c0 3.8.02 4.3.08 5.8.07 1.5.3 2.5.64 3.4a6.9 6.9 0 001.62 2.48 6.9 6.9 0 002.47 1.62c.9.35 1.9.58 3.4.64 1.5.06 2 .08 5.8.08 3.8 0 4.3-.02 5.8-.08 1.5-.07 2.5-.3 3.4-.64a6.9 6.9 0 002.48-1.62 6.9 6.9 0 001.62-2.47c.35-.9.58-1.9.64-3.4.06-1.5.08-2 .08-5.8 0-3.8-.02-4.3-.08-5.8-.07-1.5-.3-2.5-.64-3.4a6.9 6.9 0 00-1.62-2.48 6.9 6.9 0 00-2.47-1.62c-.9-.35-1.9-.58-3.4-.64C32.3 14.02 31.8 14 28 14zm0 2.5c3.73 0 4.17.01 5.65.08 1.36.06 2.1.28 2.6.47.65.25 1.12.56 1.6 1.05.5.5.8.96 1.06 1.6.18.5.4 1.24.47 2.6.07 1.48.08 1.92.08 5.65 0 3.73-.01 4.17-.08 5.65-.06 1.36-.28 2.1-.47 2.6a4.34 4.34 0 01-1.05 1.6c-.5.5-.96.8-1.6 1.06-.5.18-1.24.4-2.6.47-1.48.07-1.92.08-5.65.08s-4.17-.01-5.65-.08c-1.36-.06-2.1-.28-2.6-.47a4.34 4.34 0 01-1.6-1.05 4.34 4.34 0 01-1.06-1.6c-.18-.5-.4-1.24-.47-2.6-.07-1.48-.08-1.92-.08-5.65 0-3.73.01-4.17.08-5.65.06-1.36.28-2.1.47-2.6.25-.65.56-1.12 1.05-1.6.5-.5.96-.8 1.6-1.06.5-.18 1.24-.4 2.6-.47 1.48-.07 1.92-.08 5.65-.08zm0 4.25a7.25 7.25 0 100 14.5 7.25 7.25 0 000-14.5zm0 2.5a4.75 4.75 0 110 9.5 4.75 4.75 0 010-9.5zm9.25-4.5a1.7 1.7 0 100 3.4 1.7 1.7 0 000-3.4z" fill="white"/>
+              </svg>
+            </div>
+            <span class="tile-name">Instagram</span>
+          </div>
+
+          <!-- Google -->
+          <div class="plat-tile tile-goog">
+            <!-- Cube accent anchored to top-right of this tile -->
+            <div class="cube-wrap">
+              <div class="cube">
+                <div class="cube-face cube-front"></div>
+                <div class="cube-face cube-right"></div>
+                <div class="cube-face cube-top"></div>
+              </div>
+            </div>
+            <div class="tile-logo">
+              <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+                <path d="M52.5 28.6c0-1.63-.15-3.2-.42-4.7H28v8.9h13.73c-.6 3.19-2.4 5.89-5.1 7.7v6.4h8.25c4.83-4.44 7.62-10.99 7.62-18.3z" fill="#4285F4"/>
+                <path d="M28 54c6.9 0 12.7-2.3 16.93-6.1l-8.25-6.4C34.22 43.14 31.3 44 28 44c-6.67 0-12.32-4.5-14.34-10.56H5.13v6.6C9.35 48.88 18.05 54 28 54z" fill="#34A853"/>
+                <path d="M13.66 33.44A15.77 15.77 0 0112.75 28c0-1.9.32-3.74.9-5.44v-6.6H5.13A26 26 0 002 28c0 4.18.99 8.13 2.77 11.62l6.56-5.1 2.33-1.08z" fill="#FBBC05"/>
+                <path d="M28 12c3.77 0 7.15 1.3 9.8 3.83l7.33-7.33C40.69 4.54 34.89 2 28 2 18.05 2 9.35 7.12 5.13 15.96l8.53 6.6C15.68 16.5 21.33 12 28 12z" fill="#EA4335"/>
+              </svg>
+            </div>
+            <span class="tile-name" style="color:#374151;">Google</span>
+          </div>
+
+          <!-- YouTube -->
+          <div class="plat-tile tile-yt">
+            <div class="tile-logo">
+              <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+                <path d="M52.6 17.2s-.52-3.66-2.1-5.27c-2.02-2.1-4.27-2.12-5.3-2.25C37.9 9.2 28 9.2 28 9.2s-9.9 0-17.2.48c-1.03.13-3.28.15-5.3 2.25C3.9 13.54 3.4 17.2 3.4 17.2S2.88 21.5 2.88 25.8v4C2.88 34.1 3.4 38.4 3.4 38.4s.52 3.66 2.1 5.27c2.02 2.1 4.67 2.03 5.85 2.26C15.2 46.48 28 46.6 28 46.6s9.9-.01 17.2-.5c1.03-.13 3.28-.15 5.3-2.25 1.58-1.6 2.1-5.27 2.1-5.27s.52-4.3.52-8.6v-4c0-4.3-.52-8.58-.52-8.58zM22.63 34.3V21.44L36.3 27.9 22.63 34.3z" fill="white"/>
+              </svg>
+            </div>
+            <span class="tile-name">YouTube</span>
+          </div>
+
+          <!-- Facebook -->
+          <div class="plat-tile tile-fb">
+            <div class="tile-logo">
+              <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+                <path d="M56 28C56 12.54 43.46 0 28 0S0 12.54 0 28c0 13.98 10.24 25.56 23.63 27.66V36.09h-7.1V28h7.1v-6.16c0-7.02 4.18-10.9 10.58-10.9 3.07 0 6.28.54 6.28.54v6.9h-3.54c-3.48 0-4.56 2.16-4.56 4.37V28h7.76l-1.24 8.09h-6.52v19.57C45.76 53.56 56 41.98 56 28z" fill="white"/>
+              </svg>
+            </div>
+            <span class="tile-name">Facebook</span>
+          </div>
+
+        </div><!-- /platform-grid -->
+      </div><!-- /hero-board -->
+
+    </div><!-- /hero-inner -->
+  </div><!-- /w -->
+
+  <!-- Wave divider -->
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 72" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:72px;">
+      <path d="M0 36 C 320 72 640 0 960 36 C 1120 54 1300 28 1440 36 L1440 72 L0 72 Z" fill="#F8F7F4"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     TICKER
+══════════════════════════════════════════════════ -->
+<div class="ticker">
+  <div class="ticker-track">
+    <div class="ticker-item"><span class="t-dot"></span>Fertility clinic · London — <strong>18 consultation requests in 30 days</strong></div>
+    <div class="ticker-item"><span class="t-dot"></span>Hair restoration · Madrid — <strong>cost per lead reduced significantly in month one</strong></div>
+    <div class="ticker-item"><span class="t-dot"></span>IVF clinic · Amsterdam — <strong>fully booked 6 weeks out within 8 weeks of launch</strong></div>
+    <div class="ticker-item"><span class="t-dot"></span>Hair transplant · Rome — <strong>19 new patient consultations in month one</strong></div>
+    <div class="ticker-item"><span class="t-dot"></span>Fertility clinic · London — <strong>18 consultation requests in 30 days</strong></div>
+    <div class="ticker-item"><span class="t-dot"></span>Hair restoration · Madrid — <strong>cost per lead reduced significantly in month one</strong></div>
+    <div class="ticker-item"><span class="t-dot"></span>IVF clinic · Amsterdam — <strong>fully booked 6 weeks out within 8 weeks of launch</strong></div>
+    <div class="ticker-item"><span class="t-dot"></span>Hair transplant · Rome — <strong>19 new patient consultations in month one</strong></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     RESULTS STRIP
+══════════════════════════════════════════════════ -->
+<div class="results">
+  <div class="w">
+    <div class="results-grid">
+      <div class="res-item"><span class="res-dot"></span><span class="res-lbl">Lower acquisition friction</span></div>
+      <div class="res-item"><span class="res-dot"></span><span class="res-lbl">Faster launch timelines</span></div>
+      <div class="res-item"><span class="res-dot"></span><span class="res-lbl">Better consultation quality</span></div>
+      <div class="res-item"><span class="res-dot"></span><span class="res-lbl">Clinics across Europe &amp; Middle East</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     SERVICES
+══════════════════════════════════════════════════ -->
+<section class="services" id="services">
+  <div class="w">
+    <span class="section-eyebrow">The engine</span>
+    <h2 class="section-h">The patient acquisition system</h2>
+    <p class="section-sub">Four connected levers — intent, demand, authority, conversion — working as one integrated engine.</p>
+
+    <div class="svc-grid">
+
+      <!-- 1. Search Ads -->
+      <div class="svc-card">
+        <span class="svc-stage">01</span>
+        <div class="svc-visual svc-v-search">
+          <span class="serp-pos-badge">#1 · Top position</span>
+          <div class="serp-mini">
+            <div class="serp-mini-chrome">
+              <svg class="serp-mini-lock" width="9" height="10" viewBox="0 0 9 10" fill="none"><rect x="1" y="4.5" width="7" height="5" rx="1.5" stroke="#555" stroke-width="1.2"/><path d="M2.5 4.5V3.25a2 2 0 014 0V4.5" stroke="#555" stroke-width="1.2"/></svg>
+              google.com/search
+            </div>
+            <div class="serp-ad-row">
+              <div class="serp-ad-fav">
+                <div class="serp-ad-circle">L</div>
+                <span class="serp-ad-domain">luminafertility.com</span>
+                <span class="serp-ad-spons">Sponsored</span>
+              </div>
+              <p class="serp-ad-title">IVF Clinic London – Book Consultation</p>
+              <p class="serp-ad-desc">Award-winning fertility clinic, Harley Street. 68% clinical pregnancy rate. First consultation free. Personalised care plans.</p>
+              <div class="serp-ad-ext">
+                <span>★★★★★</span>
+                <span class="serp-ad-rv">4.9</span>
+                <span class="serp-ad-rc">(847 reviews)</span>
+              </div>
+            </div>
+          </div>
+          <svg class="serp-cursor" viewBox="0 0 14 14" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M2 1l10 6-4.5 1.2L5.8 13 2 1z"/></svg>
+        </div>
+        <div class="svc-body">
+          <span class="svc-role">Intent capture</span>
+          <p class="svc-name">Search Ads</p>
+          <p class="svc-desc">Be there the second a patient decides to search.</p>
+        </div>
+      </div>
+
+      <!-- 2. Social Ads — iPhone mockup -->
+      <div class="svc-card">
+        <span class="svc-stage">02</span>
+        <div class="svc-visual svc-v-social">
+          <div class="phone-ig" aria-hidden="true">
+            <div class="phone-frame">
+              <div class="phone-screen">
+                <div class="phone-notch"></div>
+                <div class="pig-top">
+                  <div class="pig-av"></div>
+                  <div class="pig-who">
+                    <span class="pig-name">ivfclinicbarcelona</span>
+                    <span class="pig-spon">Sponsored</span>
+                  </div>
+                  <span class="pig-dots">···</span>
+                </div>
+                <div class="pig-img">
+                  <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+                    <defs>
+                      <linearGradient id="pigbg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F8F7F5"/><stop offset="55%" stop-color="#EAE4DA"/><stop offset="100%" stop-color="#D4C8B6"/></linearGradient>
+                      <radialGradient id="piglight" cx="22%" cy="20%" r="70%"><stop offset="0%" stop-color="#FFFDFA" stop-opacity="0.98"/><stop offset="100%" stop-color="#FFFDFA" stop-opacity="0"/></radialGradient>
+                      <linearGradient id="pskin" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F2D8C0"/><stop offset="100%" stop-color="#CDA079"/></linearGradient>
+                      <linearGradient id="pwin" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFFBEF" stop-opacity="0.85"/><stop offset="100%" stop-color="#FFFBEF" stop-opacity="0.15"/></linearGradient>
+                    </defs>
+                    <rect width="180" height="180" fill="url(#pigbg)"/>
+                    <rect width="180" height="180" fill="url(#piglight)"/>
+                    <!-- Soft clinic window, top-left -->
+                    <rect x="14" y="16" width="56" height="64" rx="4" fill="url(#pwin)"/>
+                    <line x1="42" y1="16" x2="42" y2="80" stroke="#EDE4D2" stroke-width="0.8" opacity="0.6"/>
+                    <line x1="14" y1="48" x2="70" y2="48" stroke="#EDE4D2" stroke-width="0.8" opacity="0.6"/>
+                    <!-- Calm out-of-focus figure, bottom-right -->
+                    <g opacity="0.92">
+                      <ellipse cx="118" cy="96" rx="22" ry="24" fill="url(#pskin)"/>
+                      <path d="M92 138 Q118 114 144 138 L150 180 L86 180 Z" fill="#E4D9CB"/>
+                      <path d="M96 138 Q118 120 140 138 L144 180 L92 180 Z" fill="#D4BFA5" opacity="0.7"/>
+                    </g>
+                    <!-- Plant / vase accent, foreground right -->
+                    <ellipse cx="158" cy="166" rx="12" ry="5" fill="#B8A78C" opacity="0.6"/>
+                    <path d="M154 166 Q156 144 162 138 M162 166 Q164 150 168 146 M158 166 Q158 148 160 142" stroke="#8CA47E" stroke-width="1.4" fill="none" stroke-linecap="round" opacity="0.7"/>
+                    <!-- Subtle table edge -->
+                    <rect x="0" y="170" width="180" height="10" fill="#C5B49A" opacity="0.35"/>
+                  </svg>
+                </div>
+                <div class="pig-actions">
+                  <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                  <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+                  <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                  <svg class="pig-save" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
+                </div>
+                <p class="pig-likes">1,284 likes</p>
+                <p class="pig-copy"><strong>ivfclinicbarcelona</strong> Thinking about IVF abroad?</p>
+                <p class="pig-sub">Trusted clinics. Clear pricing. Personal support from first consultation.</p>
+                <div class="pig-cta">Book consultation</div>
+                <p class="pig-foot">Serving UK · Germany · US</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="svc-body">
+          <span class="svc-role">Demand creation</span>
+          <p class="svc-name">Social Ads</p>
+          <p class="svc-desc">Reach patients early and turn attention into consultation demand.</p>
+        </div>
+      </div>
+
+      <!-- 3. SEO -->
+      <div class="svc-card">
+        <span class="svc-stage">03</span>
+        <div class="svc-visual svc-v-seo">
+          <div class="kw-tracker">
+            <div class="kw-hdr">
+              <span class="kw-hdr-t">Keyword Positions</span>
+              <span class="kw-hdr-s">Updated today</span>
+            </div>
+            <div class="kw-row kw-row-top">
+              <span class="kw-word">"IVF clinic London"</span>
+              <span class="kw-pos">#1</span>
+              <span class="kw-delta">↑3</span>
+              <svg class="kw-spark" viewBox="0 0 28 12" fill="none"><polyline points="0,10 7,8 14,5 21,3 28,1" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="kw-row">
+              <span class="kw-word">"hair transplant near me"</span>
+              <span class="kw-pos">#1</span>
+              <span class="kw-delta">↑6</span>
+              <svg class="kw-spark" viewBox="0 0 28 12" fill="none"><polyline points="0,11 7,9 14,7 21,4 28,1" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="kw-row">
+              <span class="kw-word">"IVF success rates UK"</span>
+              <span class="kw-pos">#3</span>
+              <span class="kw-delta">↑8</span>
+              <svg class="kw-spark" viewBox="0 0 28 12" fill="none"><polyline points="0,11 7,10 14,8 21,5 28,2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="kw-row">
+              <span class="kw-word">"private fertility clinic"</span>
+              <span class="kw-pos">#2</span>
+              <span class="kw-delta">↑5</span>
+              <svg class="kw-spark" viewBox="0 0 28 12" fill="none"><polyline points="0,11 7,9 14,7 21,5 28,2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="svc-body">
+          <span class="svc-role">Category authority</span>
+          <p class="svc-name">SEO &amp; Organic Search</p>
+          <p class="svc-desc">Own the category. Compound demand without paying per click.</p>
+        </div>
+      </div>
+
+      <!-- 4. Landing Pages -->
+      <div class="svc-card">
+        <span class="svc-stage">04</span>
+        <div class="svc-visual svc-v-lp">
+          <div class="lp-mini">
+            <div class="lp-header-bar">
+              <span class="lp-h-logo">Lumina Fertility</span>
+            </div>
+            <div class="lp-body">
+              <span class="lp-booked"><span class="lp-booked-dot"></span>Consultation booked</span>
+              <p class="lp-headline">IVF Consultation<br>Available This Week</p>
+              <div class="lp-trust">
+                <span class="lp-stars">★★★★★</span>
+                <span class="lp-tv">4.9</span>
+                <span class="lp-tc">(847)</span>
+              </div>
+              <a class="lp-cta">Book Free Consultation →</a>
+              <p class="lp-micro">No commitment · Takes 2 minutes</p>
+            </div>
+          </div>
+        </div>
+        <div class="svc-body">
+          <span class="svc-role">Conversion engine</span>
+          <p class="svc-name">Landing Pages &amp; Conversion</p>
+          <p class="svc-desc">Where clicks become booked consultations — engineered to convert.</p>
+        </div>
+      </div>
+
+    </div><!-- /svc-grid -->
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     HOW IT WORKS
+══════════════════════════════════════════════════ -->
+<section class="process" id="how">
+  <div class="w">
+    <span class="section-eyebrow">How it works</span>
+    <h2 class="section-h">Four steps. One system.</h2>
+    <div class="process-grid">
+      <div class="proc-item">
+        <span class="proc-numeral">01</span>
+        <div class="proc-icon"><svg viewBox="0 0 24 24"><path d="M3 4h18l-7 9v6l-4-2v-4L3 4z"/></svg></div>
+        <p class="proc-title">Audit the funnel</p>
+        <p class="proc-body">We pressure-test your campaigns and patient journey before anything ships.</p>
+      </div>
+      <div class="proc-item">
+        <span class="proc-numeral">02</span>
+        <div class="proc-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+        <p class="proc-title">Build the system</p>
+        <p class="proc-body">Search, social and landing pages wired into one connected engine.</p>
+      </div>
+      <div class="proc-item">
+        <span class="proc-numeral">03</span>
+        <div class="proc-icon"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+        <p class="proc-title">Launch fast</p>
+        <p class="proc-body">Live in weeks, not quarters — with tracking wired from day one.</p>
+      </div>
+      <div class="proc-item">
+        <span class="proc-numeral">04</span>
+        <div class="proc-icon"><svg viewBox="0 0 24 24"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="15 7 21 7 21 13"/></svg></div>
+        <p class="proc-title">Improve weekly</p>
+        <p class="proc-body">We iterate on what's working and retire what isn't — every week.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     PROOF BAND
+══════════════════════════════════════════════════ -->
+<div class="proof-band">
+  <div class="w">
+    <div class="proof-band-inner">
+      <div class="proof-left">
+        <span class="proof-eyebrow">What changes when the system works</span>
+        <p class="proof-hl">A clearer path from ad spend to booked patients</p>
+        <p class="proof-clinic">What clinic teams tell us after we go live</p>
+      </div>
+      <div class="proof-right">
+        <div class="proof-metrics">
+          <div class="proof-m">
+            <span class="proof-after-soft">Lower friction</span>
+            <span class="proof-metric-lbl">in the booking path</span>
+          </div>
+          <div class="proof-m">
+            <span class="proof-after-soft">Stronger enquiry quality</span>
+            <span class="proof-metric-lbl">from every channel</span>
+          </div>
+          <div class="proof-m">
+            <span class="proof-after-soft">Faster route to launch</span>
+            <span class="proof-metric-lbl">with clear weekly progress</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     POSITIONING DIVIDER
+══════════════════════════════════════════════════ -->
+<div class="positioning-divider reveal">
+  <p>Specialist clinics don't need generic agencies. They need a <em>system built for how patients actually decide.</em></p>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     WHO WE WORK WITH
+══════════════════════════════════════════════════ -->
+<section class="who">
+  <div class="w">
+    <div class="who-grid">
+      <div class="who-left">
+        <span class="section-eyebrow">Who we work with</span>
+        <h2 class="section-h">Built for specialist<br>medical clinics.</h2>
+        <p style="font-size:15px;color:var(--ink-3);line-height:1.65;margin-bottom:0;">We are selective — on purpose. Our focus on one niche is what makes us effective.</p>
+        <div class="who-chips">
+          <span class="who-chip"><span class="who-chip-dot"></span>IVF & Fertility Clinics</span>
+          <span class="who-chip"><span class="who-chip-dot"></span>Hair Transplant Practices</span>
+          <span class="who-chip"><span class="who-chip-dot"></span>Cosmetic & Aesthetic Clinics</span>
+          <span class="who-chip"><span class="who-chip-dot"></span>Multi-location Groups</span>
+          <span class="who-chip"><span class="who-chip-dot"></span>Europe & Middle East</span>
+        </div>
+      </div>
+      <div class="who-right">
+        <p class="who-quote">"We finally had a clearer system, better quality enquiries, and a much stronger sense of what was actually working."</p>
+        <p class="who-attr">— Clinic Director, London</p>
+        <div class="who-result">
+          <div class="wr-item">
+            <span class="wr-lbl">Consistent weekly consultations</span>
+          </div>
+          <div class="wr-item">
+            <span class="wr-lbl">Improved cost efficiency</span>
+          </div>
+          <div class="wr-item">
+            <span class="wr-lbl">Higher quality patient enquiries</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     CTA
+══════════════════════════════════════════════════ -->
+<section class="cta-section" id="contact">
+  <div class="w">
+    <div class="cta-inner">
+      <h2 class="cta-h">Ready to get<br><em>more patients?</em></h2>
+      <p class="cta-sub">Start with a 30-minute call. No pitch — just a clear look at your clinic.</p>
+      <div class="cta-actions">
+        <button class="cta-btn" onclick="openModal()">
+          Get your patient acquisition plan
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8.5 4L13 8l-4.5 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="cta-secondary" type="button" onclick="openContactModal()">Or send us a message</button>
+      </div>
+      <p class="cta-note">No pitch. Just a clear look at your clinic.</p>
+      <div>
+        <span class="cta-guar"><span class="guar-ic">✓</span> 60-day results guarantee — or your management fee comes back</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════ -->
+<footer class="ftr">
+  <div class="w">
+    <div class="ftr-i">
+      <div>
+        <a href="/" class="ftr-logo">Advora<em>.</em></a>
+        <a href="mailto:hello@advora.com" class="ftr-email">hello@advora.com</a>
+      </div>
+      <div class="ftr-r">© 2026 Advora. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════════════════
+     MODAL
+══════════════════════════════════════════════════ -->
+<div class="modal-overlay" id="modal" onclick="handleOverlayClick(event)">
+  <div class="modal" role="dialog" aria-modal="true" aria-label="Get your proposal">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">
+      <svg viewBox="0 0 14 14"><path d="M1 1l12 12M13 1L1 13" stroke-linecap="round"/></svg>
+    </button>
+
+    <span class="modal-tag">Free consultation</span>
+    <h2 class="modal-h">Let's Look At<br>Your Clinic</h2>
+    <p class="modal-sub">Tell us about your clinic. We'll come prepared with a honest assessment — no fluff, no hard sell.</p>
+
+    <div class="form-group">
+      <div class="form-row">
+        <input class="f-inp" type="text" placeholder="Your name *" required>
+        <input class="f-inp" type="email" placeholder="Email address *" required>
+      </div>
+      <div class="form-row">
+        <input class="f-inp" type="tel" placeholder="Phone number *" required>
+        <input class="f-inp" type="text" placeholder="Clinic name *" required>
+      </div>
+      <select class="f-inp f-sel" required>
+        <option value="" disabled selected>I'm interested in… *</option>
+        <option>IVF & Fertility</option>
+        <option>Hair Transplant</option>
+        <option>Cosmetic / Aesthetic</option>
+        <option>Other specialist clinic</option>
+      </select>
+      <textarea class="f-inp" placeholder="Brief message — what's your biggest growth challenge?" rows="3"></textarea>
+      <button type="button" class="modal-submit" id="submitBtn">
+        Request proposal — it's free
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <p class="modal-privacy">We don't share your information. Ever.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     CONTACT MODAL (secondary CTA)
+══════════════════════════════════════════════════ -->
+<div class="modal-overlay" id="contactModal" onclick="handleContactOverlayClick(event)">
+  <div class="modal" role="dialog" aria-modal="true" aria-label="Send us a message">
+    <button class="modal-close" onclick="closeContactModal()" aria-label="Close">
+      <svg viewBox="0 0 14 14"><path d="M1 1l12 12M13 1L1 13" stroke-linecap="round"/></svg>
+    </button>
+    <span class="modal-tag">Contact</span>
+    <h2 class="modal-h">Send us a message</h2>
+    <p class="modal-sub">Not ready for a full proposal? Send a short message and we'll reply personally.</p>
+    <form class="form-group" id="contactForm" novalidate>
+      <!-- Hidden metadata sent with every submission -->
+      <input type="hidden" name="_subject" value="New Advora website contact enquiry">
+      <input type="hidden" name="form_source" value="advora.com — contact modal">
+      <!-- Honeypot: real users leave this empty; bots fill it -->
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" aria-hidden="true">
+
+      <div class="form-row">
+        <input class="f-inp" type="text" name="name" placeholder="Your name *" required>
+        <input class="f-inp" type="text" name="clinic_name" placeholder="Clinic name *" required>
+      </div>
+      <div class="form-row">
+        <input class="f-inp" type="email" name="email" placeholder="Email address *" required>
+        <input class="f-inp" type="text" name="country" placeholder="Country (optional)">
+      </div>
+      <textarea class="f-inp" name="message" placeholder="Your message" rows="3" required></textarea>
+      <button type="submit" class="modal-submit" id="contactSubmitBtn">
+        Send message
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <p class="modal-error" id="contactError" role="alert" hidden>Something went wrong. Please try again.</p>
+      <p class="modal-privacy">We don't share your information. Ever.</p>
+    </form>
+  </div>
+</div>
+
+<script>
+// Header scroll
+window.addEventListener('scroll',()=>{
+  document.getElementById('hdr').classList.toggle('scrolled', window.scrollY > 40);
+},{passive:true});
+
+// Modal
+function openModal(){
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow='';
+}
+function handleOverlayClick(e){
+  if(e.target === document.getElementById('modal')) closeModal();
+}
+function openContactModal(){
+  document.getElementById('contactModal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeContactModal(){
+  document.getElementById('contactModal').classList.remove('open');
+  document.body.style.overflow='';
+}
+function handleContactOverlayClick(e){
+  if(e.target === document.getElementById('contactModal')) closeContactModal();
+}
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){ closeModal(); closeContactModal(); }
+});
+
+// Reveal on scroll
+(function(){
+  const targets = document.querySelectorAll('.svc-card, .proc-item, .positioning-divider, .who-right, .who-chip, .res-item, .proof-m');
+  targets.forEach(el => el.classList.add('reveal'));
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  },{threshold:0.15});
+  targets.forEach(el => io.observe(el));
+})();
+
+// Submit button
+document.getElementById('submitBtn').addEventListener('click',function(){
+  const btn = this;
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+  setTimeout(()=>{
+    btn.innerHTML = '✓ &nbsp;Message sent — we\'ll be in touch soon';
+    btn.style.background = '#16A34A';
+  }, 1400);
+});
+
+// ═══════════════════════════════════════════════════
+// CONTACT FORM — Formspree integration
+// ═══════════════════════════════════════════════════
+// ▶ REPLACE the placeholder below with your own Formspree endpoint.
+//   1. Sign up free at https://formspree.io
+//   2. Create a new form, copy the endpoint URL (looks like:
+//      https://formspree.io/f/xxxxxxxx)
+//   3. Paste it as the value of FORMSPREE_ENDPOINT.
+// Until replaced, submissions will fail with the inline error state.
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xwvavwze';
+
+(function(){
+  const form      = document.getElementById('contactForm');
+  const submitBtn = document.getElementById('contactSubmitBtn');
+  const errorEl   = document.getElementById('contactError');
+  if(!form || !submitBtn) return;
+
+  const originalBtnHTML = submitBtn.innerHTML;
+
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+
+    // Native validation
+    if(!form.checkValidity()){ form.reportValidity(); return; }
+
+    // Reset UI state
+    errorEl.hidden = true;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+    submitBtn.style.background = '';
+
+    try {
+      const data = new FormData(form);
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if(res.ok){
+        submitBtn.innerHTML = '✓ &nbsp;Message sent — we\'ll reply soon';
+        submitBtn.style.background = '#16A34A';
+        // Reset fields after short delay so the user sees confirmation first
+        setTimeout(()=>{ form.reset(); }, 1800);
+      } else {
+        const body = await res.json().catch(()=>({}));
+        const msg  = (body && body.errors && body.errors[0] && body.errors[0].message)
+                    ? body.errors[0].message
+                    : 'Something went wrong. Please try again.';
+        throw new Error(msg);
+      }
+    } catch(err){
+      errorEl.textContent = err.message || 'Something went wrong. Please try again.';
+      errorEl.hidden = false;
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalBtnHTML;
+      submitBtn.style.background = '';
+    }
+  });
+})();
+</script>
+</body>
+</html>
