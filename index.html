@@ -86,7 +86,17 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
 .hero-label span{font-size:12px;font-weight:600;color:rgba(255,255,255,0.75);letter-spacing:0.04em;}
 
 .hero-h{font-family:var(--f-h);font-size:clamp(38px,4.8vw,62px);font-weight:900;line-height:1.04;letter-spacing:-0.025em;color:#fff;margin-bottom:20px;max-width:540px;padding-right:clamp(0px,2vw,24px);}
-.hero-h em{font-style:italic;font-weight:700;color:#60A5FA;white-space:nowrap;opacity:1;-webkit-font-smoothing:antialiased;font-synthesis:none;}
+.hero-h em,
+.cta-h em {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 700 !important;
+  font-synthesis: none;
+}
+.hero-h,
+.cta-h {
+  font-weight: 900;
+}
 
 .hero-sub{font-size:clamp(15px,1.5vw,18px);color:rgba(255,255,255,0.58);line-height:1.65;max-width:420px;margin-bottom:36px;}
 
@@ -408,7 +418,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
 .cta-section{background:linear-gradient(145deg,var(--hero-1),var(--hero-2));padding:120px 0;text-align:center;}
 .cta-inner{max-width:600px;margin:0 auto;}
 .cta-h{font-family:var(--f-h);font-size:clamp(32px,4vw,52px);font-weight:900;color:#fff;line-height:1.06;margin-bottom:18px;letter-spacing:-0.02em;}
-.cta-h em{font-style:italic;font-weight:700;color:var(--blue-lt);font-synthesis:none;}
 .cta-sub{font-size:17px;color:rgba(255,255,255,0.52);line-height:1.6;margin-bottom:36px;}
 .cta-actions{display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap;}
 .cta-secondary{font-size:14px;color:rgba(255,255,255,0.62);text-decoration:none;border:none;background:none;border-bottom:1px solid rgba(255,255,255,0.25);padding:0 0 2px;font-family:inherit;cursor:pointer;transition:color 0.18s,border-color 0.18s;}
