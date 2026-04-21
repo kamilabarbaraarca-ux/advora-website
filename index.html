@@ -7,7 +7,7 @@
 <meta name="description" content="Advora is a boutique growth partner for IVF and hair transplant clinics, focused on increasing international patient bookings from cross-border markets.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 <style>
 
 /* ═══════════════════════════════════════════════════
@@ -20,6 +20,10 @@
   --blue-bg:  #0F2563;
   --hero-1:   #0B1D52;
   --hero-2:   #132B7A;
+  --hero-l:   #08163E;
+  --hero-m:   #0D2060;
+  --hero-r:   #1F3EA0;
+  --highlight:#8EAEE1;
   --white:    #FFFFFF;
   --warm:     #F8F7F4;
   --cream:    #F2F0EB;
@@ -28,6 +32,8 @@
   --ink-3:    #6B7280;
   --ink-4:    #9CA3AF;
   --rule:     rgba(0,0,0,0.08);
+  --rule-light:rgba(0,0,0,0.06);
+  --wa:       #25D366;
   --f-h:      'Fraunces', Georgia, serif;
   --f-b:      'Plus Jakarta Sans', sans-serif;
   --ease:     cubic-bezier(0.22,1,0.36,1);
@@ -493,6 +499,327 @@ textarea.f-inp{resize:vertical;min-height:80px;}
   .results-grid{grid-template-columns:1fr 1fr;}
 }
 
+
+/* ═══════════════════════════════════════════════════
+   APPROVED DESIGN — v7 production promotion
+   Override + new rules appended after original styles.
+   All rules scoped; does not break existing responsive / modal CSS.
+═══════════════════════════════════════════════════ */
+
+/* Hero gradient refresh */
+.hero{
+  background:linear-gradient(95deg, var(--hero-l) 0%, var(--hero-m) 55%, var(--hero-r) 100%) !important;
+}
+.hero::before, .hero::after{content:none !important;}
+
+/* Hero typography */
+.hero-h{
+  font-weight:700 !important;
+  letter-spacing:-0.028em !important;
+}
+.hero-h em, .cta-h em{
+  font-family:'Fraunces', serif !important;
+  font-style:italic !important;
+  font-weight:600 !important;
+  color:var(--highlight) !important;
+  letter-spacing:-0.018em !important;
+}
+.hero-label{margin-bottom:36px;}
+.hero-label-dot{background:#7BE495;}
+.hero-label span{color:rgba(255,255,255,.55);}
+
+.hero-sub{max-width:440px;margin-bottom:40px;color:rgba(255,255,255,.62);}
+
+/* Primary CTA — premium blue pill */
+.btn-primary{
+  background:linear-gradient(180deg, #3A78F2 0%, #1B5CE6 60%, #1247C0 100%) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.2),
+    0 0 0 1px rgba(74,127,245,.26),
+    0 14px 32px -10px rgba(27,92,230,.55) !important;
+  padding:16px 28px !important;
+}
+
+/* Secondary ghost link in hero */
+.btn-ghost{
+  display:inline-flex;align-items:center;
+  font-size:13.5px;font-weight:500;color:rgba(255,255,255,.7);
+  margin-left:20px;letter-spacing:.015em;
+  text-decoration:none;
+}
+.btn-ghost:hover{color:#fff;}
+
+/* Hero bottom trust line */
+.hero-trust-line{
+  display:flex;gap:16px;flex-wrap:wrap;margin-top:36px;
+  padding-top:26px;border-top:1px solid rgba(255,255,255,.06);
+  font-size:11px;color:rgba(255,255,255,.4);
+  letter-spacing:.14em;text-transform:uppercase;font-weight:500;
+}
+.hero-trust-line .trust-dot{opacity:.3;}
+
+/* Platform tiles — true brand surfaces, 310 grid */
+.platform-grid{max-width:310px !important;gap:16px !important;}
+.plat-tile{
+  padding:28px 18px !important;
+  border-radius:22px !important;
+  border:none !important;
+  box-shadow:0 20px 42px -22px rgba(0,0,0,.55) !important;
+}
+.plat-tile.tile-ig{
+  background:linear-gradient(135deg,#FEDA77 0%,#F58529 25%,#DD2A7B 55%,#8134AF 85%,#515BD4 100%) !important;
+}
+.plat-tile.tile-goog{background:#fff !important;overflow:visible !important;}
+.plat-tile.tile-yt{background:#FF0033 !important;}
+.plat-tile.tile-fb{background:#1877F2 !important;}
+.tile-logo{width:50px !important;height:50px !important;}
+.tile-logo svg{width:50px !important;height:50px !important;}
+.tile-name{
+  font-size:9.5px !important;font-weight:700 !important;
+  color:rgba(255,255,255,.82) !important;letter-spacing:.16em !important;
+  text-transform:uppercase !important;margin-top:12px !important;
+}
+.tile-goog .tile-name{color:rgba(10,10,15,.55) !important;}
+
+/* Cube — subtler */
+.cube-wrap{top:-6px !important;right:-5px !important;transform:scale(.7) !important;transform-origin:top right;opacity:.88;}
+.cube, .cube-face{width:36px !important;height:36px !important;}
+.cube-face{border-radius:6px !important;}
+.cube-front{background:linear-gradient(135deg,#3A6BD6,#1A55CC) !important;transform:translateZ(18px) !important;}
+.cube-right{background:linear-gradient(135deg,#0F3A9E,#082670) !important;transform:rotateY(90deg) translateZ(18px) !important;}
+.cube-top  {background:linear-gradient(135deg,#5282DC,#3A6BD6) !important;transform:rotateX(90deg) translateZ(18px) !important;}
+
+/* ═════════ JOURNEY (iPhone section) ═════════ */
+.journey{
+  position:relative;overflow:hidden;
+  background:linear-gradient(180deg, #060F2C 0%, #0A1A48 58%, #060F2E 100%);
+  padding:116px 0 140px;
+}
+.journey-head{
+  position:relative;z-index:2;
+  display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:end;
+  margin-bottom:68px;padding-bottom:28px;
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+.j-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--highlight);margin-bottom:18px;
+}
+.j-eyebrow::before{content:"";width:22px;height:1px;background:var(--highlight);}
+.j-h{font-family:var(--f-h);font-weight:700;font-size:clamp(28px,3vw,44px);line-height:1.04;letter-spacing:-0.028em;color:#fff;}
+.j-h em{font-style:italic;font-weight:600;color:var(--highlight);letter-spacing:-0.018em;}
+.j-sub{
+  font-size:14.5px;color:rgba(255,255,255,.52);line-height:1.6;
+  max-width:280px;justify-self:end;text-align:right;
+  white-space:nowrap;
+}
+.phone-row{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;max-width:1080px;margin:0 auto;padding-bottom:48px;}
+.phone{position:relative;aspect-ratio:9/19.2;background:#0b0b0d;border-radius:36px;padding:5px;box-shadow:0 22px 44px -22px rgba(0,0,0,.45);}
+.phone-screen{width:100%;height:100%;background:#fff;border-radius:31px;position:relative;overflow:hidden;display:flex;flex-direction:column;}
+.notch{position:absolute;top:7px;left:50%;transform:translateX(-50%);width:44px;height:12px;background:#0a0a0a;border-radius:100px;z-index:5;}
+.status-bar{display:flex;justify-content:space-between;align-items:center;padding:10px 18px 4px;height:28px;font-size:10.5px;font-weight:600;color:#0a0a0a;}
+.status-bar .time{font-weight:700;}
+.status-bar .right{display:inline-flex;gap:4px;align-items:center;font-size:9.5px;font-weight:600;}
+.status-bar .bars{display:inline-flex;gap:1.2px;align-items:flex-end;}
+.status-bar .bars i{width:2px;background:#0a0a0a;border-radius:.5px;}
+.status-bar .bars i:nth-child(1){height:4px;}.status-bar .bars i:nth-child(2){height:6px;}
+.status-bar .bars i:nth-child(3){height:8px;}.status-bar .bars i:nth-child(4){height:10px;}
+.status-bar .batt{width:16px;height:8px;border:1px solid #0a0a0a;border-radius:2px;position:relative;padding:1px;}
+.status-bar .batt::after{content:"";position:absolute;right:-2.5px;top:2px;bottom:2px;width:1.5px;background:#0a0a0a;border-radius:0 1px 1px 0;}
+.status-bar .batt::before{content:"";display:block;width:70%;height:100%;background:#0a0a0a;border-radius:.5px;}
+.phone-step{position:absolute;bottom:-32px;left:0;right:0;text-align:center;font-size:10px;color:rgba(255,255,255,.5);letter-spacing:.18em;text-transform:uppercase;font-weight:600;}
+.phone-step b{color:#fff;font-weight:700;margin-right:8px;}
+
+/* Phone 1 · Google */
+.p-google .status-bar{background:#fff;border-bottom:.5px solid #f0f0f0;}
+.p-google .g-bar{display:flex;align-items:center;gap:7px;margin:8px 12px 6px;padding:7px 11px;background:#F1F3F4;border-radius:100px;font-size:9.5px;color:#0a0a0a;font-weight:500;}
+.p-google .g-bar::before{content:"G";font-family:Arial;font-weight:800;font-size:9px;color:#4285F4;background:#fff;width:14px;height:14px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;}
+.p-google .g-tabs{display:flex;gap:14px;padding:4px 14px 8px;border-bottom:.5px solid #eee;}
+.p-google .g-tab{font-size:9px;color:#5f6368;font-weight:500;}
+.p-google .g-tab.active{color:#1a73e8;border-bottom:1.8px solid #1a73e8;padding-bottom:4px;font-weight:600;}
+.p-google .g-stats{font-size:8px;color:#70757A;padding:6px 14px 4px;}
+.p-google .g-ad-label{font-size:8.5px;color:#202124;font-weight:700;padding:2px 6px;border:1px solid #dadce0;border-radius:4px;display:inline-block;margin:0 14px 5px;letter-spacing:.02em;}
+.p-google .g-result{padding:6px 14px 9px;border-bottom:.5px solid #f0f0f0;position:relative;}
+.p-google .g-rank{position:absolute;top:6px;right:8px;background:#1A73E8;color:#fff;font-size:7.5px;font-weight:800;padding:3px 7px;border-radius:5px;letter-spacing:.05em;}
+.p-google .g-site{display:flex;align-items:center;gap:6px;margin-bottom:2px;}
+.p-google .g-fav{width:16px;height:16px;border-radius:50%;background:linear-gradient(135deg,#4285F4,#34A853);color:#fff;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:800;}
+.p-google .g-who{line-height:1.2;}
+.p-google .g-dom{font-size:8.8px;color:#202124;font-weight:500;display:block;}
+.p-google .g-path{font-size:7px;color:#5f6368;display:block;}
+.p-google .g-tlt{font-size:12px;color:#1A0DAB;font-weight:600;line-height:1.28;margin-top:2px;letter-spacing:-.005em;}
+.p-google .g-dsc{font-size:8.4px;color:#4d5156;line-height:1.42;margin-top:2px;}
+.p-google .g-rate{display:flex;align-items:center;gap:4px;margin-top:4px;font-size:8.2px;color:#70757A;}
+.p-google .g-rate .stars{color:#F4B400;letter-spacing:.3px;}
+.p-google .g-sitelinks{display:grid;grid-template-columns:1fr 1fr;gap:3px 8px;margin-top:6px;}
+.p-google .g-sl{font-size:7.4px;color:#1A0DAB;font-weight:500;}
+.p-google .g-map{margin:7px 14px;height:52px;border-radius:7px;overflow:hidden;position:relative;background:linear-gradient(180deg,#E8EFEC 0%,#D9E3DC 100%);border:.5px solid #E8EAED;}
+.p-google .g-map::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 35%, #4285F4 0 5px, transparent 5.5px),radial-gradient(circle at 55% 58%, #4285F4 0 5px, transparent 5.5px),radial-gradient(circle at 78% 30%, #EA4335 0 6px, transparent 6.5px),linear-gradient(90deg, #E8EDE8 50%, #DEE5DE 50.5%);}
+.p-google .g-map::after{content:"Clinics nearby";position:absolute;left:6px;top:6px;font-size:7px;color:#202124;font-weight:700;background:rgba(255,255,255,.85);padding:2px 6px;border-radius:4px;}
+
+/* Phone 2 · Meta */
+.p-meta .ig-top{display:flex;align-items:center;gap:8px;padding:12px 12px 9px;border-bottom:.5px solid #f0f0f0;background:#fff;}
+.p-meta .ig-av{width:26px;height:26px;border-radius:50%;background:conic-gradient(from 180deg,#FEDA77,#F58529,#DD2A7B,#8134AF,#515BD4,#FEDA77);padding:1.8px;}
+.p-meta .ig-av .inner{width:100%;height:100%;border-radius:50%;background:linear-gradient(135deg,#E8D9C3 0%,#C9A87E 100%);border:1.5px solid #fff;}
+.p-meta .ig-who{flex:1;line-height:1.2;}
+.p-meta .ig-name{font-size:9.6px;font-weight:700;color:#0a0a0a;display:block;}
+.p-meta .ig-spon{font-size:7.4px;color:#737373;display:block;margin-top:1px;}
+.p-meta .ig-dots{font-size:11px;color:#0a0a0a;letter-spacing:1.5px;line-height:1;}
+.p-meta .ig-img{aspect-ratio:1;position:relative;overflow:hidden;background:linear-gradient(165deg,#F8F1E4 0%,#F0E5D0 45%,#E4D4B6 100%);}
+.p-meta .ig-img::before{content:"";position:absolute;left:62%;top:-10%;width:38%;height:130%;background:linear-gradient(180deg,rgba(255,253,247,.5) 0%,rgba(255,253,247,0) 80%);transform:rotate(12deg);}
+.p-meta .ig-img::after{content:"";position:absolute;right:9%;bottom:11%;width:34px;height:44px;background:radial-gradient(circle at 30% 20%, rgba(138,160,118,.85) 0 3.4px, transparent 4px),radial-gradient(circle at 70% 38%, rgba(138,160,118,.7) 0 2.8px, transparent 3.4px),radial-gradient(circle at 25% 62%, rgba(138,160,118,.6) 0 2.4px, transparent 3px),radial-gradient(circle at 65% 82%, rgba(138,160,118,.55) 0 2.4px, transparent 3px);opacity:.88;}
+.p-meta .ad-hook{position:absolute;left:14px;right:14px;top:18px;font-family:var(--f-h);font-weight:700;font-style:italic;font-size:17px;line-height:1.08;letter-spacing:-0.01em;color:#2C2118;}
+.p-meta .ad-hook b{display:block;font-style:normal;font-weight:800;color:#0C0C0F;letter-spacing:-.02em;font-size:19px;margin-bottom:4px;}
+.p-meta .ad-sub{position:absolute;left:14px;right:14px;top:96px;display:flex;flex-direction:column;gap:6px;}
+.p-meta .ad-sub li{list-style:none;display:flex;align-items:center;gap:7px;font-size:9.5px;color:#3D2F1F;font-weight:500;line-height:1.2;}
+.p-meta .ad-sub li::before{content:"";width:5px;height:5px;border-radius:50%;background:#8A7B5E;flex-shrink:0;}
+.p-meta .ad-badge{position:absolute;left:14px;bottom:14px;display:inline-flex;align-items:center;gap:6px;font-size:8px;font-weight:700;color:#2C2118;background:rgba(255,255,255,.8);border:.8px solid rgba(0,0,0,.06);padding:5px 10px;border-radius:100px;letter-spacing:.08em;text-transform:uppercase;}
+.p-meta .ad-badge .wa-mini{width:12px;height:12px;border-radius:50%;background:var(--wa);display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:7px;font-weight:900;}
+.p-meta .ig-act{display:flex;gap:10px;padding:10px 14px 4px;background:#fff;}
+.p-meta .ig-act svg{width:16px;height:16px;stroke:#0a0a0a;stroke-width:1.6;fill:none;}
+.p-meta .ig-act .save{margin-left:auto;}
+.p-meta .ig-cta{margin:8px 14px 10px;padding:10px 12px;background:linear-gradient(180deg,#22B85F 0%,#1B9D50 100%);color:#fff;font-size:11px;font-weight:800;letter-spacing:.02em;border-radius:9px;display:flex;align-items:center;justify-content:center;gap:7px;box-shadow:0 4px 10px -4px rgba(37,211,102,.3);}
+.p-meta .ig-cta .wa-icon{width:14px;height:14px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;}
+.p-meta .ig-cta .wa-icon svg{width:9.5px;height:9.5px;fill:#fff;}
+.p-meta .ig-hand{padding:0 14px 10px;font-size:7.8px;color:#737373;font-weight:500;display:flex;align-items:center;gap:5px;}
+.p-meta .ig-hand b{color:#0a0a0a;font-weight:700;}
+
+/* Phone 3 · Landing page */
+.p-lp .status-bar{background:#0B1D52;color:#fff;}
+.p-lp .status-bar .time,.p-lp .status-bar .right{color:#fff;}
+.p-lp .status-bar .bars i,.p-lp .status-bar .batt::before{background:#fff;}
+.p-lp .status-bar .batt{border-color:#fff;}
+.p-lp .status-bar .batt::after{background:#fff;}
+.p-lp .lp-head{padding:11px 14px 10px;background:#0B1D52;color:#fff;display:flex;justify-content:space-between;align-items:center;}
+.p-lp .lp-brand{font-family:var(--f-h);font-size:11px;font-weight:800;letter-spacing:-.01em;}
+.p-lp .lp-brand em{font-style:normal;color:var(--highlight);}
+.p-lp .lp-menu{font-size:8.2px;color:rgba(255,255,255,.55);letter-spacing:.14em;font-weight:600;}
+.p-lp .lp-body{background:#fff;padding:14px 14px 12px;display:flex;flex-direction:column;flex:1;}
+.p-lp .lp-pill{display:inline-flex;align-items:center;gap:5px;background:rgba(22,163,74,.08);color:#16A34A;font-size:8px;font-weight:700;padding:4px 9px;border-radius:100px;margin-bottom:14px;border:.8px solid rgba(22,163,74,.2);align-self:flex-start;}
+.p-lp .lp-pill::before{content:"";width:5px;height:5px;border-radius:50%;background:#22C55E;}
+.p-lp .lp-h{font-family:var(--f-h);font-weight:700;font-size:16px;color:#0a0a0a;line-height:1.08;margin-bottom:10px;letter-spacing:-.022em;}
+.p-lp .lp-h em{font-style:italic;font-weight:600;color:var(--highlight);}
+.p-lp .lp-meta{display:flex;gap:5px;align-items:center;font-size:8.2px;color:#4B5563;margin-bottom:14px;}
+.p-lp .lp-meta .stars{color:#F4B400;font-size:9px;letter-spacing:.3px;}
+.p-lp .lp-hero{height:64px;border-radius:8px;margin-bottom:12px;position:relative;overflow:hidden;background:linear-gradient(145deg,#F5EFE2 0%,#E8DCC4 100%);}
+.p-lp .lp-hero::before{content:"";position:absolute;right:8%;top:50%;transform:translateY(-50%);width:36%;height:76%;background:linear-gradient(180deg,#E7CAA7 0%,#B89068 100%);border-radius:50% 50% 45% 45%;}
+.p-lp .lp-hero-cap{position:absolute;left:6px;bottom:6px;font-size:6.6px;color:#2C2118;font-weight:600;background:rgba(255,255,255,.85);padding:3px 6px;border-radius:4px;}
+.p-lp .lp-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:12px;padding:10px 0;border-top:.5px solid #F0F0F0;border-bottom:.5px solid #F0F0F0;}
+.p-lp .lp-stat b{font-family:var(--f-h);font-weight:700;font-size:12px;color:#0a0a0a;letter-spacing:-.015em;display:block;}
+.p-lp .lp-stat span{font-size:6.5px;color:#6B7280;letter-spacing:.02em;}
+.p-lp .lp-benefits{display:flex;flex-direction:column;gap:6px;margin-bottom:12px;}
+.p-lp .lp-benefit{display:flex;align-items:center;gap:6px;font-size:8px;color:#0a0a0a;font-weight:500;}
+.p-lp .lp-benefit::before{content:"✓";width:12px;height:12px;background:#DCFCE7;color:#16A34A;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:8px;font-weight:900;flex-shrink:0;}
+.p-lp .lp-cta{background:#0a0a0a;color:#fff;padding:10px;text-align:center;font-size:9.5px;font-weight:700;border-radius:9px;margin-bottom:6px;letter-spacing:.015em;}
+.p-lp .lp-cta::after{content:" →";}
+.p-lp .lp-micro{font-size:7px;color:#9CA3AF;text-align:center;margin-bottom:10px;}
+.p-lp .lp-trust-row{margin-top:auto;display:flex;justify-content:space-between;padding-top:8px;border-top:.5px solid #F0F0F0;font-size:6.6px;color:#6B7280;font-weight:600;letter-spacing:.12em;text-transform:uppercase;}
+
+/* Phone 4 · WhatsApp */
+.p-lead .status-bar{background:#075E54;color:#fff;}
+.p-lead .status-bar .time,.p-lead .status-bar .right{color:#fff;}
+.p-lead .status-bar .bars i,.p-lead .status-bar .batt::before{background:#fff;}
+.p-lead .status-bar .batt{border-color:#fff;}
+.p-lead .status-bar .batt::after{background:#fff;}
+.p-lead .wa-top{background:#075E54;color:#fff;padding:8px 13px 10px;display:flex;align-items:center;gap:9px;}
+.p-lead .wa-back{font-size:14px;font-weight:300;opacity:.85;}
+.p-lead .wa-av{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#D1B38C,#7E6242);flex-shrink:0;}
+.p-lead .wa-who{line-height:1.2;flex:1;}
+.p-lead .wa-name{font-size:10.2px;font-weight:700;}
+.p-lead .wa-status{font-size:7.4px;color:rgba(255,255,255,.72);}
+.p-lead .wa-icons{display:flex;gap:10px;font-size:11px;color:rgba(255,255,255,.9);}
+.p-lead .wa-body{flex:1;padding:10px 9px;display:flex;flex-direction:column;gap:3px;position:relative;background:#E5DDD5;}
+.p-lead .wa-date{align-self:center;background:rgba(255,255,255,.85);font-size:7px;color:#667781;padding:2.5px 8px;border-radius:6px;margin-bottom:3px;font-weight:500;}
+.p-lead .msg{padding:6px 9px;border-radius:7px;font-size:8.2px;line-height:1.42;position:relative;}
+.p-lead .msg .time{display:block;text-align:right;font-size:6px;color:#667781;margin-top:1px;}
+.p-lead .msg.in{background:#fff;color:#0a0a0a;align-self:flex-start;border-radius:2px 7px 7px 7px;}
+.p-lead .msg.out{background:#DCF8C6;color:#0a0a0a;align-self:flex-end;border-radius:7px 2px 7px 7px;}
+.p-lead .msg.out .time{color:#4fae4b;}
+.p-lead .msg.m-1{max-width:82%;margin-top:2px;}
+.p-lead .msg.m-2{max-width:63%;margin-top:6px;}
+.p-lead .msg.m-3{max-width:31%;margin-top:5px;}
+.p-lead .msg.m-4{max-width:39%;margin-top:3px;}
+.p-lead .appt-card{align-self:flex-end;max-width:82%;background:#fff;border-radius:9px;overflow:hidden;margin-top:6px;}
+.p-lead .appt-card .head{background:#075E54;color:#fff;padding:5px 9px;font-size:7px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;}
+.p-lead .appt-card .body{padding:7px 9px 8px;display:flex;flex-direction:column;gap:2px;}
+.p-lead .appt-card .t{font-size:10px;font-weight:800;color:#0a0a0a;letter-spacing:-.01em;}
+.p-lead .appt-card .w{font-size:7.5px;color:#6B7280;}
+.p-lead .appt-card .d{display:flex;gap:4px;align-items:center;font-size:7.5px;color:#0a0a0a;font-weight:500;margin-top:4px;padding-top:5px;border-top:.5px solid #F0F0F0;}
+.p-lead .appt-card .d::before{content:"";width:7px;height:7px;border-radius:50%;background:#16A34A;}
+.p-lead .lead-toast{position:absolute;top:-4px;right:8px;z-index:5;background:#fff;border:1px solid rgba(0,0,0,.06);box-shadow:0 10px 22px -8px rgba(0,0,0,.22);border-radius:9px;padding:7px 10px;font-size:7.6px;color:#0a0a0a;font-weight:600;display:flex;align-items:center;gap:7px;}
+.p-lead .lead-toast .check{width:14px;height:14px;border-radius:50%;background:#22C55E;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:8px;font-weight:900;flex-shrink:0;}
+.p-lead .lead-toast small{display:block;font-size:6.4px;color:#6B7280;font-weight:500;margin-top:1px;}
+.p-lead .wa-input{background:#F0F0F0;padding:7px 10px;display:flex;align-items:center;gap:6px;}
+.p-lead .wa-field{flex:1;background:#fff;border-radius:100px;padding:5px 11px;font-size:7.6px;color:#aaa;}
+.p-lead .wa-send{width:22px;height:22px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;}
+.p-lead .wa-send::before{content:"";width:8px;height:8px;border-right:2px solid #fff;border-top:2px solid #fff;transform:rotate(45deg);margin-right:2px;}
+
+/* ═════════ SERVICES — clean plinth cards ═════════ */
+.services .svc-grid, .services .svc-card{display:none !important;} /* hide legacy grid if any survives */
+.services{padding:140px 0 148px !important;}
+.services .system-head{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:end;margin-bottom:66px;padding-bottom:30px;border-bottom:1px solid var(--rule);}
+.services .system-head > div{display:block;}
+.services .section-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);margin-bottom:20px;}
+.services .section-eyebrow::before{content:"";width:22px;height:1px;background:var(--blue);}
+.services .section-h{font-family:var(--f-h);font-weight:700;font-size:clamp(36px,3.6vw,52px);line-height:1.04;letter-spacing:-0.028em;color:var(--ink);}
+.services .section-h em{font-style:italic;color:var(--blue);font-weight:700;letter-spacing:-0.022em;}
+.services .system-sub{font-size:15px;color:var(--ink-3);line-height:1.6;max-width:340px;justify-self:end;text-align:right;margin:0;}
+
+.system-plinth{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border:1px solid var(--rule);border-radius:24px;overflow:hidden;box-shadow:0 22px 60px -52px rgba(11,29,82,.12);}
+.panel{position:relative;padding:42px 32px 36px;display:flex;flex-direction:column;min-height:420px;border-right:1px solid var(--rule-light);}
+.panel:last-child{border-right:none;}
+.panel-num{position:absolute;top:26px;right:26px;font-family:var(--f-h);font-style:italic;font-weight:400;font-size:50px;line-height:1;color:rgba(11,29,82,.08);letter-spacing:-0.02em;pointer-events:none;}
+.panel-icon{width:42px;height:42px;border-radius:12px;background:#F3EFE5;display:flex;align-items:center;justify-content:center;margin-bottom:30px;}
+.panel-icon svg{width:18px;height:18px;stroke:var(--hero-1);stroke-width:1.4;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+.panel-role{font-size:10.5px;font-weight:600;color:var(--blue);letter-spacing:.16em;text-transform:uppercase;margin-bottom:12px;}
+.panel-name{font-family:var(--f-h);font-weight:700;font-size:22px;line-height:1.12;letter-spacing:-0.02em;color:var(--ink);margin-bottom:14px;}
+.panel-desc{font-size:14px;color:var(--ink-3);line-height:1.55;max-width:95%;}
+.panel-foot{margin-top:auto;padding-top:26px;font-size:11px;color:var(--ink-4);letter-spacing:.08em;font-weight:500;}
+.panel-foot b{color:var(--ink-2);font-weight:600;}
+.system-footer{display:flex;justify-content:space-between;align-items:center;margin-top:30px;padding:0 8px;font-size:11px;color:var(--ink-4);letter-spacing:.14em;text-transform:uppercase;font-weight:600;}
+.system-footer .line{height:1px;flex:1;margin:0 20px;background:var(--rule);}
+
+/* ═════════ CAPTURE (end-of-page form-style section) ═════════ */
+.cta-section{display:none !important;} /* hide legacy CTA if any survives */
+.capture{padding:150px 0 160px;background:#fff;border-top:1px solid var(--rule);}
+.capture .capture-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:92px;align-items:start;}
+.capture-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);margin-bottom:22px;}
+.capture-eyebrow::before{content:"";width:22px;height:1px;background:var(--blue);}
+.capture-h{font-family:var(--f-h);font-weight:700;font-size:clamp(36px,3.4vw,48px);line-height:1.04;letter-spacing:-0.028em;color:var(--ink);margin-bottom:20px;max-width:430px;}
+.capture-h em{font-style:italic;color:var(--blue);font-weight:700;letter-spacing:-0.022em;}
+.capture-sub{font-size:15px;color:var(--ink-3);line-height:1.6;max-width:380px;margin-bottom:36px;}
+.capture-meta{display:flex;flex-direction:column;gap:12px;padding-top:26px;border-top:1px solid var(--rule);}
+.capture-meta div{font-size:13px;color:var(--ink-2);}
+.capture-meta b{color:var(--ink);font-weight:600;}
+.capture-action{padding-top:32px;}
+.btn-primary-xl{font-size:15.5px !important;padding:18px 30px !important;}
+.capture-secondary{font-size:13px;color:var(--ink-3);margin-top:18px;}
+.capture-secondary a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(27,92,230,.25);padding-bottom:1px;}
+.capture-guar{display:inline-flex;align-items:center;gap:8px;margin-top:26px;padding:12px 16px;background:var(--warm);border-radius:100px;font-size:12.5px;color:var(--ink-2);font-weight:500;}
+.capture-guar .guar-ic{width:18px;height:18px;border-radius:50%;background:#16A34A;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;flex-shrink:0;}
+
+/* Responsive — collapse new sections on mobile */
+@media(max-width:960px){
+  .phone-row{grid-template-columns:repeat(2,1fr);gap:44px 16px;}
+  .system-plinth{grid-template-columns:repeat(2,1fr);}
+  .panel{border-right:none;border-bottom:1px solid var(--rule-light);}
+  .panel:nth-child(2n){border-right:none;}
+  .journey-head, .services .system-head, .capture .capture-grid{grid-template-columns:1fr;gap:24px;}
+  .j-sub, .services .system-sub{text-align:left;justify-self:start;white-space:normal;}
+  .hero-inner{grid-template-columns:1fr !important;}
+  .platform-grid{max-width:320px !important;margin:0 auto;}
+}
+@media(max-width:560px){
+  .phone-row{grid-template-columns:1fr;gap:52px;}
+  .system-plinth{grid-template-columns:1fr;}
+  .panel{min-height:auto;padding:32px 24px;}
+  .journey{padding:80px 0 100px;}
+  .services{padding:90px 0 !important;}
+  .capture{padding:90px 0 110px;}
+  .btn-ghost{margin-left:0;margin-top:12px;}
+  .hero-actions{flex-direction:column;align-items:flex-start;}
+}
+
 </style>
 </head>
 <body>
@@ -504,12 +831,12 @@ textarea.f-inp{resize:vertical;min-height:80px;}
   <div class="w hdr-i">
     <a href="/" class="logo">Advora<em>.</em></a>
     <nav class="hdr-nav">
-      <a href="#services">Services</a>
+      <a href="#services">Approach</a>
       <a href="#how">How it works</a>
       <a href="#contact">Contact</a>
     </nav>
     <button class="hdr-cta" onclick="openModal()">
-      Get the proposal
+      Request plan
       <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </button>
   </div>
@@ -526,50 +853,43 @@ textarea.f-inp{resize:vertical;min-height:80px;}
       <div>
         <div class="hero-label">
           <span class="hero-label-dot"></span>
-          <span>One clinic per corridor · Selective by design</span>
+          <span>Selective by design</span>
         </div>
 
         <h1 class="hero-h">
-          International patient acquisition for <em>IVF and hair transplant clinics</em>
+          International patient acquisition for <em>IVF and hair<br>transplant clinics</em>
         </h1>
 
-        <p class="hero-sub">We help IVF and hair transplant clinics turn international demand into booked consultations.</p>
+        <p class="hero-sub">Cross-border demand, turned into booked consultations.</p>
 
         <div class="hero-actions">
           <button class="btn-primary" onclick="openModal()">
-            Get your patient acquisition plan
+            Request your acquisition plan
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7.5 3L12 7l-4.5 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
+          <a href="#services" class="btn-ghost">See how it works</a>
         </div>
-        <p class="hero-note">No pitch. Just a clear look at your clinic.</p>
 
-        <div class="hero-trust" style="margin-top:40px;">
-          <div class="trust-item">
-            <div class="trust-check"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,7 9,1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            IVF & fertility clinics
-          </div>
-          <div class="trust-item">
-            <div class="trust-check"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,7 9,1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            Hair transplant practices
-          </div>
-          <div class="trust-item">
-            <div class="trust-check"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,7 9,1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            Europe & Middle East
-          </div>
+        <div class="hero-trust-line">
+          <span>IVF &amp; fertility</span>
+          <span class="trust-dot">·</span>
+          <span>Hair transplant</span>
+          <span class="trust-dot">·</span>
+          <span>Europe &amp; Middle East</span>
         </div>
       </div>
 
       <!-- RIGHT: PLATFORM BOARD -->
       <div class="hero-board">
-        <!-- 2×2 platform grid -->
         <div class="platform-grid">
 
           <!-- Instagram -->
           <div class="plat-tile tile-ig">
             <div class="tile-logo">
-              <svg viewBox="12 12 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="56" height="56" rx="12" fill="none"/>
-                <path d="M28 14c-3.8 0-4.3.02-5.8.08-1.5.07-2.5.3-3.4.64a6.9 6.9 0 00-2.48 1.62 6.9 6.9 0 00-1.62 2.47c-.35.9-.58 1.9-.64 3.4C14.02 23.7 14 24.2 14 28c0 3.8.02 4.3.08 5.8.07 1.5.3 2.5.64 3.4a6.9 6.9 0 001.62 2.48 6.9 6.9 0 002.47 1.62c.9.35 1.9.58 3.4.64 1.5.06 2 .08 5.8.08 3.8 0 4.3-.02 5.8-.08 1.5-.07 2.5-.3 3.4-.64a6.9 6.9 0 002.48-1.62 6.9 6.9 0 001.62-2.47c.35-.9.58-1.9.64-3.4.06-1.5.08-2 .08-5.8 0-3.8-.02-4.3-.08-5.8-.07-1.5-.3-2.5-.64-3.4a6.9 6.9 0 00-1.62-2.48 6.9 6.9 0 00-2.47-1.62c-.9-.35-1.9-.58-3.4-.64C32.3 14.02 31.8 14 28 14zm0 2.5c3.73 0 4.17.01 5.65.08 1.36.06 2.1.28 2.6.47.65.25 1.12.56 1.6 1.05.5.5.8.96 1.06 1.6.18.5.4 1.24.47 2.6.07 1.48.08 1.92.08 5.65 0 3.73-.01 4.17-.08 5.65-.06 1.36-.28 2.1-.47 2.6a4.34 4.34 0 01-1.05 1.6c-.5.5-.96.8-1.6 1.06-.5.18-1.24.4-2.6.47-1.48.07-1.92.08-5.65.08s-4.17-.01-5.65-.08c-1.36-.06-2.1-.28-2.6-.47a4.34 4.34 0 01-1.6-1.05 4.34 4.34 0 01-1.06-1.6c-.18-.5-.4-1.24-.47-2.6-.07-1.48-.08-1.92-.08-5.65 0-3.73.01-4.17.08-5.65.06-1.36.28-2.1.47-2.6.25-.65.56-1.12 1.05-1.6.5-.5.96-.8 1.6-1.06.5-.18 1.24-.4 2.6-.47 1.48-.07 1.92-.08 5.65-.08zm0 4.25a7.25 7.25 0 100 14.5 7.25 7.25 0 000-14.5zm0 2.5a4.75 4.75 0 110 9.5 4.75 4.75 0 010-9.5zm9.25-4.5a1.7 1.7 0 100 3.4 1.7 1.7 0 000-3.4z" fill="white"/>
+              <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="10" width="36" height="36" rx="10" fill="none" stroke="#fff" stroke-width="3"/>
+                <circle cx="28" cy="28" r="8.5" fill="none" stroke="#fff" stroke-width="3"/>
+                <circle cx="40" cy="16" r="2.2" fill="#fff"/>
               </svg>
             </div>
             <span class="tile-name">Instagram</span>
@@ -577,7 +897,6 @@ textarea.f-inp{resize:vertical;min-height:80px;}
 
           <!-- Google -->
           <div class="plat-tile tile-goog">
-            <!-- Cube accent anchored to top-right of this tile -->
             <div class="cube-wrap">
               <div class="cube">
                 <div class="cube-face cube-front"></div>
@@ -593,14 +912,14 @@ textarea.f-inp{resize:vertical;min-height:80px;}
                 <path d="M28 12c3.77 0 7.15 1.3 9.8 3.83l7.33-7.33C40.69 4.54 34.89 2 28 2 18.05 2 9.35 7.12 5.13 15.96l8.53 6.6C15.68 16.5 21.33 12 28 12z" fill="#EA4335"/>
               </svg>
             </div>
-            <span class="tile-name" style="color:rgba(255,255,255,0.6);">Google</span>
+            <span class="tile-name">Google</span>
           </div>
 
           <!-- YouTube -->
           <div class="plat-tile tile-yt">
             <div class="tile-logo">
               <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
-                <path d="M52.6 17.2s-.52-3.66-2.1-5.27c-2.02-2.1-4.27-2.12-5.3-2.25C37.9 9.2 28 9.2 28 9.2s-9.9 0-17.2.48c-1.03.13-3.28.15-5.3 2.25C3.9 13.54 3.4 17.2 3.4 17.2S2.88 21.5 2.88 25.8v4C2.88 34.1 3.4 38.4 3.4 38.4s.52 3.66 2.1 5.27c2.02 2.1 4.67 2.03 5.85 2.26C15.2 46.48 28 46.6 28 46.6s9.9-.01 17.2-.5c1.03-.13 3.28-.15 5.3-2.25 1.58-1.6 2.1-5.27 2.1-5.27s.52-4.3.52-8.6v-4c0-4.3-.52-8.58-.52-8.58zM22.63 34.3V21.44L36.3 27.9 22.63 34.3z" fill="white"/>
+                <polygon points="21 18 40 28 21 38" fill="#fff"/>
               </svg>
             </div>
             <span class="tile-name">YouTube</span>
@@ -610,7 +929,7 @@ textarea.f-inp{resize:vertical;min-height:80px;}
           <div class="plat-tile tile-fb">
             <div class="tile-logo">
               <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
-                <path d="M56 28C56 12.54 43.46 0 28 0S0 12.54 0 28c0 13.98 10.24 25.56 23.63 27.66V36.09h-7.1V28h7.1v-6.16c0-7.02 4.18-10.9 10.58-10.9 3.07 0 6.28.54 6.28.54v6.9h-3.54c-3.48 0-4.56 2.16-4.56 4.37V28h7.76l-1.24 8.09h-6.52v19.57C45.76 53.56 56 41.98 56 28z" fill="white"/>
+                <path d="M36 18h-4c-1.3 0-2 .8-2 2v4h6l-1 6h-5v16h-6V30h-4v-6h4v-4c0-5 3-8 8-8 2 0 4 .3 4 .3V18z" fill="#fff"/>
               </svg>
             </div>
             <span class="tile-name">Facebook</span>
@@ -666,186 +985,218 @@ textarea.f-inp{resize:vertical;min-height:80px;}
 </div>
 
 <!-- ══════════════════════════════════════════════════
+     CONVERSION JOURNEY — standalone visual proof (4 iPhones)
+══════════════════════════════════════════════════ -->
+<section class="journey" aria-hidden="true">
+  <div class="w">
+    <div class="journey-head">
+      <div>
+        <span class="j-eyebrow">The conversion journey</span>
+        <h2 class="j-h">From first click to<br>booked <em>consultation.</em></h2>
+      </div>
+      <p class="j-sub">The system, exactly where it converts.</p>
+    </div>
+
+    <div class="phone-row">
+
+      <!-- 01 · Google search -->
+      <div class="phone p-google">
+        <div class="phone-screen">
+          <div class="notch"></div>
+          <div class="status-bar"><span class="time">9:41</span><span class="right"><span class="bars"><i></i><i></i><i></i><i></i></span> 5G <span class="batt"></span></span></div>
+          <div class="g-bar">ivf clinic — book consultation</div>
+          <div class="g-tabs"><span class="g-tab active">All</span><span class="g-tab">Maps</span><span class="g-tab">Images</span><span class="g-tab">News</span></div>
+          <div class="g-stats">About 4,280,000 results</div>
+          <span class="g-ad-label">Sponsored</span>
+          <div class="g-result">
+            <div class="g-rank">#1</div>
+            <div class="g-site">
+              <span class="g-fav">C</span>
+              <div class="g-who">
+                <span class="g-dom">yourclinic.example</span>
+                <span class="g-path">› consultation</span>
+              </div>
+            </div>
+            <p class="g-tlt">Your Clinic — Book Consultation</p>
+            <p class="g-dsc">Specialist IVF care. First consultation complimentary. Personalised plans for international patients.</p>
+            <div class="g-rate"><span class="stars">★★★★★</span><span style="color:#202124;font-weight:600;">Verified</span><span>· Patient reviews</span></div>
+            <div class="g-sitelinks">
+              <span class="g-sl">Book consultation</span>
+              <span class="g-sl">Treatments</span>
+              <span class="g-sl">International patients</span>
+              <span class="g-sl">About the clinic</span>
+            </div>
+          </div>
+          <div class="g-map"></div>
+          <div class="g-result" style="opacity:.55;">
+            <div class="g-site"><span class="g-fav" style="background:#d0d0d0;color:#444;">—</span><div class="g-who"><span class="g-dom">general-health.example</span><span class="g-path">› fertility › ivf</span></div></div>
+            <p class="g-tlt" style="color:#1A0DAB;font-weight:500;">IVF — general overview</p>
+            <p class="g-dsc">Reference information on in-vitro fertilisation.</p>
+          </div>
+        </div>
+        <div class="phone-step"><b>01</b>Google search</div>
+      </div>
+
+      <!-- 02 · Instagram / Meta ad -->
+      <div class="phone p-meta">
+        <div class="phone-screen">
+          <div class="notch"></div>
+          <div class="status-bar"><span class="time">9:41</span><span class="right"><span class="bars"><i></i><i></i><i></i><i></i></span> 5G <span class="batt"></span></span></div>
+          <div class="ig-top">
+            <div class="ig-av"><div class="inner"></div></div>
+            <div class="ig-who"><span class="ig-name">your.clinic</span><span class="ig-spon">Sponsored</span></div>
+            <span class="ig-dots">···</span>
+          </div>
+          <div class="ig-img">
+            <div class="ad-hook"><b>Considering IVF abroad?</b>Speak to a specialist this week.</div>
+            <ul class="ad-sub"><li>Personalised treatment plans</li><li>International patient support</li><li>Consultation in your language</li></ul>
+            <div class="ad-badge"><span class="wa-mini">✓</span>Reply via WhatsApp</div>
+          </div>
+          <div class="ig-act">
+            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+            <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            <svg class="save" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
+          </div>
+          <div class="ig-cta">
+            <span class="wa-icon"><svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.8-1.67-2.1-.17-.3 0-.47.13-.62.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.57-.48-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.5 0 1.48 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.1 4.5.7.3 1.27.5 1.7.62.72.23 1.37.2 1.88.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg></span>
+            Start on WhatsApp
+          </div>
+          <div class="ig-hand"><b>Fast response</b> · coordinator, in your language</div>
+        </div>
+        <div class="phone-step"><b>02</b>Meta ad</div>
+      </div>
+
+      <!-- 03 · Landing page -->
+      <div class="phone p-lp">
+        <div class="phone-screen">
+          <div class="notch"></div>
+          <div class="status-bar"><span class="time">9:41</span><span class="right"><span class="bars"><i></i><i></i><i></i><i></i></span> 5G <span class="batt"></span></span></div>
+          <div class="lp-head"><div class="lp-brand">Your Clinic<em>.</em></div><div class="lp-menu">MENU</div></div>
+          <div class="lp-body">
+            <span class="lp-pill">Consultation this week</span>
+            <div class="lp-h">IVF consultation, <em>led by specialists.</em></div>
+            <div class="lp-meta"><span class="stars">★★★★★</span><span style="color:#0a0a0a;font-weight:600;">Verified</span><span style="color:#9CA3AF;">· Patient reviews</span></div>
+            <div class="lp-hero"><span class="lp-hero-cap">Lead IVF specialist</span></div>
+            <div class="lp-stats">
+              <div class="lp-stat"><b>Fast</b><span>Reply window</span></div>
+              <div class="lp-stat"><b>Multi-lang</b><span>Support</span></div>
+              <div class="lp-stat"><b>Corridor</b><span>Specialists</span></div>
+            </div>
+            <div class="lp-benefits">
+              <div class="lp-benefit">Personalised plan</div>
+              <div class="lp-benefit">Transparent pricing</div>
+              <div class="lp-benefit">Coordinator in your language</div>
+            </div>
+            <div class="lp-cta">Book free consultation</div>
+            <p class="lp-micro">Takes 2 minutes</p>
+            <div class="lp-trust-row"><span>GDPR</span><span>Accredited</span><span>Multilingual</span></div>
+          </div>
+        </div>
+        <div class="phone-step"><b>03</b>Landing page</div>
+      </div>
+
+      <!-- 04 · WhatsApp conversion -->
+      <div class="phone p-lead">
+        <div class="phone-screen">
+          <div class="notch"></div>
+          <div class="status-bar"><span class="time">9:41</span><span class="right"><span class="bars"><i></i><i></i><i></i><i></i></span> 5G <span class="batt"></span></span></div>
+          <div class="wa-top">
+            <span class="wa-back">‹</span>
+            <div class="wa-av"></div>
+            <div class="wa-who"><div class="wa-name">Your Clinic</div><div class="wa-status">online</div></div>
+            <div class="wa-icons">📞 ⋮</div>
+          </div>
+          <div class="wa-body">
+            <div class="lead-toast">
+              <span class="check">✓</span>
+              <div><b>New lead · Patient</b><small>IVF · International</small></div>
+            </div>
+            <span class="wa-date">TODAY</span>
+            <div class="msg in m-1">Hi — saw your IVF ad. Could I book a first consultation?<span class="time">09:38</span></div>
+            <div class="msg out m-2">Of course. Two slots this week — Thursday or Friday?<span class="time">09:40 ✓✓</span></div>
+            <div class="msg in m-3">Thursday.<span class="time">09:41</span></div>
+            <div class="msg out m-4">Confirmed ↓<span class="time">09:41 ✓✓</span></div>
+            <div class="appt-card">
+              <div class="head">Consultation confirmed</div>
+              <div class="body">
+                <span class="t">Thursday · 3:00 PM</span>
+                <span class="w">45 min · Video</span>
+                <div class="d">IVF specialist</div>
+              </div>
+            </div>
+          </div>
+          <div class="wa-input">
+            <div class="wa-field">Message</div>
+            <div class="wa-send"></div>
+          </div>
+        </div>
+        <div class="phone-step"><b>04</b>Consultation booked</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
      SERVICES
 ══════════════════════════════════════════════════ -->
 <section class="services" id="services">
   <div class="w">
-    <span class="section-eyebrow">The engine</span>
-    <h2 class="section-h">The patient acquisition system</h2>
-    <p class="section-sub">Four levers — intent, demand, authority, conversion — engineered for cross-border patient flow.</p>
+    <div class="system-head">
+      <div>
+        <span class="section-eyebrow">The engine</span>
+        <h2 class="section-h">The patient<br>acquisition <em>system.</em></h2>
+      </div>
+      <p class="system-sub">Four levers. Run in parallel. Reviewed weekly.</p>
+    </div>
 
-    <div class="svc-grid">
+    <div class="system-plinth">
 
-      <!-- 1. Search Ads -->
-      <div class="svc-card">
-        <span class="svc-stage">01</span>
-        <div class="svc-visual svc-v-search">
-          <span class="serp-pos-badge">#1 · Top position</span>
-          <div class="serp-mini">
-            <div class="serp-mini-chrome">
-              <svg class="serp-mini-lock" width="9" height="10" viewBox="0 0 9 10" fill="none"><rect x="1" y="4.5" width="7" height="5" rx="1.5" stroke="#555" stroke-width="1.2"/><path d="M2.5 4.5V3.25a2 2 0 014 0V4.5" stroke="#555" stroke-width="1.2"/></svg>
-              google.com/search
-            </div>
-            <div class="serp-ad-row">
-              <div class="serp-ad-fav">
-                <div class="serp-ad-circle">L</div>
-                <span class="serp-ad-domain">luminafertility.com</span>
-                <span class="serp-ad-spons">Sponsored</span>
-              </div>
-              <p class="serp-ad-title">IVF Clinic London – Book Consultation</p>
-              <p class="serp-ad-desc">Specialist fertility clinic. First consultation free. Personalised care plans.</p>
-              <div class="serp-ad-ext">
-                <span>★★★★★</span>
-                <span class="serp-ad-rv">4.9</span>
-                <span class="serp-ad-rc">(847 reviews)</span>
-              </div>
-            </div>
-          </div>
-          <svg class="serp-cursor" viewBox="0 0 14 14" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M2 1l10 6-4.5 1.2L5.8 13 2 1z"/></svg>
-        </div>
-        <div class="svc-body">
-          <span class="svc-role">Intent capture</span>
-          <p class="svc-name">Search Ads</p>
-          <p class="svc-desc">Be there the second a patient decides to search.</p>
-        </div>
+      <div class="panel">
+        <span class="panel-num">01</span>
+        <div class="panel-icon"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.5" y1="15.5" x2="20.5" y2="20.5"/></svg></div>
+        <div class="panel-role">Intent capture</div>
+        <p class="panel-name">Search Ads</p>
+        <p class="panel-desc">Be there the moment a patient decides to search.</p>
+        <div class="panel-foot"><b>Google</b> · Search &amp; PMax</div>
       </div>
 
-      <!-- 2. Social Ads — iPhone mockup -->
-      <div class="svc-card">
-        <span class="svc-stage">02</span>
-        <div class="svc-visual svc-v-social">
-          <div class="phone-ig" aria-hidden="true">
-            <div class="phone-frame">
-              <div class="phone-screen">
-                <div class="phone-notch"></div>
-                <div class="pig-top">
-                  <div class="pig-av"></div>
-                  <div class="pig-who">
-                    <span class="pig-name">ivfclinicbarcelona</span>
-                    <span class="pig-spon">Sponsored</span>
-                  </div>
-                  <span class="pig-dots">···</span>
-                </div>
-                <div class="pig-img">
-                  <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-                    <defs>
-                      <linearGradient id="pigbg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F8F7F5"/><stop offset="55%" stop-color="#EAE4DA"/><stop offset="100%" stop-color="#D4C8B6"/></linearGradient>
-                      <radialGradient id="piglight" cx="22%" cy="20%" r="70%"><stop offset="0%" stop-color="#FFFDFA" stop-opacity="0.98"/><stop offset="100%" stop-color="#FFFDFA" stop-opacity="0"/></radialGradient>
-                      <linearGradient id="pskin" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F2D8C0"/><stop offset="100%" stop-color="#CDA079"/></linearGradient>
-                      <linearGradient id="pwin" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFFBEF" stop-opacity="0.85"/><stop offset="100%" stop-color="#FFFBEF" stop-opacity="0.15"/></linearGradient>
-                    </defs>
-                    <rect width="180" height="180" fill="url(#pigbg)"/>
-                    <rect width="180" height="180" fill="url(#piglight)"/>
-                    <!-- Soft clinic window, top-left -->
-                    <rect x="14" y="16" width="56" height="64" rx="4" fill="url(#pwin)"/>
-                    <line x1="42" y1="16" x2="42" y2="80" stroke="#EDE4D2" stroke-width="0.8" opacity="0.6"/>
-                    <line x1="14" y1="48" x2="70" y2="48" stroke="#EDE4D2" stroke-width="0.8" opacity="0.6"/>
-                    <!-- Calm out-of-focus figure, bottom-right -->
-                    <g opacity="0.92">
-                      <ellipse cx="118" cy="96" rx="22" ry="24" fill="url(#pskin)"/>
-                      <path d="M92 138 Q118 114 144 138 L150 180 L86 180 Z" fill="#E4D9CB"/>
-                      <path d="M96 138 Q118 120 140 138 L144 180 L92 180 Z" fill="#D4BFA5" opacity="0.7"/>
-                    </g>
-                    <!-- Plant / vase accent, foreground right -->
-                    <ellipse cx="158" cy="166" rx="12" ry="5" fill="#B8A78C" opacity="0.6"/>
-                    <path d="M154 166 Q156 144 162 138 M162 166 Q164 150 168 146 M158 166 Q158 148 160 142" stroke="#8CA47E" stroke-width="1.4" fill="none" stroke-linecap="round" opacity="0.7"/>
-                    <!-- Subtle table edge -->
-                    <rect x="0" y="170" width="180" height="10" fill="#C5B49A" opacity="0.35"/>
-                  </svg>
-                </div>
-                <div class="pig-actions">
-                  <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-                  <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
-                  <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-                  <svg class="pig-save" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
-                </div>
-                <p class="pig-likes">1,284 likes</p>
-                <p class="pig-copy"><strong>ivfclinicbarcelona</strong> Thinking about IVF abroad?</p>
-                <p class="pig-sub">Trusted clinics. Clear pricing. Personal support from first consultation.</p>
-                <div class="pig-cta">Book consultation</div>
-                <p class="pig-foot">Serving UK · Germany · Ireland</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="svc-body">
-          <span class="svc-role">Demand creation</span>
-          <p class="svc-name">Social Ads</p>
-          <p class="svc-desc">Reach patients early and turn attention into consultation demand.</p>
-        </div>
+      <div class="panel">
+        <span class="panel-num">02</span>
+        <div class="panel-icon"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></div>
+        <div class="panel-role">Demand creation</div>
+        <p class="panel-name">Social Ads</p>
+        <p class="panel-desc">Reach high-fit patients before they search.</p>
+        <div class="panel-foot"><b>Meta</b> · Instagram + WhatsApp</div>
       </div>
 
-      <!-- 3. SEO -->
-      <div class="svc-card">
-        <span class="svc-stage">03</span>
-        <div class="svc-visual svc-v-seo">
-          <div class="kw-tracker">
-            <div class="kw-hdr">
-              <span class="kw-hdr-t">Keyword Positions</span>
-              <span class="kw-hdr-s">Updated today</span>
-            </div>
-            <div class="kw-row kw-row-top">
-              <span class="kw-word">"IVF clinic London"</span>
-              <span class="kw-pos">#1</span>
-              <span class="kw-delta">↑3</span>
-              <svg class="kw-spark" viewBox="0 0 28 12" fill="none"><polyline points="0,10 7,8 14,5 21,3 28,1" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <div class="kw-row">
-              <span class="kw-word">"hair transplant near me"</span>
-              <span class="kw-pos">#1</span>
-              <span class="kw-delta">↑6</span>
-              <svg class="kw-spark" viewBox="0 0 28 12" fill="none"><polyline points="0,11 7,9 14,7 21,4 28,1" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <div class="kw-row">
-              <span class="kw-word">"IVF success rates UK"</span>
-              <span class="kw-pos">#3</span>
-              <span class="kw-delta">↑8</span>
-              <svg class="kw-spark" viewBox="0 0 28 12" fill="none"><polyline points="0,11 7,10 14,8 21,5 28,2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <div class="kw-row">
-              <span class="kw-word">"private fertility clinic"</span>
-              <span class="kw-pos">#2</span>
-              <span class="kw-delta">↑5</span>
-              <svg class="kw-spark" viewBox="0 0 28 12" fill="none"><polyline points="0,11 7,9 14,7 21,5 28,2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-          </div>
-        </div>
-        <div class="svc-body">
-          <span class="svc-role">Category authority</span>
-          <p class="svc-name">SEO &amp; Organic Search</p>
-          <p class="svc-desc">Own the category. Compound demand without paying per click.</p>
-        </div>
+      <div class="panel">
+        <span class="panel-num">03</span>
+        <div class="panel-icon"><svg viewBox="0 0 24 24"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="15 7 21 7 21 13"/></svg></div>
+        <div class="panel-role">Category authority</div>
+        <p class="panel-name">SEO &amp; Organic</p>
+        <p class="panel-desc">Own the category. Compound without paying per click.</p>
+        <div class="panel-foot"><b>Organic</b> · Content &amp; schema</div>
       </div>
 
-      <!-- 4. Landing Pages -->
-      <div class="svc-card">
-        <span class="svc-stage">04</span>
-        <div class="svc-visual svc-v-lp">
-          <div class="lp-mini">
-            <div class="lp-header-bar">
-              <span class="lp-h-logo">Lumina Fertility</span>
-            </div>
-            <div class="lp-body">
-              <span class="lp-booked"><span class="lp-booked-dot"></span>Consultation booked</span>
-              <p class="lp-headline">IVF Consultation<br>Available This Week</p>
-              <div class="lp-trust">
-                <span class="lp-stars">★★★★★</span>
-                <span class="lp-tv">4.9</span>
-                <span class="lp-tc">(847)</span>
-              </div>
-              <a class="lp-cta">Book Free Consultation →</a>
-              <p class="lp-micro">No commitment · Takes 2 minutes</p>
-            </div>
-          </div>
-        </div>
-        <div class="svc-body">
-          <span class="svc-role">Conversion engine</span>
-          <p class="svc-name">Landing Pages &amp; Conversion</p>
-          <p class="svc-desc">Where clicks become booked consultations — engineered to convert.</p>
-        </div>
+      <div class="panel">
+        <span class="panel-num">04</span>
+        <div class="panel-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg></div>
+        <div class="panel-role">Conversion engine</div>
+        <p class="panel-name">Landing &amp; Conversion</p>
+        <p class="panel-desc">Where the click becomes a booked consultation.</p>
+        <div class="panel-foot"><b>LP</b> · WhatsApp &amp; CRM</div>
       </div>
 
-    </div><!-- /svc-grid -->
+    </div>
+
+    <div class="system-footer">
+      <span>Intent</span><span class="line"></span>
+      <span>Demand</span><span class="line"></span>
+      <span>Authority</span><span class="line"></span>
+      <span>Conversion</span>
+    </div>
   </div>
 </section>
 
@@ -949,24 +1300,36 @@ textarea.f-inp{resize:vertical;min-height:80px;}
 </section>
 
 <!-- ══════════════════════════════════════════════════
-     CTA
+     CAPTURE — final-section design, CTA opens existing modal
 ══════════════════════════════════════════════════ -->
-<section class="cta-section" id="contact">
+<section class="capture" id="contact">
   <div class="w">
-    <div class="cta-inner">
-      <h2 class="cta-h">Win patients<br><em>across the border.</em></h2>
-      <p class="cta-sub">Start with a 30-minute call. No pitch — just a clear look at your clinic.</p>
-      <div class="cta-actions">
-        <button class="cta-btn" onclick="openModal()">
-          Get your patient acquisition plan
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8.5 4L13 8l-4.5 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="capture-grid">
+
+      <div class="capture-left">
+        <span class="capture-eyebrow">Begin</span>
+        <h2 class="capture-h">Tell us where you<br>want <em>patients from.</em></h2>
+        <p class="capture-sub">We'll show you how to unlock that corridor. No decks, no sequences — just a clear acquisition plan.</p>
+        <div class="capture-meta">
+          <div><b>One clinic per corridor.</b></div>
+          <div><b>IVF &amp; hair transplant</b> — Europe &amp; Middle East.</div>
+          <div><b>Reply within one business day.</b></div>
+        </div>
+      </div>
+
+      <div class="capture-action">
+        <button class="btn-primary btn-primary-xl" type="button" onclick="openModal()">
+          Request your acquisition plan
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7.5 3L12 7l-4.5 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
-        <button class="cta-secondary" type="button" onclick="openContactModal()">Or send us a message</button>
+        <p class="capture-secondary">
+          or email <a href="mailto:hello@advoralabs.com">hello@advoralabs.com</a>
+        </p>
+        <div class="capture-guar">
+          <span class="guar-ic">✓</span> 60-day results guarantee — or your management fee comes back
+        </div>
       </div>
-      <p class="cta-note">No pitch. Just a clear look at your clinic.</p>
-      <div>
-        <span class="cta-guar"><span class="guar-ic">✓</span> 60-day results guarantee — or your management fee comes back</span>
-      </div>
+
     </div>
   </div>
 </section>
@@ -979,7 +1342,7 @@ textarea.f-inp{resize:vertical;min-height:80px;}
     <div class="ftr-i">
       <div>
         <a href="/" class="ftr-logo">Advora<em>.</em></a>
-        <a href="mailto:hello@advora.com" class="ftr-email">hello@advora.com</a>
+        <a href="mailto:hello@advoralabs.com" class="ftr-email">hello@advoralabs.com</a>
       </div>
       <div class="ftr-r">© 2026 Advora. All rights reserved.</div>
     </div>
@@ -1037,7 +1400,7 @@ textarea.f-inp{resize:vertical;min-height:80px;}
     <form class="form-group" id="contactForm" novalidate>
       <!-- Hidden metadata sent with every submission -->
       <input type="hidden" name="_subject" value="New Advora website contact enquiry">
-      <input type="hidden" name="form_source" value="advora.com — contact modal">
+      <input type="hidden" name="form_source" value="advoralabs.com — contact modal">
       <!-- Honeypot: real users leave this empty; bots fill it -->
       <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" aria-hidden="true">
 
