@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Advora — Redesign mockup v7 (luxury pass)</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#1B5CE6; --blue-d:#1247C0; --blue-lt:#4A7FF5;
+  --hero-l:#08163E;           /* deep navy left */
+  --hero-m:#0D2060;
+  --hero-r:#1F3EA0;           /* brighter, fresher refined blue right */
+  --highlight:#8EAEE1;        /* premium refined blue — single tone */
+  --warm-inflect:rgba(200,168,138,.045);
+  --warm:#F8F7F4; --cream:#F2F0EB;
+  --ink:#0C0C0F; --ink-2:#374151; --ink-3:#6B7280; --ink-4:#9CA3AF;
+  --rule:rgba(0,0,0,0.07);
+  --rule-light:rgba(0,0,0,0.06);
+  --f-h:'Fraunces', Georgia, serif;
+  --f-b:'Plus Jakarta Sans', sans-serif;
+  --wa:#25D366;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+html,body{background:#fff;color:var(--ink);font-family:var(--f-b);line-height:1.5;}
+.w{max-width:1200px;margin:0 auto;padding:0 48px;}
+html,body{min-width:1440px;}
+
+/* ═════════════ HEADER ═════════════ */
+.hdr{position:absolute;top:0;left:0;right:0;z-index:200;padding:26px 0;}
+.hdr-i{display:flex;align-items:center;justify-content:space-between;}
+.logo{font-family:var(--f-h);font-size:22px;font-weight:900;color:#fff;letter-spacing:-0.02em;}
+.logo em{font-style:normal;color:var(--highlight);}
+.hdr-nav{display:flex;align-items:center;gap:34px;}
+.hdr-nav a{font-size:13.5px;font-weight:500;color:rgba(255,255,255,0.68);letter-spacing:.005em;}
+.hdr-cta{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--hero-m);font-size:13px;font-weight:700;padding:12px 22px;border-radius:100px;box-shadow:0 6px 18px -6px rgba(255,255,255,.35), 0 2px 8px -2px rgba(74,127,245,.35);}
+
+/* ═════════════ HERO — atmospheric luxury ═════════════ */
+.hero{
+  position:relative;overflow:hidden;padding-top:96px;
+  background:
+    radial-gradient(900px 700px at 102% -5%, var(--warm-inflect) 0%, transparent 62%),
+    radial-gradient(1100px 800px at -10% 115%, rgba(6,12,38,.42) 0%, transparent 65%),
+    linear-gradient(98deg, var(--hero-l) 0%, var(--hero-m) 55%, var(--hero-r) 100%);
+}
+/* light drift — further softened, longer cycle */
+.hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:1;
+  background:radial-gradient(780px 520px at 78% 12%, rgba(128,150,200,.09) 0%, transparent 62%);
+  animation:lightDrift 34s ease-in-out infinite;
+}
+@keyframes lightDrift{
+  0%,100%{opacity:.85;transform:translate(0,0);}
+  50%{opacity:1;transform:translate(7px,-4px);}
+}
+/* grain reduced to barely-perceptible */
+.hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.07;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.45'/></svg>");
+}
+.hero-inner{
+  position:relative;z-index:2;
+  display:grid;grid-template-columns:1.12fr 1fr;gap:72px;align-items:center;
+  padding:88px 0 116px;
+}
+
+.h-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(255,255,255,.55);margin-bottom:38px;
+}
+.h-eyebrow::before{
+  content:"";width:6px;height:6px;border-radius:50%;background:#7BE495;
+  box-shadow:0 0 0 3px rgba(123,228,149,.12);
+}
+.h-eyebrow .sep{opacity:.3;margin:0 2px;}
+
+.h-title{
+  font-family:var(--f-h);
+  font-weight:700;                         /* editorial character restored */
+  font-size:clamp(46px,4.6vw,70px);
+  line-height:1.02;
+  letter-spacing:-0.028em;
+  color:#fff;
+  max-width:640px;
+  margin-bottom:22px;
+}
+.h-title .highlight{
+  font-family:var(--f-h);font-style:italic;font-weight:600;
+  letter-spacing:-0.018em;
+  color:var(--highlight);                  /* single refined premium blue */
+}
+.h-sub{
+  font-size:17px;line-height:1.55;
+  color:rgba(255,255,255,.62);
+  max-width:440px;margin-bottom:38px;
+}
+.h-actions{display:flex;align-items:center;gap:26px;margin-bottom:42px;}
+
+/* CTA — presence without self-awareness */
+.btn-primary{
+  position:relative;display:inline-flex;align-items:center;gap:10px;
+  background:linear-gradient(180deg, #3A78F2 0%, #1B5CE6 60%, #1247C0 100%);
+  color:#fff;font-size:14.5px;font-weight:700;
+  padding:16px 28px;border-radius:100px;border:none;letter-spacing:.012em;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.2),
+    0 0 0 1px rgba(74,127,245,.26),
+    0 14px 32px -10px rgba(27,92,230,.55);
+}
+.btn-primary::before{
+  content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:linear-gradient(180deg, rgba(255,255,255,.08) 0%, transparent 50%);
+}
+.btn-primary svg{width:14px;height:14px;position:relative;z-index:1;}
+.btn-primary span{position:relative;z-index:1;}
+.btn-ghost{font-size:13.5px;font-weight:500;color:rgba(255,255,255,.7);}
+
+.h-trust{display:flex;gap:20px;flex-wrap:wrap;padding-top:26px;border-top:1px solid rgba(255,255,255,.05);}
+.h-trust span{font-size:11px;color:rgba(255,255,255,.4);letter-spacing:.14em;text-transform:uppercase;font-weight:500;}
+.h-trust .dot{opacity:.3;margin:0 -6px;}
+
+/* ── Platform tiles — more presence, still anchored ── */
+.hero-board{display:flex;align-items:center;justify-content:center;position:relative;padding:0;min-height:360px;}
+.platform-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:16px;
+  width:100%;max-width:310px;position:relative;z-index:3;
+}
+.plat-tile{
+  border-radius:22px;position:relative;overflow:hidden;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:28px 18px;aspect-ratio:1;
+  box-shadow:0 20px 42px -22px rgba(0,0,0,.55);
+}
+/* True brand surfaces — vivid, real */
+.tile-ig{background:linear-gradient(135deg,#FEDA77 0%,#F58529 25%,#DD2A7B 55%,#8134AF 85%,#515BD4 100%);}
+.tile-goog{background:#fff;}
+.tile-yt{background:#FF0033;}
+.tile-fb{background:#1877F2;}
+
+.tile-logo{width:50px;height:50px;display:flex;align-items:center;justify-content:center;position:relative;z-index:2;}
+.tile-logo svg{width:50px;height:50px;}
+.tile-name{display:block;font-size:9.5px;font-weight:700;color:rgba(255,255,255,.82);letter-spacing:.16em;text-transform:uppercase;margin-top:12px;position:relative;z-index:2;}
+.tile-goog .tile-name{color:rgba(10,10,15,.55);}
+
+/* subtle motion — different timings, 1-2px amplitude */
+.plat-tile{animation:tileFloat 11s ease-in-out infinite;}
+.tile-fb{animation-duration:12.5s;animation-delay:.8s;}
+.tile-yt{animation-duration:10.5s;animation-delay:1.6s;}
+.tile-goog{animation-duration:13s;animation-delay:.4s;overflow:visible;}
+@keyframes tileFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-2px);}}
+/* cube — supporting detail, not an attractor */
+.cube-wrap{position:absolute;top:-6px;right:-5px;z-index:4;transform:scale(.7);transform-origin:top right;opacity:.88;animation:cubeFloat 12s ease-in-out infinite;}
+@keyframes cubeFloat{0%,100%{transform:scale(.7) translateY(0);}50%{transform:scale(.7) translateY(-1px);}}
+.cube{width:36px;height:36px;position:relative;transform-style:preserve-3d;transform:rotateX(22deg) rotateY(-28deg);}
+.cube-face{position:absolute;width:36px;height:36px;border-radius:6px;}
+.cube-front{background:linear-gradient(135deg,#3A6BD6,#1A55CC);transform:translateZ(18px);}
+.cube-right{background:linear-gradient(135deg,#0F3A9E,#082670);transform:rotateY(90deg) translateZ(18px);}
+.cube-top{background:linear-gradient(135deg,#5282DC,#3A6BD6);transform:rotateX(90deg) translateZ(18px);}
+
+/* ═════════════ DIVIDER (UNCHANGED) ═════════════ */
+.hero-wave{position:relative;z-index:2;margin-top:0;line-height:0;}
+.hero-wave svg{display:block;width:100%;}
+.ticker{background:var(--warm);border-bottom:1px solid var(--rule);padding:10px 0;overflow:hidden;}
+.ticker-track{display:flex;white-space:nowrap;animation:tickroll 28s linear infinite;width:max-content;}
+.ticker-item{display:inline-flex;align-items:center;gap:10px;padding:0 48px;font-size:13px;color:var(--ink-3);}
+.t-dot{width:5px;height:5px;border-radius:50%;background:#22C55E;flex-shrink:0;}
+@keyframes tickroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+.results{background:#fff;padding:28px 0;border-bottom:1px solid var(--rule);}
+.results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+.res-item{padding:16px 24px;border-right:1px solid var(--rule);display:flex;align-items:center;gap:12px;}
+.res-item:last-child{border-right:none;}
+.res-dot{width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0;}
+.res-lbl{font-size:13px;color:var(--ink-2);line-height:1.4;font-weight:500;}
+
+/* ═════════════ IPHONE SECTION ═════════════ */
+.journey{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(900px 600px at 90% -5%, rgba(140,170,220,.05) 0%, transparent 62%),
+    linear-gradient(180deg, #060F2C 0%, #0A1A48 58%, #060F2E 100%);
+  padding:116px 0 140px;
+}
+.journey-head{
+  position:relative;z-index:2;
+  display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:end;
+  margin-bottom:68px;padding-bottom:28px;
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+.j-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--highlight);margin-bottom:18px;
+}
+.j-eyebrow::before{content:"";width:22px;height:1px;background:var(--highlight);}
+.j-h{
+  font-family:var(--f-h);font-weight:500;
+  font-size:clamp(32px,3.2vw,46px);line-height:1.04;letter-spacing:-0.024em;color:#fff;
+}
+.j-h em{font-style:italic;font-weight:600;color:var(--highlight);}
+.j-sub{
+  font-size:14.5px;color:rgba(255,255,255,.52);line-height:1.6;
+  max-width:280px;justify-self:end;text-align:right;
+  white-space:nowrap;
+}
+.phone-row{
+  position:relative;z-index:2;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:28px;
+  max-width:1100px;margin:0 auto;
+  padding-bottom:48px;
+}
+.phone{
+  position:relative;
+  aspect-ratio:9/19.2;
+  background:#0b0b0d;
+  border-radius:36px;padding:5px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.05),
+    0 22px 44px -22px rgba(0,0,0,.45);
+}
+.phone-screen{width:100%;height:100%;background:#fff;border-radius:31px;position:relative;overflow:hidden;display:flex;flex-direction:column;}
+.notch{position:absolute;top:7px;left:50%;transform:translateX(-50%);width:44px;height:12px;background:#0a0a0a;border-radius:100px;z-index:5;}
+.status-bar{display:flex;justify-content:space-between;align-items:center;padding:10px 18px 4px;height:28px;font-size:10.5px;font-weight:600;color:#0a0a0a;}
+.status-bar .time{font-weight:700;letter-spacing:.01em;}
+.status-bar .right{display:inline-flex;gap:4px;align-items:center;font-size:9.5px;font-weight:600;}
+.status-bar .bars{display:inline-flex;gap:1.2px;align-items:flex-end;}
+.status-bar .bars i{width:2px;background:#0a0a0a;border-radius:.5px;}
+.status-bar .bars i:nth-child(1){height:4px;} .status-bar .bars i:nth-child(2){height:6px;}
+.status-bar .bars i:nth-child(3){height:8px;} .status-bar .bars i:nth-child(4){height:10px;}
+.status-bar .batt{width:16px;height:8px;border:1px solid #0a0a0a;border-radius:2px;position:relative;padding:1px;}
+.status-bar .batt::after{content:"";position:absolute;right:-2.5px;top:2px;bottom:2px;width:1.5px;background:#0a0a0a;border-radius:0 1px 1px 0;}
+.status-bar .batt::before{content:"";display:block;width:70%;height:100%;background:#0a0a0a;border-radius:.5px;}
+.phone-step{position:absolute;bottom:-32px;left:0;right:0;text-align:center;font-size:10px;color:rgba(255,255,255,.5);letter-spacing:.18em;text-transform:uppercase;font-weight:600;}
+.phone-step b{color:#fff;font-weight:700;margin-right:8px;}
+
+/* ——— Phone 1 · Google ——— */
+.p-google .status-bar{background:#fff;border-bottom:.5px solid #f0f0f0;}
+.p-google .g-bar{display:flex;align-items:center;gap:7px;margin:8px 12px 6px;padding:7px 11px;background:#F1F3F4;border-radius:100px;font-size:9.5px;color:#0a0a0a;font-weight:500;}
+.p-google .g-bar::before{content:"G";font-family:Arial;font-weight:800;font-size:9px;color:#4285F4;background:#fff;width:14px;height:14px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;}
+.p-google .g-tabs{display:flex;gap:14px;padding:4px 14px 8px;border-bottom:.5px solid #eee;}
+.p-google .g-tab{font-size:9px;color:#5f6368;font-weight:500;}
+.p-google .g-tab.active{color:#1a73e8;border-bottom:1.8px solid #1a73e8;padding-bottom:4px;font-weight:600;}
+.p-google .g-stats{font-size:8px;color:#70757A;padding:6px 14px 4px;}
+.p-google .g-ad-label{font-size:8.5px;color:#202124;font-weight:700;padding:2px 6px;border:1px solid #dadce0;border-radius:4px;display:inline-block;margin:0 14px 5px;letter-spacing:.02em;}
+.p-google .g-result{padding:6px 14px 9px;border-bottom:.5px solid #f0f0f0;position:relative;}
+.p-google .g-rank{position:absolute;top:6px;right:8px;background:#1A73E8;color:#fff;font-size:7.5px;font-weight:800;padding:3px 7px;border-radius:5px;letter-spacing:.05em;}
+.p-google .g-site{display:flex;align-items:center;gap:6px;margin-bottom:2px;}
+.p-google .g-fav{width:16px;height:16px;border-radius:50%;background:linear-gradient(135deg,#4285F4,#34A853);color:#fff;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:800;}
+.p-google .g-who{line-height:1.2;}
+.p-google .g-dom{font-size:8.8px;color:#202124;font-weight:500;display:block;}
+.p-google .g-path{font-size:7px;color:#5f6368;display:block;}
+.p-google .g-tlt{font-size:12px;color:#1A0DAB;font-weight:600;line-height:1.28;margin-top:2px;letter-spacing:-.005em;}
+.p-google .g-dsc{font-size:8.4px;color:#4d5156;line-height:1.42;margin-top:2px;}
+.p-google .g-rate{display:flex;align-items:center;gap:4px;margin-top:4px;font-size:8.2px;color:#70757A;}
+.p-google .g-rate .stars{color:#F4B400;letter-spacing:.3px;}
+.p-google .g-sitelinks{display:grid;grid-template-columns:1fr 1fr;gap:3px 8px;margin-top:6px;}
+.p-google .g-sl{font-size:7.4px;color:#1A0DAB;font-weight:500;}
+.p-google .g-map{margin:7px 14px;height:52px;border-radius:7px;overflow:hidden;position:relative;background:linear-gradient(180deg,#E8EFEC 0%,#D9E3DC 100%);border:.5px solid #E8EAED;}
+.p-google .g-map::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 35%, #4285F4 0 5px, transparent 5.5px),radial-gradient(circle at 55% 58%, #4285F4 0 5px, transparent 5.5px),radial-gradient(circle at 78% 30%, #EA4335 0 6px, transparent 6.5px),linear-gradient(90deg, #E8EDE8 50%, #DEE5DE 50.5%);}
+.p-google .g-map::after{content:"3 clinics nearby";position:absolute;left:6px;top:6px;font-size:7px;color:#202124;font-weight:700;background:rgba(255,255,255,.85);padding:2px 6px;border-radius:4px;}
+
+/* ——— Phone 2 · Instagram IVF ad ——— */
+.p-meta .ig-top{display:flex;align-items:center;gap:8px;padding:12px 12px 9px;border-bottom:.5px solid #f0f0f0;background:#fff;}
+.p-meta .ig-av{width:26px;height:26px;border-radius:50%;background:conic-gradient(from 180deg,#FEDA77,#F58529,#DD2A7B,#8134AF,#515BD4,#FEDA77);padding:1.8px;}
+.p-meta .ig-av .inner{width:100%;height:100%;border-radius:50%;background:linear-gradient(135deg,#E8D9C3 0%,#C9A87E 100%);border:1.5px solid #fff;}
+.p-meta .ig-who{flex:1;line-height:1.2;}
+.p-meta .ig-name{font-size:9.6px;font-weight:700;color:#0a0a0a;display:block;}
+.p-meta .ig-spon{font-size:7.4px;color:#737373;display:block;margin-top:1px;}
+.p-meta .ig-dots{font-size:11px;color:#0a0a0a;letter-spacing:1.5px;line-height:1;}
+.p-meta .ig-img{aspect-ratio:1;position:relative;overflow:hidden;background:linear-gradient(165deg,#F8F1E4 0%,#F0E5D0 45%,#E4D4B6 100%);}
+.p-meta .ig-img::before{content:"";position:absolute;left:62%;top:-10%;width:38%;height:130%;background:linear-gradient(180deg,rgba(255,253,247,.5) 0%,rgba(255,253,247,0) 80%);transform:rotate(12deg);}
+.p-meta .ig-img::after{content:"";position:absolute;right:9%;bottom:11%;width:34px;height:44px;background:radial-gradient(circle at 30% 20%, rgba(138,160,118,.85) 0 3.4px, transparent 4px),radial-gradient(circle at 70% 38%, rgba(138,160,118,.7) 0 2.8px, transparent 3.4px),radial-gradient(circle at 25% 62%, rgba(138,160,118,.6) 0 2.4px, transparent 3px),radial-gradient(circle at 65% 82%, rgba(138,160,118,.55) 0 2.4px, transparent 3px);opacity:.88;}
+.p-meta .ad-hook{position:absolute;left:14px;right:14px;top:18px;font-family:var(--f-h);font-weight:700;font-style:italic;font-size:17px;line-height:1.08;letter-spacing:-0.01em;color:#2C2118;}
+.p-meta .ad-hook b{display:block;font-style:normal;font-weight:800;color:#0C0C0F;letter-spacing:-.02em;font-size:19px;margin-bottom:4px;}
+.p-meta .ad-sub{position:absolute;left:14px;right:14px;top:96px;display:flex;flex-direction:column;gap:6px;}
+.p-meta .ad-sub li{list-style:none;display:flex;align-items:center;gap:7px;font-size:9.5px;color:#3D2F1F;font-weight:500;line-height:1.2;}
+.p-meta .ad-sub li::before{content:"";width:5px;height:5px;border-radius:50%;background:#8A7B5E;flex-shrink:0;}
+.p-meta .ad-badge{position:absolute;left:14px;bottom:14px;display:inline-flex;align-items:center;gap:6px;font-size:8px;font-weight:700;color:#2C2118;background:rgba(255,255,255,.8);border:.8px solid rgba(0,0,0,.06);padding:5px 10px;border-radius:100px;letter-spacing:.08em;text-transform:uppercase;}
+.p-meta .ad-badge .wa-mini{width:12px;height:12px;border-radius:50%;background:var(--wa);display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:7px;font-weight:900;}
+.p-meta .ig-act{display:flex;gap:10px;padding:10px 14px 4px;background:#fff;}
+.p-meta .ig-act svg{width:16px;height:16px;stroke:#0a0a0a;stroke-width:1.6;fill:none;}
+.p-meta .ig-act .save{margin-left:auto;}
+.p-meta .ig-cta{margin:8px 14px 10px;padding:10px 12px;background:linear-gradient(180deg,#22B85F 0%,#1B9D50 100%);color:#fff;font-size:11px;font-weight:800;letter-spacing:.02em;border-radius:9px;display:flex;align-items:center;justify-content:center;gap:7px;box-shadow:0 4px 10px -4px rgba(37,211,102,.3);}
+.p-meta .ig-cta .wa-icon{width:14px;height:14px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;}
+.p-meta .ig-cta .wa-icon svg{width:9.5px;height:9.5px;fill:#fff;}
+.p-meta .ig-hand{padding:0 14px 10px;font-size:7.8px;color:#737373;font-weight:500;display:flex;align-items:center;gap:5px;}
+.p-meta .ig-hand b{color:#0a0a0a;font-weight:700;}
+
+/* ——— Phone 3 · Landing page ——— */
+.p-lp .status-bar{background:#0B1D52;color:#fff;}
+.p-lp .status-bar .time,.p-lp .status-bar .right{color:#fff;}
+.p-lp .status-bar .bars i,.p-lp .status-bar .batt::before{background:#fff;}
+.p-lp .status-bar .batt{border-color:#fff;}
+.p-lp .status-bar .batt::after{background:#fff;}
+.p-lp .lp-head{padding:11px 14px 10px;background:#0B1D52;color:#fff;display:flex;justify-content:space-between;align-items:center;}
+.p-lp .lp-brand{font-family:var(--f-h);font-size:11px;font-weight:800;letter-spacing:-.01em;}
+.p-lp .lp-brand em{font-style:normal;color:var(--highlight);}
+.p-lp .lp-menu{font-size:8.2px;color:rgba(255,255,255,.55);letter-spacing:.14em;font-weight:600;}
+.p-lp .lp-body{background:#fff;padding:14px 14px 12px;display:flex;flex-direction:column;flex:1;}
+.p-lp .lp-pill{display:inline-flex;align-items:center;gap:5px;background:rgba(22,163,74,.08);color:#16A34A;font-size:8px;font-weight:700;padding:4px 9px;border-radius:100px;margin-bottom:14px;border:.8px solid rgba(22,163,74,.2);align-self:flex-start;}
+.p-lp .lp-pill::before{content:"";width:5px;height:5px;border-radius:50%;background:#22C55E;}
+.p-lp .lp-h{font-family:var(--f-h);font-weight:700;font-size:16px;color:#0a0a0a;line-height:1.08;margin-bottom:10px;letter-spacing:-.022em;}
+.p-lp .lp-h em{font-style:italic;font-weight:600;color:var(--highlight);}
+.p-lp .lp-meta{display:flex;gap:5px;align-items:center;font-size:8.2px;color:#4B5563;margin-bottom:14px;}
+.p-lp .lp-meta .stars{color:#F4B400;font-size:9px;letter-spacing:.3px;}
+.p-lp .lp-hero{height:64px;border-radius:8px;margin-bottom:12px;position:relative;overflow:hidden;background:linear-gradient(145deg, #F5EFE2 0%, #E8DCC4 100%);}
+.p-lp .lp-hero::before{content:"";position:absolute;right:8%;top:50%;transform:translateY(-50%);width:36%;height:76%;background:linear-gradient(180deg,#E7CAA7 0%,#B89068 100%);border-radius:50% 50% 45% 45%;}
+.p-lp .lp-hero-cap{position:absolute;left:6px;bottom:6px;font-size:6.6px;color:#2C2118;font-weight:600;background:rgba(255,255,255,.85);padding:3px 6px;border-radius:4px;}
+.p-lp .lp-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:12px;padding:10px 0;border-top:.5px solid #F0F0F0;border-bottom:.5px solid #F0F0F0;}
+.p-lp .lp-stat b{font-family:var(--f-h);font-weight:700;font-size:12px;color:#0a0a0a;letter-spacing:-.015em;display:block;}
+.p-lp .lp-stat span{font-size:6.5px;color:#6B7280;letter-spacing:.02em;}
+.p-lp .lp-benefits{display:flex;flex-direction:column;gap:6px;margin-bottom:12px;}
+.p-lp .lp-benefit{display:flex;align-items:center;gap:6px;font-size:8px;color:#0a0a0a;font-weight:500;}
+.p-lp .lp-benefit::before{content:"✓";width:12px;height:12px;background:#DCFCE7;color:#16A34A;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:8px;font-weight:900;flex-shrink:0;}
+.p-lp .lp-cta{background:#0a0a0a;color:#fff;padding:10px;text-align:center;font-size:9.5px;font-weight:700;border-radius:9px;margin-bottom:6px;letter-spacing:.015em;}
+.p-lp .lp-cta::after{content:" →";}
+.p-lp .lp-micro{font-size:7px;color:#9CA3AF;text-align:center;margin-bottom:10px;}
+.p-lp .lp-trust-row{margin-top:auto;display:flex;justify-content:space-between;padding-top:8px;border-top:.5px solid #F0F0F0;font-size:6.6px;color:#6B7280;font-weight:600;letter-spacing:.12em;text-transform:uppercase;}
+
+/* ——— Phone 4 · WhatsApp (natural, uneven) ——— */
+.p-lead .status-bar{background:#075E54;color:#fff;}
+.p-lead .status-bar .time,.p-lead .status-bar .right{color:#fff;}
+.p-lead .status-bar .bars i,.p-lead .status-bar .batt::before{background:#fff;}
+.p-lead .status-bar .batt{border-color:#fff;}
+.p-lead .status-bar .batt::after{background:#fff;}
+.p-lead .wa-top{background:#075E54;color:#fff;padding:8px 13px 10px;display:flex;align-items:center;gap:9px;}
+.p-lead .wa-back{font-size:14px;font-weight:300;opacity:.85;}
+.p-lead .wa-av{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#D1B38C,#7E6242);flex-shrink:0;}
+.p-lead .wa-who{line-height:1.2;flex:1;}
+.p-lead .wa-name{font-size:10.2px;font-weight:700;}
+.p-lead .wa-status{font-size:7.4px;color:rgba(255,255,255,.72);}
+.p-lead .wa-icons{display:flex;gap:10px;font-size:11px;color:rgba(255,255,255,.9);}
+.p-lead .wa-body{flex:1;padding:10px 9px;display:flex;flex-direction:column;gap:3px;position:relative;background:#E5DDD5;}
+.p-lead .wa-date{align-self:center;background:rgba(255,255,255,.85);font-size:7px;color:#667781;padding:2.5px 8px;border-radius:6px;margin-bottom:3px;font-weight:500;}
+.p-lead .msg{padding:6px 9px;border-radius:7px;font-size:8.2px;line-height:1.42;position:relative;}
+.p-lead .msg .time{display:block;text-align:right;font-size:6px;color:#667781;margin-top:1px;}
+.p-lead .msg.in{background:#fff;color:#0a0a0a;align-self:flex-start;border-radius:2px 7px 7px 7px;}
+.p-lead .msg.out{background:#DCF8C6;color:#0a0a0a;align-self:flex-end;border-radius:7px 2px 7px 7px;}
+.p-lead .msg.out .time{color:#4fae4b;}
+/* genuinely uneven widths + spacing */
+.p-lead .msg.m-1{max-width:82%;margin-top:2px;}
+.p-lead .msg.m-2{max-width:63%;margin-top:6px;}
+.p-lead .msg.m-3{max-width:31%;margin-top:5px;}
+.p-lead .msg.m-4{max-width:39%;margin-top:3px;}
+.p-lead .appt-card{align-self:flex-end;max-width:82%;background:#fff;border-radius:9px;overflow:hidden;margin-top:6px;}
+.p-lead .appt-card .head{background:#075E54;color:#fff;padding:5px 9px;font-size:7px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;}
+.p-lead .appt-card .body{padding:7px 9px 8px;display:flex;flex-direction:column;gap:2px;}
+.p-lead .appt-card .t{font-size:10px;font-weight:800;color:#0a0a0a;letter-spacing:-.01em;}
+.p-lead .appt-card .w{font-size:7.5px;color:#6B7280;}
+.p-lead .appt-card .d{display:flex;gap:4px;align-items:center;font-size:7.5px;color:#0a0a0a;font-weight:500;margin-top:4px;padding-top:5px;border-top:.5px solid #F0F0F0;}
+.p-lead .appt-card .d::before{content:"";width:7px;height:7px;border-radius:50%;background:#16A34A;}
+.p-lead .lead-toast{position:absolute;top:-4px;right:8px;z-index:5;background:#fff;border:1px solid rgba(0,0,0,.06);box-shadow:0 10px 22px -8px rgba(0,0,0,.22);border-radius:9px;padding:7px 10px;font-size:7.6px;color:#0a0a0a;font-weight:600;display:flex;align-items:center;gap:7px;}
+.p-lead .lead-toast .check{width:14px;height:14px;border-radius:50%;background:#22C55E;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:8px;font-weight:900;flex-shrink:0;}
+.p-lead .lead-toast small{display:block;font-size:6.4px;color:#6B7280;font-weight:500;margin-top:1px;}
+.p-lead .wa-input{background:#F0F0F0;padding:7px 10px;display:flex;align-items:center;gap:6px;}
+.p-lead .wa-field{flex:1;background:#fff;border-radius:100px;padding:5px 11px;font-size:7.6px;color:#aaa;}
+.p-lead .wa-send{width:22px;height:22px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;}
+.p-lead .wa-send::before{content:"";width:8px;height:8px;border-right:2px solid #fff;border-top:2px solid #fff;transform:rotate(45deg);margin-right:2px;}
+
+/* ═════════════ CARDS ═════════════ */
+.system{background:var(--warm);padding:140px 0 148px;}
+.system-head{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:end;margin-bottom:66px;padding-bottom:30px;border-bottom:1px solid var(--rule);}
+.section-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);margin-bottom:20px;}
+.section-eyebrow::before{content:"";width:22px;height:1px;background:var(--blue);}
+.system-h{font-family:var(--f-h);font-weight:700;font-size:clamp(36px,3.6vw,52px);line-height:1.04;letter-spacing:-0.028em;color:var(--ink);}
+.system-h em{font-style:italic;color:var(--blue);font-weight:700;letter-spacing:-0.022em;}
+.system-sub{font-size:15px;color:var(--ink-3);line-height:1.6;max-width:340px;justify-self:end;text-align:right;}
+
+.system-plinth{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border:1px solid var(--rule);border-radius:24px;overflow:hidden;box-shadow:0 22px 60px -52px rgba(11,29,82,.12);}
+.panel{position:relative;padding:42px 32px 36px;display:flex;flex-direction:column;min-height:420px;border-right:1px solid var(--rule-light);}
+.panel:last-child{border-right:none;}
+.panel-num{position:absolute;top:26px;right:26px;font-family:var(--f-h);font-style:italic;font-weight:400;font-size:50px;line-height:1;color:rgba(11,29,82,.08);letter-spacing:-0.02em;pointer-events:none;}
+.panel-icon{width:42px;height:42px;border-radius:12px;background:#F3EFE5;display:flex;align-items:center;justify-content:center;margin-bottom:30px;}
+.panel-icon svg{width:18px;height:18px;stroke:var(--hero-m);stroke-width:1.4;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+.panel-role{font-size:10.5px;font-weight:600;color:var(--blue);letter-spacing:.16em;text-transform:uppercase;margin-bottom:12px;}
+.panel-name{font-family:var(--f-h);font-weight:700;font-size:22px;line-height:1.12;letter-spacing:-0.02em;color:var(--ink);margin-bottom:14px;}
+.panel-desc{font-size:14px;color:var(--ink-3);line-height:1.55;max-width:95%;}
+.panel-foot{margin-top:auto;padding-top:26px;font-size:11px;color:var(--ink-4);letter-spacing:.08em;font-weight:500;}
+.panel-foot b{color:var(--ink-2);font-weight:600;}
+.system-footer{display:flex;justify-content:space-between;align-items:center;margin-top:30px;padding:0 8px;font-size:11px;color:var(--ink-4);letter-spacing:.14em;text-transform:uppercase;font-weight:600;}
+.system-footer .line{height:1px;flex:1;margin:0 20px;background:var(--rule);}
+
+/* ═════════════ FORM ═════════════ */
+.capture{padding:150px 0 160px;background:#fff;border-top:1px solid var(--rule);}
+.capture-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:92px;align-items:start;}
+.capture-left .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);margin-bottom:22px;}
+.capture-left .eyebrow::before{content:"";width:22px;height:1px;background:var(--blue);}
+.capture-left h2{font-family:var(--f-h);font-weight:500;font-size:clamp(36px,3.4vw,48px);line-height:1.04;letter-spacing:-0.024em;color:var(--ink);margin-bottom:20px;max-width:430px;}
+.capture-left h2 em{font-style:italic;color:var(--blue);font-weight:500;}
+.capture-left p{font-size:15px;color:var(--ink-3);line-height:1.6;max-width:380px;margin-bottom:36px;}
+.capture-left .cx-meta{display:flex;flex-direction:column;gap:12px;padding-top:26px;border-top:1px solid var(--rule);}
+.capture-left .cx-meta div{font-size:13px;color:var(--ink-2);}
+.capture-left .cx-meta b{color:var(--ink);font-weight:600;}
+
+.form{}
+.form-row{display:grid;gap:40px;margin-bottom:34px;grid-template-columns:1fr 1fr;}
+.form-row.full{grid-template-columns:1fr;}
+.field label{display:block;font-size:10.5px;font-weight:600;color:var(--ink-4);letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;}
+.field input, .field textarea{width:100%;background:transparent;border:none;border-bottom:1px solid var(--rule);padding:4px 0 10px;font-size:15.5px;color:var(--ink);font-family:var(--f-b);outline:none;line-height:1.4;transition:border-bottom-color .3s ease;}
+.field input::placeholder,.field textarea::placeholder{color:var(--ink-4);}
+.field input:focus,.field textarea:focus{border-bottom-color:var(--blue);}
+.field textarea{resize:none;min-height:62px;}
+.form-foot{display:flex;flex-direction:column;gap:14px;align-items:flex-start;margin-top:8px;}
+.form .btn-primary{padding:15px 26px;font-size:14px;}
+.form-note{font-size:12.5px;color:var(--ink-4);}
+
+.page-end{padding:44px 0 80px;background:var(--warm);text-align:center;font-size:11px;color:var(--ink-4);letter-spacing:.2em;text-transform:uppercase;font-weight:600;}
+.page-end .logo-ln{font-family:var(--f-h);font-weight:900;font-size:18px;color:var(--ink-2);letter-spacing:-.02em;text-transform:none;margin-bottom:8px;display:block;}
+.page-end .logo-ln span{
+  background:linear-gradient(92deg,var(--blue),var(--blue-lt));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdr-i">
+      <div class="logo">Advora<em>.</em></div>
+      <nav class="hdr-nav"><a>Approach</a><a>How it works</a><a>Contact</a></nav>
+      <a class="hdr-cta">Request plan
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="w">
+    <div class="hero-inner">
+      <div>
+        <div class="h-eyebrow"><span>Selective by design</span></div>
+        <h1 class="h-title">International patient acquisition for <span class="highlight">IVF and hair<br>transplant clinics</span></h1>
+        <p class="h-sub">Cross-border demand, turned into booked consultations.</p>
+        <div class="h-actions">
+          <button class="btn-primary">
+            <span>Request your acquisition plan</span>
+            <svg viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7.5 3L12 7l-4.5 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <a class="btn-ghost">See how it works</a>
+        </div>
+        <div class="h-trust">
+          <span>IVF &amp; fertility</span><span class="dot">·</span>
+          <span>Hair transplant</span><span class="dot">·</span>
+          <span>Europe &amp; Middle East</span>
+        </div>
+      </div>
+
+      <div class="hero-board">
+        <div class="platform-grid">
+          <div class="plat-tile tile-ig">
+            <div class="tile-logo">
+              <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="10" width="36" height="36" rx="10" fill="none" stroke="#fff" stroke-width="3"/>
+                <circle cx="28" cy="28" r="8.5" fill="none" stroke="#fff" stroke-width="3"/>
+                <circle cx="40" cy="16" r="2.2" fill="#fff"/>
+              </svg>
+            </div>
+            <span class="tile-name">Instagram</span>
+          </div>
+
+          <div class="plat-tile tile-goog">
+            <div class="cube-wrap"><div class="cube"><div class="cube-face cube-front"></div><div class="cube-face cube-right"></div><div class="cube-face cube-top"></div></div></div>
+            <div class="tile-logo">
+              <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+                <path d="M52.5 28.6c0-1.63-.15-3.2-.42-4.7H28v8.9h13.73c-.6 3.19-2.4 5.89-5.1 7.7v6.4h8.25c4.83-4.44 7.62-10.99 7.62-18.3z" fill="#4285F4"/>
+                <path d="M28 54c6.9 0 12.7-2.3 16.93-6.1l-8.25-6.4C34.22 43.14 31.3 44 28 44c-6.67 0-12.32-4.5-14.34-10.56H5.13v6.6C9.35 48.88 18.05 54 28 54z" fill="#34A853"/>
+                <path d="M13.66 33.44A15.77 15.77 0 0112.75 28c0-1.9.32-3.74.9-5.44v-6.6H5.13A26 26 0 002 28c0 4.18.99 8.13 2.77 11.62l6.56-5.1 2.33-1.08z" fill="#FBBC05"/>
+                <path d="M28 12c3.77 0 7.15 1.3 9.8 3.83l7.33-7.33C40.69 4.54 34.89 2 28 2 18.05 2 9.35 7.12 5.13 15.96l8.53 6.6C15.68 16.5 21.33 12 28 12z" fill="#EA4335"/>
+              </svg>
+            </div>
+            <span class="tile-name">Google</span>
+          </div>
+
+          <div class="plat-tile tile-yt">
+            <div class="tile-logo">
+              <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="21 18 40 28 21 38" fill="#fff"/>
+              </svg>
+            </div>
+            <span class="tile-name">YouTube</span>
+          </div>
+
+          <div class="plat-tile tile-fb">
+            <div class="tile-logo">
+              <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+                <path d="M36 18h-4c-1.3 0-2 .8-2 2v4h6l-1 6h-5v16h-6V30h-4v-6h4v-4c0-5 3-8 8-8 2 0 4 .3 4 .3V18z" fill="#fff"/>
+              </svg>
+            </div>
+            <span class="tile-name">Facebook</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 72" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:72px;">
+      <path d="M0 36 C 320 72 640 0 960 36 C 1120 54 1300 28 1440 36 L1440 72 L0 72 Z" fill="#F8F7F4"/>
+    </svg>
+  </div>
+</section>
+
+<!-- TICKER (UNCHANGED) -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <div class="ticker-item"><span class="t-dot"></span>Cross-border patient acquisition</div>
+    <div class="ticker-item"><span class="t-dot"></span>IVF and hair transplant clinics, exclusively</div>
+    <div class="ticker-item"><span class="t-dot"></span>One clinic per corridor</div>
+    <div class="ticker-item"><span class="t-dot"></span>Native-language creative, reviewed by natives</div>
+    <div class="ticker-item"><span class="t-dot"></span>Qualified bookings, not leads</div>
+    <div class="ticker-item"><span class="t-dot"></span>Selective by design</div>
+    <div class="ticker-item"><span class="t-dot"></span>Cross-border patient acquisition</div>
+    <div class="ticker-item"><span class="t-dot"></span>IVF and hair transplant clinics, exclusively</div>
+  </div>
+</div>
+
+<!-- RESULTS (UNCHANGED) -->
+<div class="results">
+  <div class="w">
+    <div class="results-grid">
+      <div class="res-item"><span class="res-dot"></span><span class="res-lbl">Lower acquisition friction</span></div>
+      <div class="res-item"><span class="res-dot"></span><span class="res-lbl">Faster launch timelines</span></div>
+      <div class="res-item"><span class="res-dot"></span><span class="res-lbl">Better consultation quality</span></div>
+      <div class="res-item"><span class="res-dot"></span><span class="res-lbl">Clinics across Europe &amp; Middle East</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- IPHONE SECTION -->
+<section class="journey">
+  <div class="w">
+
+    <div class="journey-head">
+      <div>
+        <span class="j-eyebrow">The conversion journey</span>
+        <h2 class="j-h">From first click to<br>booked <em>consultation.</em></h2>
+      </div>
+      <p class="j-sub">The system, exactly where it converts.</p>
+    </div>
+
+    <div class="phone-row">
+
+      <div class="phone p-google">
+        <div class="phone-screen">
+          <div class="notch"></div>
+          <div class="status-bar"><span class="time">9:41</span><span class="right"><span class="bars"><i></i><i></i><i></i><i></i></span> 5G <span class="batt"></span></span></div>
+          <div class="g-bar">ivf clinic london</div>
+          <div class="g-tabs"><span class="g-tab active">All</span><span class="g-tab">Maps</span><span class="g-tab">Images</span><span class="g-tab">News</span></div>
+          <div class="g-stats">About 4,280,000 results</div>
+          <span class="g-ad-label">Sponsored</span>
+          <div class="g-result">
+            <div class="g-rank">#1</div>
+            <div class="g-site"><span class="g-fav">L</span><div class="g-who"><span class="g-dom">luminafertility.com</span><span class="g-path">› london › consultation</span></div></div>
+            <p class="g-tlt">IVF Clinic London — Book Consultation</p>
+            <p class="g-dsc">Specialist fertility clinic. First consultation free. Personalised care for international patients.</p>
+            <div class="g-rate"><span class="stars">★★★★★</span><span style="color:#202124;font-weight:600;">4.9</span><span>· 847 reviews</span></div>
+            <div class="g-sitelinks">
+              <span class="g-sl">Book consultation</span>
+              <span class="g-sl">Treatments</span>
+              <span class="g-sl">International patients</span>
+              <span class="g-sl">Success stories</span>
+            </div>
+          </div>
+          <div class="g-map"></div>
+          <div class="g-result" style="opacity:.55;">
+            <div class="g-site"><span class="g-fav" style="background:#d0d0d0;color:#444;">N</span><div class="g-who"><span class="g-dom">nhs.uk</span><span class="g-path">› fertility › ivf</span></div></div>
+            <p class="g-tlt" style="color:#1A0DAB;font-weight:500;">IVF — NHS overview</p>
+            <p class="g-dsc">General information about IVF on the NHS.</p>
+          </div>
+        </div>
+        <div class="phone-step"><b>01</b>Google search</div>
+      </div>
+
+      <div class="phone p-meta">
+        <div class="phone-screen">
+          <div class="notch"></div>
+          <div class="status-bar"><span class="time">9:41</span><span class="right"><span class="bars"><i></i><i></i><i></i><i></i></span> 5G <span class="batt"></span></span></div>
+          <div class="ig-top">
+            <div class="ig-av"><div class="inner"></div></div>
+            <div class="ig-who"><span class="ig-name">lumina.fertility</span><span class="ig-spon">Sponsored · UK &amp; Ireland</span></div>
+            <span class="ig-dots">···</span>
+          </div>
+          <div class="ig-img">
+            <div class="ad-hook"><b>Considering IVF abroad?</b>Speak to a specialist this week.</div>
+            <ul class="ad-sub"><li>Personalised treatment plans</li><li>International patient support</li><li>Consultation in your language</li></ul>
+            <div class="ad-badge"><span class="wa-mini">✓</span>Reply via WhatsApp</div>
+          </div>
+          <div class="ig-act">
+            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+            <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            <svg class="save" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
+          </div>
+          <div class="ig-cta">
+            <span class="wa-icon"><svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.8-1.67-2.1-.17-.3 0-.47.13-.62.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.57-.48-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.5 0 1.48 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.1 4.5.7.3 1.27.5 1.7.62.72.23 1.37.2 1.88.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg></span>
+            Start on WhatsApp
+          </div>
+          <div class="ig-hand"><b>Response under 15 min</b> · coordinator, in your language</div>
+        </div>
+        <div class="phone-step"><b>02</b>Meta ad</div>
+      </div>
+
+      <div class="phone p-lp">
+        <div class="phone-screen">
+          <div class="notch"></div>
+          <div class="status-bar"><span class="time">9:41</span><span class="right"><span class="bars"><i></i><i></i><i></i><i></i></span> 5G <span class="batt"></span></span></div>
+          <div class="lp-head"><div class="lp-brand">Lumina<em>.</em></div><div class="lp-menu">MENU</div></div>
+          <div class="lp-body">
+            <span class="lp-pill">Consultation this week</span>
+            <div class="lp-h">IVF consultation, <em>led by specialists.</em></div>
+            <div class="lp-meta"><span class="stars">★★★★★</span><span style="color:#0a0a0a;font-weight:600;">4.9</span><span style="color:#9CA3AF;">· 847 patients</span></div>
+            <div class="lp-hero"><span class="lp-hero-cap">Dr. Elena Márquez · IVF specialist</span></div>
+            <div class="lp-stats">
+              <div class="lp-stat"><b>94%</b><span>Reply &lt; 15 min</span></div>
+              <div class="lp-stat"><b>12y</b><span>Experience</span></div>
+              <div class="lp-stat"><b>18</b><span>Languages</span></div>
+            </div>
+            <div class="lp-benefits">
+              <div class="lp-benefit">Personalised plan</div>
+              <div class="lp-benefit">Transparent pricing</div>
+              <div class="lp-benefit">Coordinator in your language</div>
+            </div>
+            <div class="lp-cta">Book free consultation</div>
+            <p class="lp-micro">Takes 2 minutes</p>
+            <div class="lp-trust-row"><span>GDPR</span><span>HFEA accredited</span><span>EN · DE · FR</span></div>
+          </div>
+        </div>
+        <div class="phone-step"><b>03</b>Landing page</div>
+      </div>
+
+      <div class="phone p-lead">
+        <div class="phone-screen">
+          <div class="notch"></div>
+          <div class="status-bar"><span class="time">9:41</span><span class="right"><span class="bars"><i></i><i></i><i></i><i></i></span> 5G <span class="batt"></span></span></div>
+          <div class="wa-top">
+            <span class="wa-back">‹</span>
+            <div class="wa-av"></div>
+            <div class="wa-who"><div class="wa-name">Lumina Fertility</div><div class="wa-status">online</div></div>
+            <div class="wa-icons">📞 ⋮</div>
+          </div>
+          <div class="wa-body">
+            <div class="lead-toast">
+              <span class="check">✓</span>
+              <div><b>New lead · Sarah M.</b><small>IVF · Dublin → Barcelona</small></div>
+            </div>
+            <span class="wa-date">TODAY</span>
+            <div class="msg in m-1">Hi — saw your IVF ad last night. Could I book a first consultation?<span class="time">09:38</span></div>
+            <div class="msg out m-2">Hi Sarah. Thursday 3pm or Friday 10am?<span class="time">09:40 ✓✓</span></div>
+            <div class="msg in m-3">Thursday.<span class="time">09:41</span></div>
+            <div class="msg out m-4">Confirmed ↓<span class="time">09:41 ✓✓</span></div>
+
+            <div class="appt-card">
+              <div class="head">Consultation confirmed</div>
+              <div class="body">
+                <span class="t">Thu · Apr 24 · 3:00 PM</span>
+                <span class="w">45 min · Video</span>
+                <div class="d">Dr. Elena Márquez</div>
+              </div>
+            </div>
+          </div>
+          <div class="wa-input">
+            <div class="wa-field">Message</div>
+            <div class="wa-send"></div>
+          </div>
+        </div>
+        <div class="phone-step"><b>04</b>Consultation booked</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CARDS -->
+<section class="system">
+  <div class="w">
+    <div class="system-head">
+      <div>
+        <span class="section-eyebrow">The engine</span>
+        <h2 class="system-h">The patient<br>acquisition <em>system.</em></h2>
+      </div>
+      <p class="system-sub">Four levers. Run in parallel. Reviewed weekly.</p>
+    </div>
+
+    <div class="system-plinth">
+      <div class="panel">
+        <span class="panel-num">01</span>
+        <div class="panel-icon"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.5" y1="15.5" x2="20.5" y2="20.5"/></svg></div>
+        <div class="panel-role">Intent capture</div>
+        <p class="panel-name">Search Ads</p>
+        <p class="panel-desc">Be there the moment a patient decides to search.</p>
+        <div class="panel-foot"><b>Google</b> · Search &amp; PMax</div>
+      </div>
+      <div class="panel">
+        <span class="panel-num">02</span>
+        <div class="panel-icon"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></div>
+        <div class="panel-role">Demand creation</div>
+        <p class="panel-name">Social Ads</p>
+        <p class="panel-desc">Reach high-fit patients before they search.</p>
+        <div class="panel-foot"><b>Meta</b> · Instagram + WhatsApp</div>
+      </div>
+      <div class="panel">
+        <span class="panel-num">03</span>
+        <div class="panel-icon"><svg viewBox="0 0 24 24"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="15 7 21 7 21 13"/></svg></div>
+        <div class="panel-role">Category authority</div>
+        <p class="panel-name">SEO &amp; Organic</p>
+        <p class="panel-desc">Own the category. Compound without paying per click.</p>
+        <div class="panel-foot"><b>Organic</b> · Content &amp; schema</div>
+      </div>
+      <div class="panel">
+        <span class="panel-num">04</span>
+        <div class="panel-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg></div>
+        <div class="panel-role">Conversion engine</div>
+        <p class="panel-name">Landing &amp; Conversion</p>
+        <p class="panel-desc">Where the click becomes a booked consultation.</p>
+        <div class="panel-foot"><b>LP</b> · WhatsApp &amp; CRM</div>
+      </div>
+    </div>
+
+    <div class="system-footer">
+      <span>Intent</span><span class="line"></span>
+      <span>Demand</span><span class="line"></span>
+      <span>Authority</span><span class="line"></span>
+      <span>Conversion</span>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="capture">
+  <div class="w">
+    <div class="capture-grid">
+      <div class="capture-left">
+        <span class="eyebrow">Begin</span>
+        <h2>Tell us where you<br>want <em>patients from.</em></h2>
+        <p>We'll show you how to unlock that corridor. No decks, no sequences — just a clear acquisition plan.</p>
+        <div class="cx-meta">
+          <div><b>One clinic per corridor.</b></div>
+          <div><b>IVF &amp; hair transplant</b> — Europe &amp; Middle East.</div>
+          <div><b>Reply within one business day.</b></div>
+        </div>
+      </div>
+
+      <form class="form" onsubmit="return false;">
+        <div class="form-row">
+          <div class="field"><label>Name</label><input type="text" placeholder="Your name"></div>
+          <div class="field"><label>Clinic</label><input type="text" placeholder="Clinic name"></div>
+        </div>
+        <div class="form-row full">
+          <div class="field"><label>Email</label><input type="email" placeholder="you@clinic.com"></div>
+        </div>
+        <div class="form-row full" style="margin-bottom:28px;">
+          <div class="field"><label>Message</label><textarea placeholder="Where are patients coming from today?"></textarea></div>
+        </div>
+        <div class="form-foot">
+          <button class="btn-primary" type="submit">
+            <span>Request your acquisition plan</span>
+            <svg viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7.5 3L12 7l-4.5 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <p class="form-note">hello@advoralabs.com</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div class="page-end">
+  <span class="logo-ln">Advora<span>.</span></span>
+  Specialist patient acquisition · Europe &amp; Middle East
+</div>
+
+</body>
+</html>
