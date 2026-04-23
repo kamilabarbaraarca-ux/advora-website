@@ -626,145 +626,8 @@ textarea.f-inp{resize:vertical;min-height:80px;}
   max-width:280px;justify-self:end;text-align:right;
   white-space:nowrap;
 }
-.phone-row{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;max-width:1080px;margin:0 auto;padding-bottom:48px;}
-.phone{position:relative;aspect-ratio:9/19.2;background:#0b0b0d;border-radius:36px;padding:5px;box-shadow:0 22px 44px -22px rgba(0,0,0,.45);}
-.phone-screen{width:100%;height:100%;background:#fff;border-radius:31px;position:relative;overflow:hidden;display:flex;flex-direction:column;}
-.notch{position:absolute;top:7px;left:50%;transform:translateX(-50%);width:44px;height:12px;background:#0a0a0a;border-radius:100px;z-index:5;}
-.status-bar{display:flex;justify-content:space-between;align-items:center;padding:10px 18px 4px;height:28px;font-size:10.5px;font-weight:600;color:#0a0a0a;}
-.status-bar .time{font-weight:700;}
-.status-bar .right{display:inline-flex;gap:4px;align-items:center;font-size:9.5px;font-weight:600;}
-.status-bar .bars{display:inline-flex;gap:1.2px;align-items:flex-end;}
-.status-bar .bars i{width:2px;background:#0a0a0a;border-radius:.5px;}
-.status-bar .bars i:nth-child(1){height:4px;}.status-bar .bars i:nth-child(2){height:6px;}
-.status-bar .bars i:nth-child(3){height:8px;}.status-bar .bars i:nth-child(4){height:10px;}
-.status-bar .batt{width:16px;height:8px;border:1px solid #0a0a0a;border-radius:2px;position:relative;padding:1px;}
-.status-bar .batt::after{content:"";position:absolute;right:-2.5px;top:2px;bottom:2px;width:1.5px;background:#0a0a0a;border-radius:0 1px 1px 0;}
-.status-bar .batt::before{content:"";display:block;width:70%;height:100%;background:#0a0a0a;border-radius:.5px;}
-.phone-step{position:absolute;bottom:-32px;left:0;right:0;text-align:center;font-size:10px;color:rgba(255,255,255,.5);letter-spacing:.18em;text-transform:uppercase;font-weight:600;}
-.phone-step b{color:#fff;font-weight:700;margin-right:8px;}
-
-/* Phone 1 · Google */
-.p-google .status-bar{background:#fff;border-bottom:.5px solid #f0f0f0;}
-.p-google .g-bar{display:flex;align-items:center;gap:7px;margin:8px 12px 6px;padding:7px 11px;background:#F1F3F4;border-radius:100px;font-size:9.5px;color:#0a0a0a;font-weight:500;}
-.p-google .g-bar::before{content:"G";font-family:Arial;font-weight:800;font-size:9px;color:#4285F4;background:#fff;width:14px;height:14px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;}
-.p-google .g-tabs{display:flex;gap:14px;padding:4px 14px 8px;border-bottom:.5px solid #eee;}
-.p-google .g-tab{font-size:9px;color:#5f6368;font-weight:500;}
-.p-google .g-tab.active{color:#1a73e8;border-bottom:1.8px solid #1a73e8;padding-bottom:4px;font-weight:600;}
-.p-google .g-stats{font-size:8px;color:#70757A;padding:6px 14px 4px;}
-.p-google .g-ad-label{font-size:8.5px;color:#202124;font-weight:700;padding:2px 6px;border:1px solid #dadce0;border-radius:4px;display:inline-block;margin:0 14px 5px;letter-spacing:.02em;}
-.p-google .g-result{padding:6px 14px 9px;border-bottom:.5px solid #f0f0f0;position:relative;}
-.p-google .g-rank{position:absolute;top:6px;right:8px;background:#1A73E8;color:#fff;font-size:7.5px;font-weight:800;padding:3px 7px;border-radius:5px;letter-spacing:.05em;}
-.p-google .g-site{display:flex;align-items:center;gap:6px;margin-bottom:2px;}
-.p-google .g-fav{width:16px;height:16px;border-radius:50%;background:linear-gradient(135deg,#4285F4,#34A853);color:#fff;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:800;}
-.p-google .g-who{line-height:1.2;}
-.p-google .g-dom{font-size:8.8px;color:#202124;font-weight:500;display:block;}
-.p-google .g-path{font-size:7px;color:#5f6368;display:block;}
-.p-google .g-tlt{font-size:12px;color:#1A0DAB;font-weight:600;line-height:1.28;margin-top:2px;letter-spacing:-.005em;}
-.p-google .g-dsc{font-size:8.4px;color:#4d5156;line-height:1.42;margin-top:2px;}
-.p-google .g-rate{display:flex;align-items:center;gap:4px;margin-top:4px;font-size:8.2px;color:#70757A;}
-.p-google .g-rate .stars{color:#F4B400;letter-spacing:.3px;}
-.p-google .g-sitelinks{display:grid;grid-template-columns:1fr 1fr;gap:3px 8px;margin-top:6px;}
-.p-google .g-sl{font-size:7.4px;color:#1A0DAB;font-weight:500;}
-.p-google .g-map{margin:7px 14px;height:52px;border-radius:7px;overflow:hidden;position:relative;background:linear-gradient(180deg,#E8EFEC 0%,#D9E3DC 100%);border:.5px solid #E8EAED;}
-.p-google .g-map::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 35%, #4285F4 0 5px, transparent 5.5px),radial-gradient(circle at 55% 58%, #4285F4 0 5px, transparent 5.5px),radial-gradient(circle at 78% 30%, #EA4335 0 6px, transparent 6.5px),linear-gradient(90deg, #E8EDE8 50%, #DEE5DE 50.5%);}
-.p-google .g-map::after{content:"Clinics nearby";position:absolute;left:6px;top:6px;font-size:7px;color:#202124;font-weight:700;background:rgba(255,255,255,.85);padding:2px 6px;border-radius:4px;}
-
-/* Phone 2 · Meta */
-.p-meta .ig-top{display:flex;align-items:center;gap:8px;padding:12px 12px 9px;border-bottom:.5px solid #f0f0f0;background:#fff;}
-.p-meta .ig-av{width:26px;height:26px;border-radius:50%;background:conic-gradient(from 180deg,#FEDA77,#F58529,#DD2A7B,#8134AF,#515BD4,#FEDA77);padding:1.8px;}
-.p-meta .ig-av .inner{width:100%;height:100%;border-radius:50%;background:linear-gradient(135deg,#E8D9C3 0%,#C9A87E 100%);border:1.5px solid #fff;}
-.p-meta .ig-who{flex:1;line-height:1.2;}
-.p-meta .ig-name{font-size:9.6px;font-weight:700;color:#0a0a0a;display:block;}
-.p-meta .ig-spon{font-size:7.4px;color:#737373;display:block;margin-top:1px;}
-.p-meta .ig-dots{font-size:11px;color:#0a0a0a;letter-spacing:1.5px;line-height:1;}
-.p-meta .ig-img{aspect-ratio:1;position:relative;overflow:hidden;background:linear-gradient(165deg,#F8F1E4 0%,#F0E5D0 45%,#E4D4B6 100%);}
-.p-meta .ig-img::before{content:"";position:absolute;left:62%;top:-10%;width:38%;height:130%;background:linear-gradient(180deg,rgba(255,253,247,.5) 0%,rgba(255,253,247,0) 80%);transform:rotate(12deg);}
-.p-meta .ig-img::after{content:"";position:absolute;right:9%;bottom:11%;width:34px;height:44px;background:radial-gradient(circle at 30% 20%, rgba(138,160,118,.85) 0 3.4px, transparent 4px),radial-gradient(circle at 70% 38%, rgba(138,160,118,.7) 0 2.8px, transparent 3.4px),radial-gradient(circle at 25% 62%, rgba(138,160,118,.6) 0 2.4px, transparent 3px),radial-gradient(circle at 65% 82%, rgba(138,160,118,.55) 0 2.4px, transparent 3px);opacity:.88;}
-.p-meta .ad-hook{position:absolute;left:14px;right:14px;top:18px;font-family:var(--f-h);font-weight:700;font-style:italic;font-size:17px;line-height:1.08;letter-spacing:-0.01em;color:#2C2118;}
-.p-meta .ad-hook b{display:block;font-style:normal;font-weight:800;color:#0C0C0F;letter-spacing:-.02em;font-size:19px;margin-bottom:4px;}
-.p-meta .ad-sub{position:absolute;left:14px;right:14px;top:116px;display:flex;flex-direction:column;gap:7px;}
-.p-meta .ad-sub li{list-style:none;display:flex;align-items:center;gap:7px;font-size:9.5px;color:#3D2F1F;font-weight:500;line-height:1.2;}
-.p-meta .ad-sub li::before{content:"";width:5px;height:5px;border-radius:50%;background:#8A7B5E;flex-shrink:0;}
-.p-meta .ad-badge{position:absolute;left:14px;bottom:14px;display:inline-flex;align-items:center;gap:6px;font-size:8px;font-weight:700;color:#2C2118;background:rgba(255,255,255,.8);border:.8px solid rgba(0,0,0,.06);padding:5px 10px;border-radius:100px;letter-spacing:.08em;text-transform:uppercase;}
-.p-meta .ad-badge .wa-mini{width:12px;height:12px;border-radius:50%;background:var(--wa);display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:7px;font-weight:900;}
-.p-meta .ig-act{display:flex;gap:10px;padding:10px 14px 4px;background:#fff;}
-.p-meta .ig-act svg{width:16px;height:16px;stroke:#0a0a0a;stroke-width:1.6;fill:none;}
-.p-meta .ig-act .save{margin-left:auto;}
-.p-meta .ig-cta{margin:8px 14px 10px;padding:10px 12px;background:linear-gradient(180deg,#22B85F 0%,#1B9D50 100%);color:#fff;font-size:11px;font-weight:800;letter-spacing:.02em;border-radius:9px;display:flex;align-items:center;justify-content:center;gap:7px;box-shadow:0 4px 10px -4px rgba(37,211,102,.3);}
-.p-meta .ig-cta .wa-icon{width:14px;height:14px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;}
-.p-meta .ig-cta .wa-icon svg{width:9.5px;height:9.5px;fill:#fff;}
-.p-meta .ig-hand{padding:0 14px 10px;font-size:7.8px;color:#737373;font-weight:500;display:flex;align-items:center;gap:5px;}
-.p-meta .ig-hand b{color:#0a0a0a;font-weight:700;}
-
-/* Phone 3 · Landing page */
-.p-lp .status-bar{background:#0B1D52;color:#fff;}
-.p-lp .status-bar .time,.p-lp .status-bar .right{color:#fff;}
-.p-lp .status-bar .bars i,.p-lp .status-bar .batt::before{background:#fff;}
-.p-lp .status-bar .batt{border-color:#fff;}
-.p-lp .status-bar .batt::after{background:#fff;}
-.p-lp .lp-head{padding:11px 14px 10px;background:#0B1D52;color:#fff;display:flex;justify-content:space-between;align-items:center;}
-.p-lp .lp-brand{font-family:var(--f-h);font-size:11px;font-weight:800;letter-spacing:-.01em;}
-.p-lp .lp-brand em{font-style:normal;color:var(--highlight);}
-.p-lp .lp-menu{font-size:8.2px;color:rgba(255,255,255,.55);letter-spacing:.14em;font-weight:600;}
-.p-lp .lp-body{background:#fff;padding:14px 14px 12px;display:flex;flex-direction:column;flex:1;}
-.p-lp .lp-pill{display:inline-flex;align-items:center;gap:5px;background:rgba(22,163,74,.08);color:#16A34A;font-size:8px;font-weight:700;padding:4px 9px;border-radius:100px;margin-bottom:14px;border:.8px solid rgba(22,163,74,.2);align-self:flex-start;}
-.p-lp .lp-pill::before{content:"";width:5px;height:5px;border-radius:50%;background:#22C55E;}
-.p-lp .lp-h{font-family:var(--f-h);font-weight:700;font-size:16px;color:#0a0a0a;line-height:1.08;margin-bottom:10px;letter-spacing:-.022em;}
-.p-lp .lp-h em{font-style:italic;font-weight:600;color:var(--highlight);}
-.p-lp .lp-meta{display:flex;gap:5px;align-items:center;font-size:8.2px;color:#4B5563;margin-bottom:14px;}
-.p-lp .lp-meta .stars{color:#F4B400;font-size:9px;letter-spacing:.3px;}
-.p-lp .lp-hero{height:64px;border-radius:8px;margin-bottom:12px;position:relative;overflow:hidden;background:linear-gradient(145deg,#F5EFE2 0%,#E8DCC4 100%);}
-.p-lp .lp-hero::before{content:"";position:absolute;right:8%;top:50%;transform:translateY(-50%);width:36%;height:76%;background:linear-gradient(180deg,#E7CAA7 0%,#B89068 100%);border-radius:50% 50% 45% 45%;}
-.p-lp .lp-hero-cap{position:absolute;left:6px;bottom:6px;font-size:6.6px;color:#2C2118;font-weight:600;background:rgba(255,255,255,.85);padding:3px 6px;border-radius:4px;}
-.p-lp .lp-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:12px;padding:10px 0;border-top:.5px solid #F0F0F0;border-bottom:.5px solid #F0F0F0;}
-.p-lp .lp-stat b{font-family:var(--f-h);font-weight:700;font-size:12px;color:#0a0a0a;letter-spacing:-.015em;display:block;}
-.p-lp .lp-stat span{font-size:6.5px;color:#6B7280;letter-spacing:.02em;}
-.p-lp .lp-benefits{display:flex;flex-direction:column;gap:6px;margin-bottom:12px;}
-.p-lp .lp-benefit{display:flex;align-items:center;gap:6px;font-size:8px;color:#0a0a0a;font-weight:500;}
-.p-lp .lp-benefit::before{content:"✓";width:12px;height:12px;background:#DCFCE7;color:#16A34A;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:8px;font-weight:900;flex-shrink:0;}
-.p-lp .lp-cta{background:#0a0a0a;color:#fff;padding:10px;text-align:center;font-size:9.5px;font-weight:700;border-radius:9px;margin-bottom:6px;letter-spacing:.015em;}
-.p-lp .lp-cta::after{content:" →";}
-.p-lp .lp-micro{font-size:7px;color:#9CA3AF;text-align:center;margin-bottom:10px;}
-.p-lp .lp-trust-row{margin-top:auto;display:flex;justify-content:space-between;padding-top:8px;border-top:.5px solid #F0F0F0;font-size:6.6px;color:#6B7280;font-weight:600;letter-spacing:.12em;text-transform:uppercase;}
-
-/* Phone 4 · WhatsApp */
-.p-lead .status-bar{background:#075E54;color:#fff;}
-.p-lead .status-bar .time,.p-lead .status-bar .right{color:#fff;}
-.p-lead .status-bar .bars i,.p-lead .status-bar .batt::before{background:#fff;}
-.p-lead .status-bar .batt{border-color:#fff;}
-.p-lead .status-bar .batt::after{background:#fff;}
-.p-lead .wa-top{background:#075E54;color:#fff;padding:8px 13px 10px;display:flex;align-items:center;gap:9px;}
-.p-lead .wa-back{font-size:14px;font-weight:300;opacity:.85;}
-.p-lead .wa-av{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#D1B38C,#7E6242);flex-shrink:0;}
-.p-lead .wa-who{line-height:1.2;flex:1;}
-.p-lead .wa-name{font-size:10.2px;font-weight:700;}
-.p-lead .wa-status{font-size:7.4px;color:rgba(255,255,255,.72);}
-.p-lead .wa-icons{display:flex;gap:10px;font-size:11px;color:rgba(255,255,255,.9);}
-.p-lead .wa-body{flex:1;padding:10px 9px;display:flex;flex-direction:column;gap:3px;position:relative;background:#E5DDD5;}
-.p-lead .wa-date{align-self:center;background:rgba(255,255,255,.85);font-size:7px;color:#667781;padding:2.5px 8px;border-radius:6px;margin-bottom:3px;font-weight:500;}
-.p-lead .msg{padding:6px 9px;border-radius:7px;font-size:8.2px;line-height:1.42;position:relative;}
-.p-lead .msg .time{display:block;text-align:right;font-size:6px;color:#667781;margin-top:1px;}
-.p-lead .msg.in{background:#fff;color:#0a0a0a;align-self:flex-start;border-radius:2px 7px 7px 7px;}
-.p-lead .msg.out{background:#DCF8C6;color:#0a0a0a;align-self:flex-end;border-radius:7px 2px 7px 7px;}
-.p-lead .msg.out .time{color:#4fae4b;}
-.p-lead .msg.m-1{max-width:82%;margin-top:2px;}
-.p-lead .msg.m-2{max-width:63%;margin-top:6px;}
-.p-lead .msg.m-3{max-width:31%;margin-top:5px;}
-.p-lead .msg.m-4{max-width:39%;margin-top:3px;}
-.p-lead .appt-card{align-self:flex-end;max-width:82%;background:#fff;border-radius:9px;overflow:hidden;margin-top:6px;}
-.p-lead .appt-card .head{background:#075E54;color:#fff;padding:5px 9px;font-size:7px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;}
-.p-lead .appt-card .body{padding:7px 9px 8px;display:flex;flex-direction:column;gap:2px;}
-.p-lead .appt-card .t{font-size:10px;font-weight:800;color:#0a0a0a;letter-spacing:-.01em;}
-.p-lead .appt-card .w{font-size:7.5px;color:#6B7280;}
-.p-lead .appt-card .d{display:flex;gap:4px;align-items:center;font-size:7.5px;color:#0a0a0a;font-weight:500;margin-top:4px;padding-top:5px;border-top:.5px solid #F0F0F0;}
-.p-lead .appt-card .d::before{content:"";width:7px;height:7px;border-radius:50%;background:#16A34A;}
-.p-lead .lead-toast{position:absolute;top:-4px;right:8px;z-index:5;background:#fff;border:1px solid rgba(0,0,0,.06);box-shadow:0 10px 22px -8px rgba(0,0,0,.22);border-radius:9px;padding:7px 10px;font-size:7.6px;color:#0a0a0a;font-weight:600;display:flex;align-items:center;gap:7px;}
-.p-lead .lead-toast .check{width:14px;height:14px;border-radius:50%;background:#22C55E;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:8px;font-weight:900;flex-shrink:0;}
-.p-lead .lead-toast small{display:block;font-size:6.4px;color:#6B7280;font-weight:500;margin-top:1px;}
-.p-lead .wa-input{background:#F0F0F0;padding:7px 10px;display:flex;align-items:center;gap:6px;}
-.p-lead .wa-field{flex:1;background:#fff;border-radius:100px;padding:5px 11px;font-size:7.6px;color:#aaa;}
-.p-lead .wa-send{width:22px;height:22px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;}
-.p-lead .wa-send::before{content:"";width:8px;height:8px;border-right:2px solid #fff;border-top:2px solid #fff;transform:rotate(45deg);margin-right:2px;}
+/* === Removed orphaned pre-integration funnel CSS — 2026-04-23 === */
+/* 139 lines of unused .phone-row / .phone / .p-google / .p-meta / .p-lp / .p-lead rules removed after the .adv-* funnel replaced the old markup. */
 
 /* ═════════ SERVICES — clean plinth cards ═════════ */
 .services .svc-grid, .services .svc-card{display:none !important;} /* hide legacy grid if any survives */
@@ -854,6 +717,149 @@ textarea.f-inp{resize:vertical;min-height:80px;}
   .btn-ghost{margin-left:0;margin-top:12px;}
   .hero-actions{flex-direction:column;align-items:flex-start;}
 }
+
+/* === New 4-phone funnel section — added 2026-04-23 === */
+/* All classes prefixed with "adv-" to isolate from existing site CSS. */
+.adv-phones {
+  --adv-accent: #5B8FC7;
+  --adv-frame: #1A1A1C;
+  --adv-frame-edge: #2A2A2E;
+  --adv-screen-ink: #1F2937;
+  --adv-screen-muted: #6B7280;
+  --adv-screen-rule: #E5E7EB;
+  --adv-booking-blue: #2563EB;
+  --adv-sans: -apple-system, BlinkMacSystemFont, 'Inter', 'SF Pro Display', system-ui, sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 32px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  font-family: var(--adv-sans);
+  color: var(--adv-screen-ink);
+  line-height: 1.4;
+}
+.adv-phone-slot { display: flex; flex-direction: column; align-items: center; }
+.adv-caption-block { margin-top: 20px; display: flex; flex-direction: column; align-items: center; gap: 3px; }
+.adv-caption-channel { font-size: 10.5px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #FFFFFF; }
+.adv-caption-stage { font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--adv-accent); }
+.adv-iphone { position: relative; width: 230px; height: 478px; background: var(--adv-frame); border: 2px solid var(--adv-frame-edge); border-radius: 39px; box-shadow: 0 26px 70px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.06); overflow: hidden; }
+.adv-island { position: absolute; top: 16px; left: 50%; transform: translateX(-50%); width: 80px; height: 25px; background: #000; border-radius: 12px; z-index: 3; }
+.adv-screen { position: absolute; inset: 9px; background: #FFFFFF; border-radius: 32px; overflow: hidden; display: flex; flex-direction: column; color: var(--adv-screen-ink); font-size: 11px; line-height: 1.4; }
+.adv-statusbar { position: relative; z-index: 1; height: 42px; padding: 0 16px; display: flex; align-items: center; justify-content: space-between; font-size: 12.5px; font-weight: 600; color: #000; flex-shrink: 0; }
+.adv-statusbar .adv-icons { display: inline-flex; gap: 2px; align-items: center; color: #000; }
+.adv-statusbar .adv-icons svg { display: block; }
+
+/* Screen 1: Google SERP */
+.adv-screen-serp { padding: 0; flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+.adv-serp-content { padding: 0 14px; flex: 1; overflow: hidden; }
+.adv-safari-top { display: flex; align-items: center; gap: 5px; padding: 5px 9px 7px; background: #F5F5F7; border-bottom: 1px solid var(--adv-screen-rule); flex-shrink: 0; }
+.adv-safari-aa { font-size: 12px; font-weight: 600; color: var(--adv-screen-ink); padding: 2px 5px; background: rgba(0,0,0,0.04); border-radius: 4px; }
+.adv-safari-url { flex: 1; background: #E8E8ED; border-radius: 7px; padding: 3px 9px; display: inline-flex; align-items: center; justify-content: center; gap: 4px; font-size: 10px; color: var(--adv-screen-ink); }
+.adv-safari-url .adv-safari-lock { font-size: 8px; color: var(--adv-screen-muted); }
+.adv-safari-reload { font-size: 13px; color: var(--adv-screen-ink); padding: 2px 5px; }
+.adv-safari-bottom { margin-top: auto; display: flex; justify-content: space-around; align-items: center; padding: 8px 10px; background: #F5F5F7; border-top: 1px solid var(--adv-screen-rule); font-size: 16px; color: #1A73E8; flex-shrink: 0; }
+.adv-safari-bottom span { padding: 0 3px; }
+.adv-safari-bottom .adv-safari-share { display: inline-flex; align-items: center; }
+.adv-g-logo { display: flex; justify-content: center; margin: 12px 0 10px; font-size: 20px; font-weight: 500; letter-spacing: -0.5px; font-family: 'Product Sans', Arial, sans-serif; }
+.adv-g-logo span:nth-child(1){color:#4285F4}
+.adv-g-logo span:nth-child(2){color:#EA4335}
+.adv-g-logo span:nth-child(3){color:#FBBC04}
+.adv-g-logo span:nth-child(4){color:#4285F4}
+.adv-g-logo span:nth-child(5){color:#34A853}
+.adv-g-logo span:nth-child(6){color:#EA4335}
+.adv-g-search { display: flex; align-items: center; gap: 7px; border: 1px solid #DFE1E5; border-radius: 18px; padding: 7px 10px; font-size: 10px; color: var(--adv-screen-ink); margin-bottom: 9px; }
+.adv-g-search .adv-mag { color: #9AA0A6; font-size: 10px; }
+.adv-g-filters { display: flex; gap: 12px; font-size: 9px; color: var(--adv-screen-muted); padding-bottom: 7px; border-bottom: 1px solid var(--adv-screen-rule); margin-bottom: 10px; overflow: hidden; white-space: nowrap; }
+.adv-g-filters span:first-child { color: var(--adv-screen-ink); font-weight: 500; border-bottom: 2px solid #1A73E8; padding-bottom: 5px; margin-bottom: -7px; }
+.adv-g-result { font-size: 10px; }
+.adv-g-sponsored { font-size: 8.5px; font-weight: 700; color: var(--adv-screen-ink); margin-bottom: 3px; }
+.adv-g-domain { font-size: 9px; color: #006621; margin-bottom: 2px; display: flex; align-items: center; gap: 5px; }
+.adv-g-favicon { display: inline-flex; align-items: center; justify-content: center; width: 14px; height: 14px; border-radius: 50%; background: #2563EB; color: #fff; font-size: 8px; font-weight: 700; line-height: 1; flex-shrink: 0; }
+.adv-g-title { font-size: 12px; color: #1A0DAB; font-weight: 400; line-height: 1.3; margin-bottom: 3px; }
+.adv-g-meta { font-size: 9px; color: var(--adv-screen-muted); margin-bottom: 4px; }
+.adv-g-meta .adv-stars { color: #FBBC04; }
+.adv-g-desc { font-size: 9px; color: #4D5156; line-height: 1.4; margin-bottom: 7px; }
+.adv-g-sitelinks { font-size: 9px; color: #1A0DAB; line-height: 1.5; }
+.adv-g-sitelinks span { margin-right: 2px; }
+.adv-g-sitelinks span + span::before { content: '·'; color: var(--adv-screen-muted); margin: 0 4px 0 0; }
+
+/* Screen 2: Instagram */
+.adv-screen-ig { display: flex; flex-direction: column; }
+.adv-ig-topbar { display: flex; align-items: center; justify-content: space-between; padding: 7px 12px 9px; border-bottom: 1px solid var(--adv-screen-rule); }
+.adv-ig-wordmark { font-family: 'Billabong', 'Segoe Script', cursive, var(--adv-sans); font-size: 18px; font-weight: 500; letter-spacing: -0.3px; color: var(--adv-screen-ink); }
+.adv-ig-icons { display: inline-flex; gap: 9px; color: var(--adv-screen-ink); }
+.adv-ig-post-header { display: flex; align-items: center; gap: 9px; padding: 5px 12px 9px; }
+.adv-ig-avatar { width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(45deg, #F58529 0%, #DD2A7B 50%, #8134AF 100%); padding: 2px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.adv-ig-avatar-inner { width: 100%; height: 100%; border-radius: 50%; background: #0A1020; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; letter-spacing: 0.02em; color: #FFFFFF; }
+.adv-ig-handle-wrap { display: flex; flex-direction: column; line-height: 1.2; }
+.adv-ig-menu { margin-left: auto; display: inline-flex; align-items: center; }
+.adv-ig-handle { font-size: 11px; font-weight: 600; color: var(--adv-screen-ink); }
+.adv-ig-sponsored { font-size: 9px; color: var(--adv-screen-muted); }
+.adv-ig-image { width: 100%; aspect-ratio: 1 / 1; overflow: hidden; background: #F2F2F4; margin-bottom: 0; }
+.adv-ig-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.adv-ig-actions { display: flex; align-items: center; gap: 10px; padding: 5px 10px; color: var(--adv-screen-ink); }
+.adv-ig-actions .adv-spacer { flex: 1; }
+.adv-ig-caption { padding: 0 10px; margin-top: 3px; font-size: 11px; line-height: 1.35; color: var(--adv-screen-ink); }
+.adv-ig-caption b { font-weight: 600; margin-right: 4px; }
+.adv-ig-comments { padding: 0 10px 3px; margin-top: 2px; font-size: 11px; color: #8E8E93; line-height: 1.35; }
+.adv-ig-nav { margin-top: auto; margin-bottom: 0; display: flex; justify-content: space-around; align-items: center; border-top: 1px solid var(--adv-screen-rule); padding: 9px 0 18px; color: var(--adv-screen-ink); }
+
+/* Screen 3: Booking */
+.adv-screen-book { padding: 10px 12px 8px; display: flex; flex-direction: column; }
+.adv-book-title { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.25; color: var(--adv-screen-ink); margin-bottom: 3px; }
+.adv-book-sub { font-size: 10px; color: var(--adv-screen-muted); margin-bottom: 3px; }
+.adv-book-section { font-size: 8.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--adv-screen-muted); margin-top: 8px; margin-bottom: 5px; }
+.adv-book-section:first-of-type { margin-top: 3px; }
+.adv-book-date { display: flex; align-items: center; justify-content: space-between; gap: 5px; padding: 6px 10px; border: 1px solid rgba(0,0,0,0.08); background: #FAFAFA; border-radius: 7px; font-size: 11px; color: var(--adv-screen-ink); }
+.adv-book-date .adv-date-label { display: inline-flex; align-items: center; gap: 5px; }
+.adv-book-date .adv-chev { color: #8E8E93; display: inline-flex; align-items: center; }
+.adv-book-slots { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
+.adv-slot { padding: 5px 0; text-align: center; border: 1px solid rgba(0,0,0,0.08); background: #FAFAFA; border-radius: 5px; font-size: 10px; font-weight: 500; color: var(--adv-screen-ink); }
+.adv-slot.adv-sel { background: var(--adv-booking-blue); border-color: var(--adv-booking-blue); color: #fff; }
+.adv-book-fields { display: flex; flex-direction: column; gap: 4px; }
+.adv-book-field { padding: 5px 9px; border: 1px solid rgba(0,0,0,0.08); border-radius: 5px; font-size: 10px; color: var(--adv-screen-ink); background: #FAFAFA; }
+.adv-book-field.adv-placeholder { color: var(--adv-screen-muted); }
+.adv-book-cta { padding: 8px 0; margin-top: 8px; background: var(--adv-booking-blue); color: #fff; font-size: 11px; font-weight: 600; border-radius: 5px; text-align: center; margin-bottom: 5px; }
+.adv-book-foot { font-size: 8px; color: var(--adv-screen-muted); text-align: center; letter-spacing: 0.02em; margin-bottom: 6px; }
+
+/* Screen 4: WhatsApp */
+.adv-screen-wa { flex: 1; min-height: 0; display: flex; flex-direction: column; background: #E5DDD5; }
+.adv-wa-header { display: flex; align-items: center; gap: 7px; height: 50px; padding: 0 9px; background: #FFFFFF; border-bottom: 1px solid rgba(0,0,0,0.08); flex-shrink: 0; }
+.adv-wa-back { display: inline-flex; align-items: center; color: #25D366; flex-shrink: 0; }
+.adv-wa-avatar { width: 26px; height: 26px; border-radius: 50%; background-image: url('images/doctor-portrait.jpg'); background-size: cover; background-position: center; flex-shrink: 0; }
+.adv-wa-name-wrap { display: flex; flex-direction: column; line-height: 1.2; flex: 1; min-width: 0; }
+.adv-wa-name { font-size: 13.5px; font-weight: 600; color: #000; white-space: nowrap; overflow: hidden; }
+.adv-wa-status { font-size: 10px; font-weight: 400; color: #667781; white-space: nowrap; overflow: hidden; }
+.adv-wa-header-icons { display: inline-flex; align-items: center; gap: 7px; color: #3B4A54; flex-shrink: 0; }
+.adv-wa-header-icons svg { display: block; }
+.adv-wa-chat { flex: 1; min-height: 0; padding: 0 9px; display: flex; flex-direction: column; overflow: hidden; }
+.adv-wa-e2e { align-self: center; background: #FFF3C4; color: #5D4A1F; font-size: 9px; text-align: center; padding: 4px 10px; line-height: 1.25; border-radius: 4px; margin: 5px 12px 6px 12px; }
+.adv-wa-date { align-self: center; background: #E1D9CE; color: #4A4A4A; font-size: 9.5px; font-weight: 600; padding: 2px 7px; border-radius: 7px; letter-spacing: 0.04em; margin-top: 2px; margin-bottom: 4px; }
+.adv-wa-bubble + .adv-wa-bubble { margin-top: 3px; }
+.adv-wa-bubble { max-width: 78%; padding: 5px 8px; font-size: 12px; line-height: 1.35; color: #1C1C1E; position: relative; box-shadow: 0 1px 0.5px rgba(0,0,0,0.12); }
+.adv-wa-bubble.adv-in { align-self: flex-start; background: #FFFFFF; border-radius: 8px 8px 8px 2px; }
+.adv-wa-bubble.adv-out { align-self: flex-end; background: #D9FDD3; border-radius: 8px 8px 2px 8px; }
+.adv-wa-bubble.adv-in.adv-first::before { content: ""; position: absolute; top: 0; left: -6px; width: 0; height: 0; border-top: 8px solid #FFFFFF; border-left: 6px solid transparent; }
+.adv-wa-bubble.adv-out::before { content: ""; position: absolute; top: 0; right: -6px; width: 0; height: 0; border-top: 8px solid #D9FDD3; border-right: 6px solid transparent; }
+.adv-wa-time { display: block; font-size: 9px; color: #8E8E93; text-align: right; margin-top: 3px; padding-right: 2px; }
+.adv-wa-time .adv-tick { color: #34B7F1; font-size: 10px; margin-left: 3px; letter-spacing: -1px; }
+.adv-wa-input { display: flex; align-items: center; gap: 7px; padding: 7px 9px 12px; background: #FFFFFF; border-top: 1px solid rgba(0,0,0,0.08); flex-shrink: 0; margin-top: auto; }
+.adv-wa-emoji { display: inline-flex; align-items: center; color: #8696A0; }
+.adv-wa-field { flex: 1; display: flex; align-items: center; justify-content: space-between; gap: 7px; background: #F0F0F0; border-radius: 18px; padding: 5px 10px; font-size: 12px; color: #8E8E93; }
+.adv-wa-plus { display: inline-flex; align-items: center; color: #8696A0; }
+.adv-wa-mic { display: inline-flex; align-items: center; color: #667781; }
+
+/* iOS home indicator (all 4 screens) */
+.adv-home-indicator { position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%); width: 88px; height: 3px; background: #000; border-radius: 2px; opacity: 0.18; z-index: 5; pointer-events: none; }
+
+/* Responsive */
+@media (max-width: 1100px) { .adv-phones { gap: 24px; } }
+@media (max-width: 900px)  { .adv-phones { gap: 32px 20px; } }
+@media (max-width: 560px)  { .adv-iphone { transform: scale(0.9); transform-origin: top center; margin-bottom: -42px; } }
+/* ===== end new 4-phone funnel section ===== */
 
 </style>
 </head>
@@ -990,17 +996,13 @@ textarea.f-inp{resize:vertical;min-height:80px;}
 ══════════════════════════════════════════════════ -->
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track">
-    <div class="ticker-item"><span class="t-dot"></span>Cross-border patient acquisition</div>
-    <div class="ticker-item"><span class="t-dot"></span>IVF and hair transplant clinics, exclusively</div>
-    <div class="ticker-item"><span class="t-dot"></span>One clinic per corridor</div>
-    <div class="ticker-item"><span class="t-dot"></span>Native-language creative, reviewed by natives</div>
-    <div class="ticker-item"><span class="t-dot"></span>Qualified bookings, not leads</div>
+    <div class="ticker-item"><span class="t-dot"></span>Built for IVF and hair transplant clinics — nothing else.</div>
+    <div class="ticker-item"><span class="t-dot"></span>We measure bookings, not clicks.</div>
+    <div class="ticker-item"><span class="t-dot"></span>We understand medical compliance. GDPR, Meta health restrictions, Google Ads medical policies.</div>
     <div class="ticker-item"><span class="t-dot"></span>Selective by design</div>
-    <div class="ticker-item"><span class="t-dot"></span>Cross-border patient acquisition</div>
-    <div class="ticker-item"><span class="t-dot"></span>IVF and hair transplant clinics, exclusively</div>
-    <div class="ticker-item"><span class="t-dot"></span>One clinic per corridor</div>
-    <div class="ticker-item"><span class="t-dot"></span>Native-language creative, reviewed by natives</div>
-    <div class="ticker-item"><span class="t-dot"></span>Qualified bookings, not leads</div>
+    <div class="ticker-item"><span class="t-dot"></span>Built for IVF and hair transplant clinics — nothing else.</div>
+    <div class="ticker-item"><span class="t-dot"></span>We measure bookings, not clicks.</div>
+    <div class="ticker-item"><span class="t-dot"></span>We understand medical compliance. GDPR, Meta health restrictions, Google Ads medical policies.</div>
     <div class="ticker-item"><span class="t-dot"></span>Selective by design</div>
   </div>
 </div>
@@ -1032,141 +1034,236 @@ textarea.f-inp{resize:vertical;min-height:80px;}
       <p class="j-sub">The system, exactly where it converts.</p>
     </div>
 
-    <div class="phone-row">
+    <div class="adv-phones">
 
-      <!-- 01 · Google search -->
-      <div class="phone p-google">
-        <div class="phone-screen">
-          <div class="notch"></div>
-          <div class="status-bar"><span class="time">9:41</span><span class="right"><span class="bars"><i></i><i></i><i></i><i></i></span> 5G <span class="batt"></span></span></div>
-          <div class="g-bar">ivf clinic — book consultation</div>
-          <div class="g-tabs"><span class="g-tab active">All</span><span class="g-tab">Maps</span><span class="g-tab">Images</span><span class="g-tab">News</span></div>
-          <div class="g-stats">About 4,280,000 results</div>
-          <span class="g-ad-label">Sponsored</span>
-          <div class="g-result">
-            <div class="g-rank">#1</div>
-            <div class="g-site">
-              <span class="g-fav">C</span>
-              <div class="g-who">
-                <span class="g-dom">yourclinic.example</span>
-                <span class="g-path">› consultation</span>
+      <!-- 01 · Google Search -->
+      <div class="adv-phone-slot">
+        <div class="adv-iphone">
+          <div class="adv-island"></div>
+          <div class="adv-screen">
+            <div class="adv-statusbar">
+              <span>9:41</span>
+              <span class="adv-icons">
+                <svg width="12" height="9" viewBox="0 0 17 11"><g fill="currentColor"><rect x="0" y="7" width="3" height="4" rx="0.5"/><rect x="4.5" y="5" width="3" height="6" rx="0.5"/><rect x="9" y="3" width="3" height="8" rx="0.5"/><rect x="13.5" y="0" width="3" height="11" rx="0.5"/></g></svg>
+                <svg width="11" height="9" viewBox="0 0 16 11" fill="currentColor"><path d="M8 2c-2.5 0-4.8.9-6.6 2.5l1.3 1.4C4.2 4.6 6 3.9 8 3.9s3.8.7 5.3 2l1.3-1.4C12.8 2.9 10.5 2 8 2zm0 3.1c-1.5 0-3 .6-4.1 1.6L5.2 8c.8-.7 1.8-1.1 2.8-1.1s2 .4 2.8 1.1l1.3-1.3C10.9 5.7 9.5 5.1 8 5.1zM8 8.2c-.7 0-1.4.3-1.9.8L8 11l1.9-2c-.5-.5-1.2-.8-1.9-.8z"/></svg>
+                <svg width="18" height="9" viewBox="0 0 25 11"><rect x="0.5" y="0.5" width="21" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-opacity="0.45"/><rect x="22" y="3.5" width="1.5" height="4" rx="0.5" fill="currentColor" fill-opacity="0.45"/><rect x="2" y="2" width="18" height="7" rx="1.2" fill="currentColor"/></svg>
+              </span>
+            </div>
+            <div class="adv-screen-serp">
+              <div class="adv-safari-top">
+                <span class="adv-safari-aa">AA</span>
+                <span class="adv-safari-url"><span class="adv-safari-lock">🔒</span>google.com</span>
+                <span class="adv-safari-reload">↻</span>
+              </div>
+              <div class="adv-serp-content">
+                <div class="adv-g-logo">
+                  <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+                </div>
+                <div class="adv-g-search">
+                  <span class="adv-mag">🔍</span>
+                  <span>ivf clinic abroad consultation</span>
+                </div>
+                <div class="adv-g-filters">
+                  <span>All</span><span>Images</span><span>News</span><span>Maps</span><span>Shopping</span>
+                </div>
+                <div class="adv-g-result">
+                  <div class="adv-g-sponsored">Sponsored</div>
+                  <div class="adv-g-domain"><span class="adv-g-favicon">EF</span>europafertility.com</div>
+                  <div class="adv-g-title">IVF Treatment Abroad — Free Video Consultation</div>
+                  <div class="adv-g-meta"><span class="adv-stars">★ 4.9</span> (2,847 reviews) · Europa Fertility Center</div>
+                  <div class="adv-g-desc">Leading European fertility clinic. High success rates, multilingual support, personalized care. EU-certified specialists.</div>
+                  <div class="adv-g-sitelinks">
+                    <span>Success Rates</span><span>Patient Reviews</span><span>Pricing</span><span>Contact</span>
+                  </div>
+                </div>
+              </div>
+              <div class="adv-safari-bottom">
+                <span>‹</span>
+                <span>›</span>
+                <span class="adv-safari-share" aria-label="Share"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#007AFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg></span>
+                <span>▢</span>
+                <span>⧉</span>
               </div>
             </div>
-            <p class="g-tlt">Your Clinic — Book Consultation</p>
-            <p class="g-dsc">Specialist IVF care. First consultation complimentary. Personalised plans for international patients.</p>
-            <div class="g-rate"><span class="stars">★★★★★</span><span style="color:#202124;font-weight:600;">Verified</span><span>· Patient reviews</span></div>
-            <div class="g-sitelinks">
-              <span class="g-sl">Book consultation</span>
-              <span class="g-sl">Treatments</span>
-              <span class="g-sl">International patients</span>
-              <span class="g-sl">About the clinic</span>
-            </div>
-          </div>
-          <div class="g-map"></div>
-          <div class="g-result" style="opacity:.55;">
-            <div class="g-site"><span class="g-fav" style="background:#d0d0d0;color:#444;">—</span><div class="g-who"><span class="g-dom">general-health.example</span><span class="g-path">› fertility › ivf</span></div></div>
-            <p class="g-tlt" style="color:#1A0DAB;font-weight:500;">IVF — general overview</p>
-            <p class="g-dsc">Reference information on in-vitro fertilisation.</p>
+            <div class="adv-home-indicator"></div>
           </div>
         </div>
-        <div class="phone-step"><b>01</b>Google search</div>
-      </div>
-
-      <!-- 02 · Instagram / Meta ad -->
-      <div class="phone p-meta">
-        <div class="phone-screen">
-          <div class="notch"></div>
-          <div class="status-bar"><span class="time">9:41</span><span class="right"><span class="bars"><i></i><i></i><i></i><i></i></span> 5G <span class="batt"></span></span></div>
-          <div class="ig-top">
-            <div class="ig-av"><div class="inner"></div></div>
-            <div class="ig-who"><span class="ig-name">your.clinic</span><span class="ig-spon">Sponsored</span></div>
-            <span class="ig-dots">···</span>
-          </div>
-          <div class="ig-img">
-            <div class="ad-hook"><b>Considering IVF abroad?</b>Speak to a specialist this week.</div>
-            <ul class="ad-sub"><li>Personalised treatment plans</li><li>International patient support</li><li>Consultation in your language</li></ul>
-            <div class="ad-badge"><span class="wa-mini">✓</span>Reply via WhatsApp</div>
-          </div>
-          <div class="ig-act">
-            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
-            <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-            <svg class="save" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
-          </div>
-          <div class="ig-cta">
-            <span class="wa-icon"><svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.8-1.67-2.1-.17-.3 0-.47.13-.62.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.57-.48-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.5 0 1.48 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.1 4.5.7.3 1.27.5 1.7.62.72.23 1.37.2 1.88.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg></span>
-            Start on WhatsApp
-          </div>
-          <div class="ig-hand"><b>Fast response</b> · coordinator, in your language</div>
+        <div class="adv-caption-block">
+          <span class="adv-caption-channel">Google Search</span>
+          <span class="adv-caption-stage">01 — Discovery</span>
         </div>
-        <div class="phone-step"><b>02</b>Meta ad</div>
       </div>
 
-      <!-- 03 · Landing page -->
-      <div class="phone p-lp">
-        <div class="phone-screen">
-          <div class="notch"></div>
-          <div class="status-bar"><span class="time">9:41</span><span class="right"><span class="bars"><i></i><i></i><i></i><i></i></span> 5G <span class="batt"></span></span></div>
-          <div class="lp-head"><div class="lp-brand">Your Clinic<em>.</em></div><div class="lp-menu">MENU</div></div>
-          <div class="lp-body">
-            <span class="lp-pill">Consultation this week</span>
-            <div class="lp-h">IVF consultation, <em>led by specialists.</em></div>
-            <div class="lp-meta"><span class="stars">★★★★★</span><span style="color:#0a0a0a;font-weight:600;">Verified</span><span style="color:#9CA3AF;">· Patient reviews</span></div>
-            <div class="lp-hero"><span class="lp-hero-cap">Lead IVF specialist</span></div>
-            <div class="lp-stats">
-              <div class="lp-stat"><b>Fast</b><span>Reply window</span></div>
-              <div class="lp-stat"><b>Multi-lang</b><span>Support</span></div>
-              <div class="lp-stat"><b>Corridor</b><span>Specialists</span></div>
+      <!-- 02 · Instagram -->
+      <div class="adv-phone-slot">
+        <div class="adv-iphone">
+          <div class="adv-island"></div>
+          <div class="adv-screen">
+            <div class="adv-statusbar">
+              <span>9:41</span>
+              <span class="adv-icons">
+                <svg width="12" height="9" viewBox="0 0 17 11"><g fill="currentColor"><rect x="0" y="7" width="3" height="4" rx="0.5"/><rect x="4.5" y="5" width="3" height="6" rx="0.5"/><rect x="9" y="3" width="3" height="8" rx="0.5"/><rect x="13.5" y="0" width="3" height="11" rx="0.5"/></g></svg>
+                <svg width="11" height="9" viewBox="0 0 16 11" fill="currentColor"><path d="M8 2c-2.5 0-4.8.9-6.6 2.5l1.3 1.4C4.2 4.6 6 3.9 8 3.9s3.8.7 5.3 2l1.3-1.4C12.8 2.9 10.5 2 8 2zm0 3.1c-1.5 0-3 .6-4.1 1.6L5.2 8c.8-.7 1.8-1.1 2.8-1.1s2 .4 2.8 1.1l1.3-1.3C10.9 5.7 9.5 5.1 8 5.1zM8 8.2c-.7 0-1.4.3-1.9.8L8 11l1.9-2c-.5-.5-1.2-.8-1.9-.8z"/></svg>
+                <svg width="18" height="9" viewBox="0 0 25 11"><rect x="0.5" y="0.5" width="21" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-opacity="0.45"/><rect x="22" y="3.5" width="1.5" height="4" rx="0.5" fill="currentColor" fill-opacity="0.45"/><rect x="2" y="2" width="18" height="7" rx="1.2" fill="currentColor"/></svg>
+              </span>
             </div>
-            <div class="lp-benefits">
-              <div class="lp-benefit">Personalised plan</div>
-              <div class="lp-benefit">Transparent pricing</div>
-              <div class="lp-benefit">Coordinator in your language</div>
-            </div>
-            <div class="lp-cta">Book free consultation</div>
-            <p class="lp-micro">Takes 2 minutes</p>
-            <div class="lp-trust-row"><span>GDPR</span><span>Accredited</span><span>Multilingual</span></div>
-          </div>
-        </div>
-        <div class="phone-step"><b>03</b>Landing page</div>
-      </div>
-
-      <!-- 04 · WhatsApp conversion -->
-      <div class="phone p-lead">
-        <div class="phone-screen">
-          <div class="notch"></div>
-          <div class="status-bar"><span class="time">9:41</span><span class="right"><span class="bars"><i></i><i></i><i></i><i></i></span> 5G <span class="batt"></span></span></div>
-          <div class="wa-top">
-            <span class="wa-back">‹</span>
-            <div class="wa-av"></div>
-            <div class="wa-who"><div class="wa-name">Your Clinic</div><div class="wa-status">online</div></div>
-            <div class="wa-icons">📞 ⋮</div>
-          </div>
-          <div class="wa-body">
-            <div class="lead-toast">
-              <span class="check">✓</span>
-              <div><b>New lead · Patient</b><small>IVF · International</small></div>
-            </div>
-            <span class="wa-date">TODAY</span>
-            <div class="msg in m-1">Hi — saw your IVF ad. Could I book a first consultation?<span class="time">09:38</span></div>
-            <div class="msg out m-2">Of course. Two slots this week — Thursday or Friday?<span class="time">09:40 ✓✓</span></div>
-            <div class="msg in m-3">Thursday.<span class="time">09:41</span></div>
-            <div class="msg out m-4">Confirmed ↓<span class="time">09:41 ✓✓</span></div>
-            <div class="appt-card">
-              <div class="head">Consultation confirmed</div>
-              <div class="body">
-                <span class="t">Thursday · 3:00 PM</span>
-                <span class="w">45 min · Video</span>
-                <div class="d">IVF specialist</div>
+            <div class="adv-screen-ig">
+              <div class="adv-ig-topbar">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: #262626;"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                <div class="adv-ig-wordmark">Instagram</div>
+                <div class="adv-ig-icons">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                </div>
+              </div>
+              <div class="adv-ig-post-header">
+                <div class="adv-ig-avatar">
+                  <div class="adv-ig-avatar-inner">EF</div>
+                </div>
+                <div class="adv-ig-handle-wrap">
+                  <span class="adv-ig-handle">europafertility</span>
+                  <span class="adv-ig-sponsored">Sponsored</span>
+                </div>
+                <span class="adv-ig-menu" aria-label="More"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="color: #262626;"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg></span>
+              </div>
+              <div class="adv-ig-image">
+                <img src="images/consultation.jpg" alt="Consultation with Dr. Petrova" />
+              </div>
+              <div class="adv-ig-actions">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                <div class="adv-spacer"></div>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+              </div>
+              <div class="adv-ig-caption">
+                <b>europafertility</b>Meet our fertility specialists. Free video consultation — link in bio.
+              </div>
+              <div class="adv-ig-comments">View all 47 comments</div>
+              <div class="adv-ig-nav">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5" ry="5"/><path d="M10 8.5 L10 15.5 L16 12 Z" fill="#000000" stroke="none"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2h12a1 1 0 0 1 1 1v19l-7-4-7 4V3a1 1 0 0 1 1-1z"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
               </div>
             </div>
-          </div>
-          <div class="wa-input">
-            <div class="wa-field">Message</div>
-            <div class="wa-send"></div>
+            <div class="adv-home-indicator"></div>
           </div>
         </div>
-        <div class="phone-step"><b>04</b>Consultation booked</div>
+        <div class="adv-caption-block">
+          <span class="adv-caption-channel">Instagram</span>
+          <span class="adv-caption-stage">02 — Engagement</span>
+        </div>
+      </div>
+
+      <!-- 03 · Booking -->
+      <div class="adv-phone-slot">
+        <div class="adv-iphone">
+          <div class="adv-island"></div>
+          <div class="adv-screen">
+            <div class="adv-statusbar">
+              <span>9:41</span>
+              <span class="adv-icons">
+                <svg width="12" height="9" viewBox="0 0 17 11"><g fill="currentColor"><rect x="0" y="7" width="3" height="4" rx="0.5"/><rect x="4.5" y="5" width="3" height="6" rx="0.5"/><rect x="9" y="3" width="3" height="8" rx="0.5"/><rect x="13.5" y="0" width="3" height="11" rx="0.5"/></g></svg>
+                <svg width="11" height="9" viewBox="0 0 16 11" fill="currentColor"><path d="M8 2c-2.5 0-4.8.9-6.6 2.5l1.3 1.4C4.2 4.6 6 3.9 8 3.9s3.8.7 5.3 2l1.3-1.4C12.8 2.9 10.5 2 8 2zm0 3.1c-1.5 0-3 .6-4.1 1.6L5.2 8c.8-.7 1.8-1.1 2.8-1.1s2 .4 2.8 1.1l1.3-1.3C10.9 5.7 9.5 5.1 8 5.1zM8 8.2c-.7 0-1.4.3-1.9.8L8 11l1.9-2c-.5-.5-1.2-.8-1.9-.8z"/></svg>
+                <svg width="18" height="9" viewBox="0 0 25 11"><rect x="0.5" y="0.5" width="21" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-opacity="0.45"/><rect x="22" y="3.5" width="1.5" height="4" rx="0.5" fill="currentColor" fill-opacity="0.45"/><rect x="2" y="2" width="18" height="7" rx="1.2" fill="currentColor"/></svg>
+              </span>
+            </div>
+            <div class="adv-screen-book">
+              <div class="adv-book-title">Book Your Free Consultation</div>
+              <div class="adv-book-sub">with Dr. Elena Petrova, Senior Fertility Specialist</div>
+              <div class="adv-book-section">Calendar</div>
+              <div class="adv-book-date">
+                <span class="adv-date-label">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#3C3C43;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  <span>Oct 26, 2026</span>
+                </span>
+                <span class="adv-chev"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+              </div>
+              <div class="adv-book-section">Available Times</div>
+              <div class="adv-book-slots">
+                <div class="adv-slot">10:00 AM</div>
+                <div class="adv-slot adv-sel">11:30 AM</div>
+                <div class="adv-slot">1:00 PM</div>
+                <div class="adv-slot">2:30 PM</div>
+              </div>
+              <div class="adv-book-section">Your Details</div>
+              <div class="adv-book-fields">
+                <div class="adv-book-field">Jane D.</div>
+                <div class="adv-book-field">jane.d@email.com</div>
+                <div class="adv-book-field adv-placeholder">Phone (optional)</div>
+              </div>
+              <div class="adv-book-cta">Confirm Appointment</div>
+              <div class="adv-book-foot">Free · No obligation · Secure video call</div>
+            </div>
+            <div class="adv-home-indicator"></div>
+          </div>
+        </div>
+        <div class="adv-caption-block">
+          <span class="adv-caption-channel">Booking</span>
+          <span class="adv-caption-stage">03 — Conversion</span>
+        </div>
+      </div>
+
+      <!-- 04 · WhatsApp -->
+      <div class="adv-phone-slot">
+        <div class="adv-iphone">
+          <div class="adv-island"></div>
+          <div class="adv-screen">
+            <div class="adv-statusbar">
+              <span>9:41</span>
+              <span class="adv-icons">
+                <svg width="12" height="9" viewBox="0 0 17 11"><g fill="currentColor"><rect x="0" y="7" width="3" height="4" rx="0.5"/><rect x="4.5" y="5" width="3" height="6" rx="0.5"/><rect x="9" y="3" width="3" height="8" rx="0.5"/><rect x="13.5" y="0" width="3" height="11" rx="0.5"/></g></svg>
+                <svg width="11" height="9" viewBox="0 0 16 11" fill="currentColor"><path d="M8 2c-2.5 0-4.8.9-6.6 2.5l1.3 1.4C4.2 4.6 6 3.9 8 3.9s3.8.7 5.3 2l1.3-1.4C12.8 2.9 10.5 2 8 2zm0 3.1c-1.5 0-3 .6-4.1 1.6L5.2 8c.8-.7 1.8-1.1 2.8-1.1s2 .4 2.8 1.1l1.3-1.3C10.9 5.7 9.5 5.1 8 5.1zM8 8.2c-.7 0-1.4.3-1.9.8L8 11l1.9-2c-.5-.5-1.2-.8-1.9-.8z"/></svg>
+                <svg width="18" height="9" viewBox="0 0 25 11"><rect x="0.5" y="0.5" width="21" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-opacity="0.45"/><rect x="22" y="3.5" width="1.5" height="4" rx="0.5" fill="currentColor" fill-opacity="0.45"/><rect x="2" y="2" width="18" height="7" rx="1.2" fill="currentColor"/></svg>
+              </span>
+            </div>
+            <div class="adv-screen-wa">
+              <div class="adv-wa-header">
+                <span class="adv-wa-back" aria-label="Back"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></span>
+                <div class="adv-wa-avatar" role="img" aria-label="Dr. Elena Petrova"></div>
+                <div class="adv-wa-name-wrap">
+                  <span class="adv-wa-name">Dr. Petrova</span>
+                  <span class="adv-wa-status">online</span>
+                </div>
+                <span class="adv-wa-header-icons">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </span>
+              </div>
+              <div class="adv-wa-chat">
+                <div class="adv-wa-e2e">🔒 End-to-end encrypted</div>
+                <div class="adv-wa-date">TODAY</div>
+                <div class="adv-wa-bubble adv-in adv-first">
+                  Hi Jane, so glad we connected. Your consultation is confirmed for Oct 26 at 11:30.
+                  <span class="adv-wa-time">9:41</span>
+                </div>
+                <div class="adv-wa-bubble adv-in">
+                  I'll send you a short prep guide and a reminder 24h before. Any questions in the meantime — just message me here 💙
+                  <span class="adv-wa-time">9:41</span>
+                </div>
+                <div class="adv-wa-bubble adv-out">
+                  Thank you Dr. Petrova 🙏
+                  <span class="adv-wa-time">9:42<span class="adv-tick">✓✓</span></span>
+                </div>
+              </div>
+              <div class="adv-wa-input">
+                <span class="adv-wa-emoji" aria-label="Emoji"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></span>
+                <div class="adv-wa-field">
+                  <span>Message</span>
+                  <span class="adv-wa-plus" aria-label="Attach"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+                </div>
+                <span class="adv-wa-mic" aria-label="Voice message"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></span>
+              </div>
+            </div>
+            <div class="adv-home-indicator"></div>
+          </div>
+        </div>
+        <div class="adv-caption-block">
+          <span class="adv-caption-channel">WhatsApp</span>
+          <span class="adv-caption-stage">04 — Retention</span>
+        </div>
       </div>
 
     </div>
