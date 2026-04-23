@@ -9,3 +9,7 @@ node_modules/
 .netlify/
 .cache/
 lighthouse.html
+
+# Backup snapshots — do not commit
+*.bak
+index.html.pre-*.bak
